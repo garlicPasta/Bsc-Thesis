@@ -1,0 +1,343 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{url}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Darstellung gigantischer Punktwolken auf Android Geraeten
+\end_layout
+
+\begin_layout Author
+Jakob Krause
+\end_layout
+
+\begin_layout Section*
+Einführung 
+\end_layout
+
+\begin_layout Subsection*
+Motivation
+\end_layout
+
+\begin_layout Itemize
+Live darstellung der Ergebnisse bei Fluegen des Archecopters
+\end_layout
+
+\begin_layout Subsection*
+Aufbau der Arbeit
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Section*
+Vergleichbare Arbeiten
+\end_layout
+
+\begin_layout Standard
+Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
+ von modernen 3D Scanner in den letzten Jahrzehnt stark gewachsen.
+ Für die Visualisierung von Punktmengen existieren Bibliotheken wie PCL
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PCL"
+
+\end_inset
+
+.
+ Z.B greift die Android App 
+\begin_inset Quotes eld
+\end_inset
+
+KiwiVewer
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KiwiVierwer"
+
+\end_inset
+
+ auf PCL zurueck.
+ Auch streaming wird unterstützt.
+ Große Punktmengen sind damit alleine allerdings nicht zu bewältigen.
+\end_layout
+
+\begin_layout Standard
+Erste Vorschläge zur Darstellung von sehr großer Punktmengen wurden durch
+ das QSplat
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rusinkiewicz:2000:QMP:344779.344940"
+
+\end_inset
+
+ Verfahren gemacht.
+ Die Punktemenge wird durch 'multiresolution' Hierarchie auf Basis von 'bounding
+ spheres' modelliert.
+ Abhängig von der Kameraposition wird die Struktur bis zu einer gewissen
+ Tiefe (Auflösung) durchlaufen.
+ Das Verfahren kann modifiziert auch zum streaming von Punktwolken genutzt
+ werden 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rusinkiewicz:2001:SQV:364338.364350"
+
+\end_inset
+
+ .
+ Für HD Displays ist der Algorithmus zu rechenintesiv weil die Berechnung
+ pro Display Punkt von der CPU erledigt wird.
+ 
+\end_layout
+
+\begin_layout Standard
+Moderne Ansätze Benutzen einen 'Multi Resolution' Octree
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wand:2008:SSP:1363373.1363581"
+
+\end_inset
+
+.
+ Die Daten werden 'out-of-core' verwaltet, also dynamisch von der Festplatte
+ geladen.
+ Der Octree bietet den Vorteil, das Punkte dynamisch hinzugefügt werden
+ können.
+ Hier werden in den inneren Knoten die unterschiedliche Detailstufen gespeichert.
+\end_layout
+
+\begin_layout Standard
+Eine weitere Möglichkeit ist ein Knn-Tree zu verwenden
+\begin_inset CommandInset citation
+LatexCommand cite
+key "VAST:VAST12:057-064"
+
+\end_inset
+
+.
+ Allerdings mit der Beschränkung, dass die Punktmenge von Anfang an vollstaendig
+ ist.
+\end_layout
+
+\begin_layout Standard
+Diese Arbeit richtet sich besonders an die Darstellung auf mobilen Geräten.
+ Die einzelnen Knoten werden auf Anfrage über das Netzwerk vom einem Server
+ übertragen.
+\end_layout
+
+\begin_layout Standard
+Beide Verfahren nutzen einen LRU-Cache um Verzögerungen zu verringern.
+ Die Implementierung erfolgte in C++ und OpenGl ES.
+ Fuer die Netzwerkkommunikation wir 'http pipelining' sowie eine Wavletkompressi
+on verwendet.
+ Punktmegen von bis zu 
+\end_layout
+
+\begin_layout Section*
+Gewählter Lösungsansatz
+\end_layout
+
+\begin_layout Subsection*
+Architektur
+\end_layout
+
+\begin_layout Standard
+Die Applikation besteht entspricht einer Client-Server Architektur.
+\end_layout
+
+\begin_layout Subsubsection*
+Server
+\end_layout
+
+\begin_layout Standard
+Der http Server stellt dem Client die Datenstruktur zur Verfügung um benötigte
+ Punkte zu ermitteln.
+ Des weiteren liefert er diese Punkte auf Anfrage aus.
+\end_layout
+
+\begin_layout Standard
+Da es nötig ist Punkte kontinuierlich hinzufügen kommt ein 'Multi Resolution'
+ Octree
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wand:2008:SSP:1363373.1363581"
+
+\end_inset
+
+ zum Einsatz.
+\end_layout
+
+\begin_layout Standard
+Die Knoten des Baumes enthalten lediglich Keys zu den Daten.
+\end_layout
+
+\begin_layout Standard
+Die eigentlichen Punkte werden in einer Key-Value Datenbank gespeichert
+ und für Anfragen zu Verfügung stellt.
+\end_layout
+
+\begin_layout Standard
+Das Model selbst ist auf die Blätter verteilt.
+ Die inneren Knoten erhalten vereinfachte Abbilder von seinen Kindern.
+\end_layout
+
+\begin_layout Itemize
+Programmiersprache Java
+\end_layout
+
+\begin_layout Itemize
+dynamischer 'Multi Resolution' Octree
+\end_layout
+
+\begin_layout Itemize
+'Redis'
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Redis"
+
+\end_inset
+
+ als Key-Value Datenbank
+\end_layout
+
+\begin_layout Itemize
+Kompression 
+\end_layout
+
+\begin_layout Subsubsection*
+Client
+\end_layout
+
+\begin_layout Standard
+Der Android-Client erhält ein Abbild der Datenstruktur vom Server und synchronis
+iert diese regelmaessig.
+ Beim traversieren der Struktur werden an den Server Anfragen gesendet.
+\end_layout
+
+\begin_layout Standard
+Empfangene Daten werden in einem 'last recently used' Cache gespeichert.
+ Dieser Cache wird gleichzeitig von OpenGl als Buffer für die Punkte benutzt.
+\end_layout
+
+\begin_layout Standard
+Es existiert ein Buffer für die Punktposition sowie für die RGB Werte.
+\end_layout
+
+\begin_layout Standard
+Die Anfragen zum Server laufen über das http Protokoll.
+ 
+\end_layout
+
+\begin_layout Itemize
+Programmiersprache Java
+\end_layout
+
+\begin_layout Itemize
+'Volley'
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Volley"
+
+\end_inset
+
+ for asynchrone http Anfragen
+\end_layout
+
+\begin_layout Itemize
+OpenGl ES für das Rendering
+\end_layout
+
+\begin_layout Section*
+Schwierigkeiten
+\end_layout
+
+\begin_layout Section*
+Dokumentation der Durchführung
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "sources"
+options "bibtotoc,plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
