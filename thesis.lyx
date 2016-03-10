@@ -80,59 +80,141 @@ Darstellung gigantischer Punktwolken auf Android Geraeten
 Jakob Krause
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Einführung 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 Motivation
 \end_layout
 
-\begin_layout Itemize
-Live darstellung der Ergebnisse bei Fluegen des Archecopters
-\end_layout
-
-\begin_layout Subsection*
-Aufbau der Arbeit
+\begin_layout Standard
+Das Archaeocopter Projekt, welches 2012 von Dr.
+ Benjamin Ducke and Prof.
+ Dr.
+ Marco Block-Berlitz ins Leben gerufen wurde, suchte nach einer Moeglichkeit
+ zur live Darstellung von Punkten waehren der Fluege.
+ 
 \end_layout
 
 \begin_layout Standard
--
+Die Idee ist mit Hilfe der Darstellung feststellen zu können, fuer welche
+ Bereiche des Objektes noch mehr Information gesammelt werden muessen.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Standard
+Dadurch kann waehrend des Fluges erkannt werden welche Bereiche schwer zu
+ erkennen sind.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Darstellung sollte auf einem Android Tabelett implementiert werden.
+\end_layout
+
+\begin_layout Standard
+Die Herrausforderung bestand darin trotz der Limitierungen eines Tabletts
+ (wenig RAM, schwache GPU) Punktwolken mit mehreren Millionen Punkten fluessig
+ Darzustellen.
+ Dabei muss es moeglich sein jederzeit neue Punkte in die bestehende Darstellung
+ einzufuegen.
+\end_layout
+
+\begin_layout Subsection
+Ziele
+\end_layout
+
+\begin_layout Standard
+Hauptziel der Arbeit ist es eine Datenstruktur zu entwickeln welche es ermoeglic
+h die Bereiche der Punktwolke in unterschiedliche Detailstufen zu liefern.
+\end_layout
+
+\begin_layout Standard
+Das System folgt der Client Server Architektur.
+ Daher muss eine effiziente Loesung fuer den Netzwerkverkehr gefunden werden.
+\end_layout
+
+\begin_layout Standard
+Ein weiteres Ziel der Arbeit war es, die Architektur möglichst modular und
+ Plattformunabhaengig zu gestalten um dadurch Austauschbarkeit Wiederverwendbark
+eit der einzelnen Komponenten zu gewährleisten.
+\end_layout
+
+\begin_layout Standard
+Es soll möglichst einfach sein eine App fuer iOS oder ein anderes mobiles
+ Betriebssystem nachzureichen.
+ Desweiteren soll eine moderne Auswahl von benutzten Frameworks/Komponenten
+ getroffen werden.
+\end_layout
+
+\begin_layout Standard
+Die App sollte moeglichst intuitiv benutzbar sein.
+\end_layout
+
+\begin_layout Section
 Vergleichbare Arbeiten
 \end_layout
 
 \begin_layout Standard
 Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
  von modernen 3D Scanner in den letzten Jahrzehnt stark gewachsen.
- Für die Visualisierung von Punktmengen existieren Bibliotheken wie PCL
-\begin_inset CommandInset citation
-LatexCommand cite
-key "PCL"
+\end_layout
 
-\end_inset
+\begin_layout Subsection
+KiwiViewer
+\end_layout
 
-.
- Z.B greift die Android App 
-\begin_inset Quotes eld
-\end_inset
+\begin_layout Standard
+KiwiViewer ist eine freie 'open-source' App zum erkunden von Punktwolken.
+\end_layout
 
-KiwiVewer
-\begin_inset Quotes erd
-\end_inset
+\begin_layout Standard
+Die App ist fuer Android sowie iOS verfügbar.
+ Multi-Touch Gestensteuerung wird unterstutzt.
+ 
+\end_layout
 
-
+\begin_layout Standard
+KiwiViewer 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "KiwiVierwer"
 
 \end_inset
 
- auf PCL zurueck.
- Auch streaming wird unterstützt.
- Große Punktmengen sind damit alleine allerdings nicht zu bewältigen.
+ bedient sich der 
+\begin_inset Quotes eld
+\end_inset
+
+Point Cloud Library
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PCL"
+
+\end_inset
+
+ fuer seine Kernfunktionen.
+ Die Punktmenge wird entweder ueber eine SD Karte, eMail oder URL geladen.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die App speichert die geladenen Punkte direkt auf dem Tablett.
+ Daher sind die Modelle auch auf dessen Arbeitspeicher beschränkt.
+ Modelle mit mehreren Millionen Punkten sind nicht darstellbar.
+\end_layout
+
+\begin_layout Subsection
+QSplat Verfahren
 \end_layout
 
 \begin_layout Standard
@@ -163,8 +245,12 @@ key "Rusinkiewicz:2001:SQV:364338.364350"
  
 \end_layout
 
+\begin_layout Subsection
+Multiresolution Octree
+\end_layout
+
 \begin_layout Standard
-Moderne Ansätze Benutzen einen 'Multi Resolution' Octree
+Moderne Ansätze benutzen einen Multiresolution Octree
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Wand:2008:SSP:1363373.1363581"
@@ -172,11 +258,31 @@ key "Wand:2008:SSP:1363373.1363581"
 \end_inset
 
 .
- Die Daten werden 'out-of-core' verwaltet, also dynamisch von der Festplatte
+ Diese Datenstruktur speichert die original Punkte in ihren äusseren Knoten.
+ Die inneren Knoten beinhalten gröbere Praesentationen für ihre Zellen.
+\end_layout
+
+\begin_layout Standard
+Die Punktdaten werden 'out-of-core' verwaltet, also dynamisch von der Festplatte
  geladen.
  Der Octree bietet den Vorteil, das Punkte dynamisch hinzugefügt werden
  können.
- Hier werden in den inneren Knoten die unterschiedliche Detailstufen gespeichert.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Das Paper beschreibt ein Verfahren für Desktop Systeme.
+ Eigenarten von Mobilen Geraten wie Netzwerkverkehr sind nicht berücksichtigt.
+\end_layout
+
+\begin_layout Subsection
+Knn-Tree iOS
 \end_layout
 
 \begin_layout Standard
@@ -188,29 +294,79 @@ key "VAST:VAST12:057-064"
 \end_inset
 
 .
- Allerdings mit der Beschränkung, dass die Punktmenge von Anfang an vollstaendig
+ Allerdings mit der Beschränkung, dass die Punktmenge von Anfang an vollständig
  ist.
 \end_layout
 
 \begin_layout Standard
 Diese Arbeit richtet sich besonders an die Darstellung auf mobilen Geräten.
- Die einzelnen Knoten werden auf Anfrage über das Netzwerk vom einem Server
- übertragen.
+ Die Datenstruktur selbst wird auf einem Server gespeichert.
+ Knoten werden auf Anfrage eines Clienten übertragen.
 \end_layout
 
 \begin_layout Standard
-Beide Verfahren nutzen einen LRU-Cache um Verzögerungen zu verringern.
+Ubertragende Knoten werden mit Hilfe eines LRU-Cache gespeichert.
  Die Implementierung erfolgte in C++ und OpenGl ES.
- Fuer die Netzwerkkommunikation wir 'http pipelining' sowie eine Wavletkompressi
-on verwendet.
- Punktmegen von bis zu 
+ Für die Netzwerkkommunikation wir 'http pipelining' sowie eine Wavletkompressio
+n verwendet.
+ 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Standard
+
+\emph on
+Abgenzung
+\end_layout
+
+\begin_layout Standard
+Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
+ Anfang an fest stehen.
+ Implementierung erfolgte in C++ fur iOS.
+\end_layout
+
+\begin_layout Standard
+Netzwerkverkehr erfolgt uber Http Pipelining.
+\end_layout
+
+\begin_layout Section
 Gewählter Lösungsansatz
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
+Datenstrukturen
+\end_layout
+
+\begin_layout Subsubsection
+Octree
+\end_layout
+
+\begin_layout Standard
+Octrees sind eine Datenstruktur um 3d dimensionale Daten hierarchisch zu
+ untergliedern.
+ Sie wurde 1980 von Donal Maegher beschrieben.
+ Octrees sind im 3 dimensionalen das was im 1 dimensionale Binarytrees sind
+ und im 2 dimensionalen die Quadtrees.
+\end_layout
+
+\begin_layout Standard
+Die Wurzel repräsentiert alle eingefuegten Daten.
+ Jeder innere Knoten besitzt 8 Kinder.
+ Diese unterteilen den Knoten in 8 gleichgrosse Octanten usw.
+\end_layout
+
+\begin_layout Paragraph
+Einfügen
+\end_layout
+
+\begin_layout Standard
+2
+\end_layout
+
+\begin_layout Subsubsection
+Muliresolution Octree
+\end_layout
+
+\begin_layout Subsection
 Architektur
 \end_layout
 
@@ -218,14 +374,30 @@ Architektur
 Die Applikation besteht entspricht einer Client-Server Architektur.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Standard
+Client und Server sind beide in Java geschrieben.
+\end_layout
+
+\begin_layout Subsubsection
 Server
 \end_layout
 
 \begin_layout Standard
 Der http Server stellt dem Client die Datenstruktur zur Verfügung um benötigte
  Punkte zu ermitteln.
- Des weiteren liefert er diese Punkte auf Anfrage aus.
+ Als HTTP Server kommt 
+\begin_inset Quotes eld
+\end_inset
+
+nanohttpd
+\begin_inset Quotes erd
+\end_inset
+
+ zum Einsatz, weil es schlank und einfach ist.
+\end_layout
+
+\begin_layout Standard
+Des weiteren liefert er diese Punkte auf Anfrage aus.
 \end_layout
 
 \begin_layout Standard
@@ -251,7 +423,7 @@ Die eigentlichen Punkte werden in einer Key-Value Datenbank gespeichert
 
 \begin_layout Standard
 Das Model selbst ist auf die Blätter verteilt.
- Die inneren Knoten erhalten vereinfachte Abbilder von seinen Kindern.
+ Die inneren Knoten erhalten vereinfachte Abbilder von seinen Kindern.mu
 \end_layout
 
 \begin_layout Itemize
@@ -277,7 +449,7 @@ key "Redis"
 Kompression 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Client
 \end_layout
 
@@ -318,6 +490,26 @@ key "Volley"
 
 \begin_layout Itemize
 OpenGl ES für das Rendering
+\end_layout
+
+\begin_layout Itemize
+UI
+\end_layout
+
+\begin_layout Subsubsection
+Netzwerktransfer
+\end_layout
+
+\begin_layout Itemize
+Plattform unabhängigkeit durch 
+\begin_inset Quotes eld
+\end_inset
+
+google Protocoll Buffer
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
