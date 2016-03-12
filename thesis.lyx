@@ -63,6 +63,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\listings_params "language=PHP,frame=lrbt,numbers=left,showstringspaces=false,breaklines=true,xleftmargin=15pt"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -73,7 +74,7 @@
 \begin_body
 
 \begin_layout Title
-Darstellung gigantischer Punktwolken auf Android Geraeten
+Darstellung gigantischer Punktwolken auf Android Geräten
 \end_layout
 
 \begin_layout Author
@@ -118,6 +119,7 @@ Die Herrausforderung bestand darin trotz der Limitierungen eines Tabletts
  Darzustellen.
  Dabei muss es moeglich sein jederzeit neue Punkte in die bestehende Darstellung
  einzufuegen.
+ Zur Zeit existieren nur bedingt geieignet Softwarelösungen fuer das Problem
 \end_layout
 
 \begin_layout Subsection
@@ -125,8 +127,14 @@ Ziele
 \end_layout
 
 \begin_layout Standard
-Hauptziel der Arbeit ist es eine Datenstruktur zu entwickeln welche es ermoeglic
-h die Bereiche der Punktwolke in unterschiedliche Detailstufen zu liefern.
+Hauptziel der Arbeit ist es eine Datenstruktur zu implementieren welche
+ es ermöglicht Punktwolken im 6 stelligebereich auf Android Systemen flüssig
+ darzustellen.
+ Die Punktwolke wird während des Fluges der Drohne berechnet und erweitert.,
+ daher muss die Datenstruktur dynamisches Einfügen unterstützen.
+ Um mit der Anzahl an Punkten zurechtzukommen sollen Punkte abhaengig von
+ der Kameraposition geliefert werden.
+ Also bei Sichtbarkeit und in einer sinnvollen Detailstufe.
 \end_layout
 
 \begin_layout Standard
@@ -136,14 +144,15 @@ Das System folgt der Client Server Architektur.
 
 \begin_layout Standard
 Ein weiteres Ziel der Arbeit war es, die Architektur möglichst modular und
- Plattformunabhaengig zu gestalten um dadurch Austauschbarkeit Wiederverwendbark
-eit der einzelnen Komponenten zu gewährleisten.
+ plattformunabhaengig zu gestalten um dadurch Austauschbarkeit und Wartbarkeit
+ der einzelnen Komponenten zu gewährleisten.
+ 
 \end_layout
 
 \begin_layout Standard
 Es soll möglichst einfach sein eine App fuer iOS oder ein anderes mobiles
  Betriebssystem nachzureichen.
- Desweiteren soll eine moderne Auswahl von benutzten Frameworks/Komponenten
+ Desweiteren soll eine progessive Auswahl von benutzten Frameworks/Komponenten
  getroffen werden.
 \end_layout
 
@@ -158,6 +167,9 @@ Vergleichbare Arbeiten
 \begin_layout Standard
 Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
  von modernen 3D Scanner in den letzten Jahrzehnt stark gewachsen.
+ Durch den Anstieg der Leistungsfähigkeit von Tabletts wurde schon einige
+ Ansaetze fuer die Darstellung von sehr grossen Punktwolken gemacht.
+ Allerdings kann keine bestehende Arbeit alle Anforderungen erfuellen.
 \end_layout
 
 \begin_layout Subsection
@@ -201,7 +213,7 @@ key "PCL"
  Die Punktmenge wird entweder ueber eine SD Karte, eMail oder URL geladen.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph
 
 \emph on
 Abgrenzung
@@ -210,7 +222,8 @@ Abgrenzung
 \begin_layout Standard
 Die App speichert die geladenen Punkte direkt auf dem Tablett.
  Daher sind die Modelle auch auf dessen Arbeitspeicher beschränkt.
- Modelle mit mehreren Millionen Punkten sind nicht darstellbar.
+ Modelle mit mehreren Millionen Punkten treffen schnell and die Grenzen
+ des RAMs.
 \end_layout
 
 \begin_layout Subsection
@@ -227,11 +240,11 @@ key "Rusinkiewicz:2000:QMP:344779.344940"
 \end_inset
 
  Verfahren gemacht.
- Die Punktemenge wird durch 'multiresolution' Hierarchie auf Basis von 'bounding
- spheres' modelliert.
+ Die Punktemenge wird durch eine 'Multiresolution' Hierarchie auf Basis
+ von 'bounding spheres' modelliert.
  Abhängig von der Kameraposition wird die Struktur bis zu einer gewissen
- Tiefe (Auflösung) durchlaufen.
- Das Verfahren kann modifiziert auch zum streaming von Punktwolken genutzt
+ Tiefe (Detailstufe) durchlaufen.
+ Das Verfahren kann modifiziert auch zum Streaming von Punktwolken genutzt
  werden 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -240,7 +253,15 @@ key "Rusinkiewicz:2001:SQV:364338.364350"
 \end_inset
 
  .
- Für HD Displays ist der Algorithmus zu rechenintesiv weil die Berechnung
+ 
+\end_layout
+
+\begin_layout Paragraph
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Für HD Displays ist der Algorithmus zu rechenintesiv weil die Berechnung
  pro Display Punkt von der CPU erledigt wird.
  
 \end_layout
@@ -259,7 +280,7 @@ key "Wand:2008:SSP:1363373.1363581"
 
 .
  Diese Datenstruktur speichert die original Punkte in ihren äusseren Knoten.
- Die inneren Knoten beinhalten gröbere Praesentationen für ihre Zellen.
+ Die inneren Knoten beinhalten gröbere Präsentationen für ihre Zellen.
 \end_layout
 
 \begin_layout Standard
@@ -270,9 +291,7 @@ Die Punktdaten werden 'out-of-core' verwaltet, also dynamisch von der Festplatte
  
 \end_layout
 
-\begin_layout Standard
-
-\emph on
+\begin_layout Paragraph
 Abgrenzung
 \end_layout
 
@@ -313,19 +332,18 @@ n verwendet.
 \end_layout
 
 \begin_layout Standard
+Die Benchmarks aus dieser Implementierung sollen als Vergleich dienen.
+\end_layout
 
-\emph on
-Abgenzung
+\begin_layout Paragraph
+Abgrenzung
 \end_layout
 
 \begin_layout Standard
 Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
  Anfang an fest stehen.
  Implementierung erfolgte in C++ fur iOS.
-\end_layout
-
-\begin_layout Standard
-Netzwerkverkehr erfolgt uber Http Pipelining.
+ Netzwerkverkehr erfolgt uber Http Pipelining.
 \end_layout
 
 \begin_layout Section
@@ -337,33 +355,98 @@ Datenstrukturen
 \end_layout
 
 \begin_layout Subsubsection
-Octree
+Dynamic Octree
 \end_layout
 
 \begin_layout Standard
 Octrees sind eine Datenstruktur um 3d dimensionale Daten hierarchisch zu
  untergliedern.
  Sie wurde 1980 von Donal Maegher beschrieben.
- Octrees sind im 3 dimensionalen das was im 1 dimensionale Binarytrees sind
- und im 2 dimensionalen die Quadtrees.
+ Octrees sind im 3 dimensionalen das was im 1 dimensionalen Binarytrees
+ sind und im 2 dimensionalen die Quadtrees.
 \end_layout
 
 \begin_layout Standard
-Die Wurzel repräsentiert alle eingefuegten Daten.
+Die Wurzel repräsentiert einen Würfel welcher alle eingefuegten 3D Punkte
+ beinhaltet.
  Jeder innere Knoten besitzt 8 Kinder.
- Diese unterteilen den Knoten in 8 gleichgrosse Octanten usw.
+ Diese unterteilen den Raum des Knoten Knoten in 8 gleichgrosse Octanten
+ usw.
+\end_layout
+
+\begin_layout Standard
+Der dynamische Octree unterstützt das Einfuegen von Punkten.
 \end_layout
 
 \begin_layout Paragraph
 Einfügen
 \end_layout
 
-\begin_layout Standard
-2
+\begin_layout Subsubsection
+Multiresolution Octree
 \end_layout
 
-\begin_layout Subsubsection
-Muliresolution Octree
+\begin_layout Standard
+Die Datenstruktur entstammt aus der Arbeit 
+\begin_inset Quotes eld
+\end_inset
+
+Interactive Editing of Large Point Clouds
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wand:2008:SSP:1363373.1363581"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im folgendem wird die Datenstruktur vorgestellt.
+\end_layout
+
+\begin_layout Standard
+Der Multiresolution Octree kann als eine spezielle Form des Octree verstanden
+ werden.
+ Wie beim Octree enthalten die Kinder alle Punkte.
+\end_layout
+
+\begin_layout Standard
+Die inneren Knoten haben ein 3 dimensionale Rasterung als Voxelgitter gespeicher
+t.
+ Das Raster hat eine feste Anzahl von n^3 Voxel.
+ Jeder Raster Punkt hat eine Gewicht sowie ein Farbe als RGB Werte gespeichert.
+ Das Raster selbst ist nicht als Array( O(n^3) ) gespeichert sondern als
+ Hashtable um Speicherplatz zu sparen.
+ Die Hashfunktion lautet
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(p)=(\left\lfloor \frac{x(p)}{cellLength}\right\rfloor ,\left\lfloor \frac{y(p)}{cellLength}\right\rfloor ,\left\lfloor \frac{z(p)}{cellLength}\right\rfloor )
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+wobei die Koordinate von p relativ zu dem Rasterursprung sind.
+ Die Variable
+\begin_inset Formula $cellLength$
+\end_inset
+
+ entspricht der Länge eines Voxels.
+\end_layout
+
+\begin_layout Paragraph
+Einfügen
 \end_layout
 
 \begin_layout Subsection
@@ -465,12 +548,14 @@ Empfangene Daten werden in einem 'last recently used' Cache gespeichert.
 \end_layout
 
 \begin_layout Standard
-Es existiert ein Buffer für die Punktposition sowie für die RGB Werte.
+Es existiert ein Buffer für die Punktposition, die RGB Werte und das Gewicht.
 \end_layout
 
 \begin_layout Standard
 Die Anfragen zum Server laufen über das http Protokoll.
- 
+ Für Anfragen an den Server wird das Volley Framework verwendet.
+ Anfragen werden in einer Warteschlange gespeichert und gesendet.
+ Antworten werden in eigenen Threads verarbeitet.
 \end_layout
 
 \begin_layout Itemize
@@ -500,13 +585,88 @@ UI
 Netzwerktransfer
 \end_layout
 
-\begin_layout Itemize
-Plattform unabhängigkeit durch 
+\begin_layout Standard
+Bestehnde Ansaetze machen sich eine kommpression zu nutze im den Netzwerkverkehr
+ möglichst kompakt zu halten.
+\end_layout
+
+\begin_layout Standard
+Unsere Lösung bedient sich vorerst nur einer Serializierung in Form von
+ 
 \begin_inset Quotes eld
 \end_inset
 
-google Protocoll Buffer
-\begin_inset Quotes erd
+Protocol Buffers.
+ Dabei handelt es sich um eine platform unabhängige Datenstruktur von Google.
+ Die Datenstruktur wird in einem einheitlichen Format festgelegt.
+ Nun kann fuer jeden Unterstützte Sprache Klassen generiert werden welche
+ die Daten (de)serializieren.
+ Das macht es möglich einfach Clienten in anderen Sprachen zu schreiben.
+ Ausserdem verringert es den Overhead merklich im Vergleich zu JSON oder
+ anderen Formaten.
+ Nachteilig ist das die übertragenden Daten nicht ohne weiteres für einen
+ Menschen lesbar sind.
+\end_layout
+
+\begin_layout Standard
+Spezifierung der Rasterung 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+package DataAccesLayer;
+\end_layout
+
+\begin_layout Plain Layout
+
+option java_outer_classname = "RasterProtos";
+\end_layout
+
+\begin_layout Plain Layout
+
+message Raster{     
+\end_layout
+
+\begin_layout Plain Layout
+
+	repeated Point3DRGB sample = 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+	message Point3DRGB{         
+\end_layout
+
+\begin_layout Plain Layout
+
+		repeated float position = 1;         
+\end_layout
+
+\begin_layout Plain Layout
+
+repeated float color = 2;         
+\end_layout
+
+\begin_layout Plain Layout
+
+required int32 size = 3;     
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
 \end_inset
 
 
@@ -517,7 +677,7 @@ Schwierigkeiten
 \end_layout
 
 \begin_layout Section*
-Dokumentation der Durchführung
+Benchmarks
 \end_layout
 
 \begin_layout Standard
