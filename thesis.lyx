@@ -378,10 +378,6 @@ Die Wurzel repräsentiert einen Würfel welcher alle eingefuegten 3D Punkte
 Der dynamische Octree unterstützt das Einfuegen von Punkten.
 \end_layout
 
-\begin_layout Paragraph
-Einfügen
-\end_layout
-
 \begin_layout Subsubsection
 Multiresolution Octree
 \end_layout
@@ -416,11 +412,18 @@ Der Multiresolution Octree kann als eine spezielle Form des Octree verstanden
 \end_layout
 
 \begin_layout Standard
-Die inneren Knoten haben ein 3 dimensionale Rasterung als Voxelgitter gespeicher
-t.
- Das Raster hat eine feste Anzahl von n^3 Voxel.
- Jeder Raster Punkt hat eine Gewicht sowie ein Farbe als RGB Werte gespeichert.
- Das Raster selbst ist nicht als Array( O(n^3) ) gespeichert sondern als
+Die inneren Knoten haben ein 3 dimensionale Rasterung gespeichert.
+ Das Raster hat eine feste Anzahl von 
+\begin_inset Formula $k^{3}$
+\end_inset
+
+ Voxel (z.B 
+\begin_inset Formula $k\text{=128}$
+\end_inset
+
+).
+ Jeder Rasterpunkt hat eine Gewicht sowie ein Farbe als RGB Werte gespeichert.
+ Das Raster selbst ist nicht als einfaches Array gespeichert, sondern als
  Hashtable um Speicherplatz zu sparen.
  Die Hashfunktion lautet
 \end_layout
@@ -586,7 +589,7 @@ Netzwerktransfer
 \end_layout
 
 \begin_layout Standard
-Bestehnde Ansaetze machen sich eine kommpression zu nutze im den Netzwerkverkehr
+Bestehende Ansätze machen sich eine Kompression zu nutze um den Netzwerkverkehr
  möglichst kompakt zu halten.
 \end_layout
 
@@ -596,20 +599,24 @@ Unsere Lösung bedient sich vorerst nur einer Serializierung in Form von
 \begin_inset Quotes eld
 \end_inset
 
-Protocol Buffers.
+Protocol Buffers
+\begin_inset Quotes erd
+\end_inset
+
+.
  Dabei handelt es sich um eine platform unabhängige Datenstruktur von Google.
  Die Datenstruktur wird in einem einheitlichen Format festgelegt.
- Nun kann fuer jeden Unterstützte Sprache Klassen generiert werden welche
+ Nun kann für jede unterstützte Sprache Klassen generiert werden welche
  die Daten (de)serializieren.
- Das macht es möglich einfach Clienten in anderen Sprachen zu schreiben.
+ Das macht es möglich Clienten in anderen Sprachen zu schreiben.
  Ausserdem verringert es den Overhead merklich im Vergleich zu JSON oder
- anderen Formaten.
+ XML.
  Nachteilig ist das die übertragenden Daten nicht ohne weiteres für einen
  Menschen lesbar sind.
 \end_layout
 
 \begin_layout Standard
-Spezifierung der Rasterung 
+Spezifizierung der Rasterung 
 \end_layout
 
 \begin_layout Standard
@@ -624,7 +631,15 @@ package DataAccesLayer;
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 option java_outer_classname = "RasterProtos";
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -649,17 +664,17 @@ message Raster{
 
 \begin_layout Plain Layout
 
-repeated float color = 2;         
+		repeated float color = 2;         
 \end_layout
 
 \begin_layout Plain Layout
 
-required int32 size = 3;     
+		required int32 size = 3;     
 \end_layout
 
 \begin_layout Plain Layout
 
-} 
+	} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -670,6 +685,10 @@ required int32 size = 3;
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Als Übertragungsprotkoll kommt HTTP zum Einsatz.
 \end_layout
 
 \begin_layout Section*
