@@ -521,18 +521,7 @@ dynamischer 'Multi Resolution' Octree
 \end_layout
 
 \begin_layout Itemize
-'Redis'
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Redis"
-
-\end_inset
-
- als Key-Value Datenbank
-\end_layout
-
-\begin_layout Itemize
-Kompression 
+Google Protocol Buffers
 \end_layout
 
 \begin_layout Subsubsection
