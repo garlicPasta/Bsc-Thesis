@@ -94,17 +94,17 @@ Das Archaeocopter Projekt, welches 2012 von Dr.
  Benjamin Ducke and Prof.
  Dr.
  Marco Block-Berlitz ins Leben gerufen wurde, suchte nach einer Moeglichkeit
- zur live Darstellung von Punkten waehren der Fluege.
+ zur live Darstellung von 3 dimensionalen Punkten währen der Flüge.
  
 \end_layout
 
 \begin_layout Standard
-Die Idee ist mit Hilfe der Darstellung feststellen zu können, fuer welche
- Bereiche des Objektes noch mehr Information gesammelt werden muessen.
+Die Idee ist mit Hilfe der Darstellung feststellen zu können, für welche
+ Bereiche des Objektes noch weitere Information gesammelt werden müssen.
 \end_layout
 
 \begin_layout Standard
-Dadurch kann waehrend des Fluges erkannt werden welche Bereiche schwer zu
+Dadurch kann während des Fluges erkannt werden, welche Bereiche schwer zu
  erkennen sind.
  
 \end_layout
@@ -115,11 +115,11 @@ Die Darstellung sollte auf einem Android Tabelett implementiert werden.
 
 \begin_layout Standard
 Die Herrausforderung bestand darin trotz der Limitierungen eines Tabletts
- (wenig RAM, schwache GPU) Punktwolken mit mehreren Millionen Punkten fluessig
+ (wenig RAM, schwache GPU) Punktwolken mit mehreren Millionen Punkten flüssig
  Darzustellen.
- Dabei muss es moeglich sein jederzeit neue Punkte in die bestehende Darstellung
- einzufuegen.
- Zur Zeit existieren nur bedingt geieignet Softwarelösungen fuer das Problem
+ Dabei muss es möglich sein jederzeit neue Punkte in die bestehende Darstellung
+ hinzuzufügen.
+ Zur Zeit existieren nur bedingt geeignet Softwarelösungen für das Problem.
 \end_layout
 
 \begin_layout Subsection
@@ -127,30 +127,30 @@ Ziele
 \end_layout
 
 \begin_layout Standard
-Hauptziel der Arbeit ist es eine Datenstruktur zu implementieren welche
- es ermöglicht Punktwolken im 6 stelligebereich auf Android Systemen flüssig
+Hauptziel der Arbeit war es eine Datenstruktur zu implementieren welche
+ es ermöglicht Punktwolken im 7 stelligen Bereich auf Android Systemen flüssig
  darzustellen.
- Die Punktwolke wird während des Fluges der Drohne berechnet und erweitert.,
- daher muss die Datenstruktur dynamisches Einfügen unterstützen.
- Um mit der Anzahl an Punkten zurechtzukommen sollen Punkte abhaengig von
+ Die Punktwolke wird während des Fluges der Drohne berechnet und erweitert,
+ daher muss die Datenstruktur dynamisch sein.
+ Um mit der Anzahl an Punkten zurechtzukommen sollen Punkte abhängig von
  der Kameraposition geliefert werden.
  Also bei Sichtbarkeit und in einer sinnvollen Detailstufe.
 \end_layout
 
 \begin_layout Standard
-Das System folgt der Client Server Architektur.
- Daher muss eine effiziente Loesung fuer den Netzwerkverkehr gefunden werden.
+Das System folgt der Client-Server Architektur.
+ Daher muss eine effiziente Lösung für den Netzwerkverkehr gefunden werden.
 \end_layout
 
 \begin_layout Standard
 Ein weiteres Ziel der Arbeit war es, die Architektur möglichst modular und
- plattformunabhaengig zu gestalten um dadurch Austauschbarkeit und Wartbarkeit
+ plattformunabhängig zu gestalten um dadurch Austauschbarkeit und Wartbarkeit
  der einzelnen Komponenten zu gewährleisten.
  
 \end_layout
 
 \begin_layout Standard
-Es soll möglichst einfach sein eine App fuer iOS oder ein anderes mobiles
+Es soll möglichst einfach sein eine App für iOS oder ein anderes mobiles
  Betriebssystem nachzureichen.
  Desweiteren soll eine progessive Auswahl von benutzten Frameworks/Komponenten
  getroffen werden.
@@ -169,7 +169,7 @@ Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
  von modernen 3D Scanner in den letzten Jahrzehnt stark gewachsen.
  Durch den Anstieg der Leistungsfähigkeit von Tabletts wurde schon einige
  Ansaetze fuer die Darstellung von sehr grossen Punktwolken gemacht.
- Allerdings kann keine bestehende Arbeit alle Anforderungen erfuellen.
+ Allerdings kann keine bestehende Arbeit alle Anforderungen erfüllen.
 \end_layout
 
 \begin_layout Subsection
@@ -182,7 +182,7 @@ KiwiViewer ist eine freie 'open-source' App zum erkunden von Punktwolken.
 
 \begin_layout Standard
 Die App ist fuer Android sowie iOS verfügbar.
- Multi-Touch Gestensteuerung wird unterstutzt.
+ Multi-Touch Gestensteuerung wird unterstützt.
  
 \end_layout
 
@@ -210,7 +210,7 @@ key "PCL"
 \end_inset
 
  fuer seine Kernfunktionen.
- Die Punktmenge wird entweder ueber eine SD Karte, eMail oder URL geladen.
+ Die Punktmenge wird entweder über eine SD Karte, eMail oder URL geladen.
 \end_layout
 
 \begin_layout Paragraph
@@ -240,8 +240,8 @@ key "Rusinkiewicz:2000:QMP:344779.344940"
 \end_inset
 
  Verfahren gemacht.
- Die Punktemenge wird durch eine 'Multiresolution' Hierarchie auf Basis
- von 'bounding spheres' modelliert.
+ Die Punkteenge wird durch eine 'Multiresolution' Hierarchie auf Basis von
+ 'bounding spheres' modelliert.
  Abhängig von der Kameraposition wird die Struktur bis zu einer gewissen
  Tiefe (Detailstufe) durchlaufen.
  Das Verfahren kann modifiziert auch zum Streaming von Punktwolken genutzt
@@ -279,8 +279,9 @@ key "Wand:2008:SSP:1363373.1363581"
 \end_inset
 
 .
- Diese Datenstruktur speichert die original Punkte in ihren äusseren Knoten.
- Die inneren Knoten beinhalten gröbere Präsentationen für ihre Zellen.
+ Diese Datenstruktur speichert die Punkte in ihren äusseren Knoten.
+ Die inneren Knoten beinhalten gröbere Präsentationen für ihre direkten
+ Kinder.
 \end_layout
 
 \begin_layout Standard
@@ -347,7 +348,7 @@ Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
 \end_layout
 
 \begin_layout Section
-Gewählter Lösungsansatz
+Gewählter Lösungsansatz [WIP]
 \end_layout
 
 \begin_layout Subsection
@@ -363,15 +364,14 @@ Octrees sind eine Datenstruktur um 3d dimensionale Daten hierarchisch zu
  untergliedern.
  Sie wurde 1980 von Donal Maegher beschrieben.
  Octrees sind im 3 dimensionalen das was im 1 dimensionalen Binarytrees
- sind und im 2 dimensionalen die Quadtrees.
+ sind oder im 2 dimensionalen die Quadtrees.
 \end_layout
 
 \begin_layout Standard
 Die Wurzel repräsentiert einen Würfel welcher alle eingefuegten 3D Punkte
  beinhaltet.
  Jeder innere Knoten besitzt 8 Kinder.
- Diese unterteilen den Raum des Knoten Knoten in 8 gleichgrosse Octanten
- usw.
+ Diese unterteilen den Raum des Knoten in 8 gleichgrosse Octanten usw.
 \end_layout
 
 \begin_layout Standard
@@ -402,6 +402,10 @@ key "Wand:2008:SSP:1363373.1363581"
 \end_layout
 
 \begin_layout Standard
+Da Einfügen unterstüzt wird ist die Datenstruktur sehr gut geeignet.
+\end_layout
+
+\begin_layout Standard
 Im folgendem wird die Datenstruktur vorgestellt.
 \end_layout
 
@@ -417,7 +421,7 @@ Die inneren Knoten haben ein 3 dimensionale Rasterung gespeichert.
 \begin_inset Formula $k^{3}$
 \end_inset
 
- Voxel (z.B 
+ Punkten (z.B 
 \begin_inset Formula $k\text{=128}$
 \end_inset
 
@@ -440,12 +444,11 @@ H(p)=(\left\lfloor \frac{x(p)}{cellLength}\right\rfloor ,\left\lfloor \frac{y(p)
 \end_layout
 
 \begin_layout Standard
-wobei die Koordinate von p relativ zu dem Rasterursprung sind.
- Die Variable
+wobei die Koordinate von p relativ zu dem Rasterursprung is.t Die Variable
 \begin_inset Formula $cellLength$
 \end_inset
 
- entspricht der Länge eines Voxels.
+ entspricht der Länge einer Gitterzelle.
 \end_layout
 
 \begin_layout Paragraph
@@ -469,9 +472,17 @@ Server
 \end_layout
 
 \begin_layout Standard
-Der http Server stellt dem Client die Datenstruktur zur Verfügung um benötigte
+Der Server verwaltet den Multiresolution Tree.
+ Der http Server stellt dem Client die Datenstruktur zur Verfügung um benötigte
  Punkte zu ermitteln.
- Als HTTP Server kommt 
+\end_layout
+
+\begin_layout Standard
+Die Knoten des Baumes enthalten lediglich Keys zu den Daten.
+\end_layout
+
+\begin_layout Standard
+Als HTTP Server kommt 
 \begin_inset Quotes eld
 \end_inset
 
@@ -483,33 +494,12 @@ nanohttpd
 \end_layout
 
 \begin_layout Standard
-Des weiteren liefert er diese Punkte auf Anfrage aus.
-\end_layout
-
-\begin_layout Standard
-Da es nötig ist Punkte kontinuierlich hinzufügen kommt ein 'Multi Resolution'
- Octree
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Wand:2008:SSP:1363373.1363581"
-
-\end_inset
-
- zum Einsatz.
-\end_layout
-
-\begin_layout Standard
-Die Knoten des Baumes enthalten lediglich Keys zu den Daten.
-\end_layout
-
-\begin_layout Standard
-Die eigentlichen Punkte werden in einer Key-Value Datenbank gespeichert
- und für Anfragen zu Verfügung stellt.
+Die eigentlichen Punkte werden in einer Key-Value Datenbank gespeichert.
 \end_layout
 
 \begin_layout Standard
 Das Model selbst ist auf die Blätter verteilt.
- Die inneren Knoten erhalten vereinfachte Abbilder von seinen Kindern.mu
+ Die inneren Knoten erhalten vereinfachte Abbilder von seinen Kindern.
 \end_layout
 
 \begin_layout Itemize
