@@ -93,7 +93,7 @@ Motivation
 Das Archaeocopter Projekt, welches 2012 von Dr.
  Benjamin Ducke and Prof.
  Dr.
- Marco Block-Berlitz ins Leben gerufen wurde, suchte nach einer Moeglichkeit
+ Marco Block-Berlitz ins Leben gerufen wurde, suchte nach einer Möglichkeit
  zur live Darstellung von 3 dimensionalen Punkten währen der Flüge.
  
 \end_layout
@@ -114,7 +114,7 @@ Die Darstellung sollte auf einem Android Tabelett implementiert werden.
 \end_layout
 
 \begin_layout Standard
-Die Herrausforderung bestand darin trotz der Limitierungen eines Tabletts
+Die Herrausforderung bestand darin trotz der Limitierungen eines Tablets
  (wenig RAM, schwache GPU) Punktwolken mit mehreren Millionen Punkten flüssig
  Darzustellen.
  Dabei muss es möglich sein jederzeit neue Punkte in die bestehende Darstellung
@@ -368,14 +368,51 @@ Octrees sind eine Datenstruktur um 3d dimensionale Daten hierarchisch zu
 \end_layout
 
 \begin_layout Standard
-Die Wurzel repräsentiert einen Würfel welcher alle eingefuegten 3D Punkte
+Jeder Knoten repräsentiert einen Würfel welcher alle eingefügten 3D Punkte
  beinhaltet.
- Jeder innere Knoten besitzt 8 Kinder.
+ Jeder innere Knoten besitzt immer 8 Kinder.
  Diese unterteilen den Raum des Knoten in 8 gleichgrosse Octanten usw.
 \end_layout
 
 \begin_layout Standard
-Der dynamische Octree unterstützt das Einfuegen von Punkten.
+Die eigentlichen Punktdaten sind in den Kindern gespeichert
+\end_layout
+
+\begin_layout Standard
+Der dynamische Octree unterstützt das Einfügen von Punkten.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename picture/Octree2.svg
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schematische Darstellung eines Octrees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -402,7 +439,9 @@ key "Wand:2008:SSP:1363373.1363581"
 \end_layout
 
 \begin_layout Standard
-Da Einfügen unterstüzt wird ist die Datenstruktur sehr gut geeignet.
+Die Datenstuktur unterstützt einfügen und löschen und bietet unterschiedlich
+ detalierte Darstellungen des Ausgangsmodels.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -416,20 +455,42 @@ Der Multiresolution Octree kann als eine spezielle Form des Octree verstanden
 \end_layout
 
 \begin_layout Standard
-Die inneren Knoten haben ein 3 dimensionale Rasterung gespeichert.
- Das Raster hat eine feste Anzahl von 
+Die Tiefe ergibt sich aus der Eigenschaft das kein Kind mehr als 
+\begin_inset Formula $n_{max}$
+\end_inset
+
+ Punkte beinhalten darf.
+ Ist 
+\begin_inset Formula $n_{max}$
+\end_inset
+
+ nach einer Einfüge Operation überschritten wird das Kind geteilt und die
+ bestehenden Punkte werden auf die neuen Kinder verteilt.
+\end_layout
+
+\begin_layout Standard
+Die inneren Knoten sollen eine vereinfachtere Version ihrer Kinder liefern.
+\end_layout
+
+\begin_layout Standard
+Dafür haben inneren Knoten eine 3 dimensionale Rasterung gespeichert.
+ Das Raster unterteilt den Würfel in 
 \begin_inset Formula $k^{3}$
 \end_inset
 
- Punkten (z.B 
+ gleichgrosse Rasterzellen (z.B.
+ 
 \begin_inset Formula $k\text{=128}$
 \end_inset
 
 ).
- Jeder Rasterpunkt hat eine Gewicht sowie ein Farbe als RGB Werte gespeichert.
+ Jeder Rasterzelle hat zusätzlich ein Gewicht und ein Farbe als RGB Wert
+ gespeichert.
+ Zu beginn sind alles Rasterzellen mit Gewicht 0 initialisiert.
  Das Raster selbst ist nicht als einfaches Array gespeichert, sondern als
- Hashtable um Speicherplatz zu sparen.
- Die Hashfunktion lautet
+ Hashtabelle um Speicherplatz zu sparen.
+ Auf diese Art werden nur die Zellen gespeichert welche Punkte enthalten.Die
+ Hashfunktion lautet
 \end_layout
 
 \begin_layout Standard
@@ -444,15 +505,86 @@ H(p)=(\left\lfloor \frac{x(p)}{cellLength}\right\rfloor ,\left\lfloor \frac{y(p)
 \end_layout
 
 \begin_layout Standard
-wobei die Koordinate von p relativ zu dem Rasterursprung is.t Die Variable
+wobei die Koordinate von 
+\begin_inset Formula $p$
+\end_inset
+
+ relativ zu Ursprung des Würfel ist.
+ Die Variable
 \begin_inset Formula $cellLength$
 \end_inset
 
  entspricht der Länge einer Gitterzelle.
+ Also:
+\begin_inset Formula 
+\[
+cellLength=\frac{cube.length}{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zellen mit hohem Gewicht werden beim Rendern grösser gezeichnet.
+ Sobald ein weiterer Punkt in die gleiche Zellen fällt wird das Gewicht
+ incrementiert.
+ 
+\end_layout
+
+\begin_layout Standard
+Der Farbwert entspricht dem des zuerst hinzugefügten Punktes der Zelle.
+ Als Koordinate wird der Wert der Hashfunktion benutzt.
 \end_layout
 
 \begin_layout Paragraph
-Einfügen
+Einfügen eines Punktes
+\end_layout
+
+\begin_layout Standard
+Beim Einfügen können 2 Fälle auftretten.
+\end_layout
+
+\begin_layout Subparagraph
+1.
+ Fall : Der Punkt liegt ausserhalb der Wurzel.
+ 
+\end_layout
+
+\begin_layout Standard
+Nun muss die bestehende Wurzel so lange erweiter werden bis sie den neuen
+ Punkt mit einschliesst.
+\end_layout
+
+\begin_layout Standard
+Die Größe der Wurzel verdoppelt sich dabei bei jedem Schritt.
+\end_layout
+
+\begin_layout Standard
+Sobald der Punkt in der Wurzel liegt tritt der 2.
+ Fall in Kraft
+\end_layout
+
+\begin_layout Subparagraph
+2.
+ Fall : Der Punkt liegt innerhalb der Wurzel
+\end_layout
+
+\begin_layout Standard
+Zuerst wird der Punkt der Rasterung hinzugefügt.
+ Sprich das Gewicht in der entsprechende Rasterzelle wird incrementiert
+ und die Farbe des Punkten wird gegebenfalls gespeichert.
+ Dann wird ermittelt in welchem der Kinder der Punkt liegt.
+ Nun wird der Vorgang beim Kind wiederhollt bis ein äusserer Knoten erreicht
+ wird.
+ Falls die maximale Anzahl Punkte 
+\begin_inset Formula $n_{max}$
+\end_inset
+
+ überschritten wurde muss der Knoten gespalten werden.
+ Alle bisher gespeicherten Punkte und der neue Punkt werden nun auf die
+ neuen Kinder verteilt.
 \end_layout
 
 \begin_layout Subsection
