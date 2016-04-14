@@ -2,7 +2,7 @@
 \lyxformat 474
 \begin_document
 \begin_header
-\textclass scrartcl
+\textclass llncs
 \begin_preamble
 \usepackage{url}
 \usepackage{graphicx}
@@ -168,6 +168,16 @@ Einführung
 
 \begin_layout Subsection
 Motivation
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Allgemeiner
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -243,7 +253,22 @@ Die App sollte möglichst intuitiv benutzbar sein.
 \end_layout
 
 \begin_layout Section
-Vergleichbare Arbeiten
+Theorie und verwandte Arbeiten
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Punktwolken diskutieren, Formate ply, nvm.
+ visualsfm, theorie und verwande arbeiten, 3d punkt definieren, 3d Rekonstruktio
+n
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -427,7 +452,17 @@ Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
 \end_layout
 
 \begin_layout Section
-Grundlagen und Frameworks
+Grundlagen und Frameworks 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+kaptiel 2 und 3 merge; Theorie und Verwandte Arbeit 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -536,6 +571,16 @@ Gewählter Lösungsansatz [WIP]
 
 \begin_layout Subsection
 Datenstrukturen
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Datenfluss
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -601,6 +646,16 @@ Schematische Darstellung eines Octrees
 
 \begin_layout Subsubsection
 Multiresolution Octree(MRT)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ein kapitel hoch, modifikation hier
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1003,7 +1058,15 @@ MultiResolution Tree(WIP)
 \end_layout
 
 \begin_layout Standard
-Der MultiResolution Tree besteht aus 4 Klassen.
+Der MultiResolution Tree besteht aus 4 Klassen (siehe Abb.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Multiresolution-Tree-UML"
+
+\end_inset
+
+).
  Die Klasse 
 \begin_inset Quotes eld
 \end_inset
@@ -1021,19 +1084,16 @@ MultiResolutionTree
 \end_layout
 
 \begin_layout Standard
-Der Index wird in regelmäßigen Abständen aktualisiert.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename picture/MultiResolutionTreeUML.png
-	width 12cm
+	width 100col%
 
 \end_inset
 
@@ -1044,6 +1104,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Multiresolution-Tree-UML"
+
+\end_inset
+
 Multiresolution Tree UML
 \end_layout
 
@@ -1052,13 +1118,13 @@ Multiresolution Tree UML
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Der Index wird in regelmäßigen Abständen aktualisiert.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1089,15 +1155,7 @@ UI
 \end_layout
 
 \begin_layout Section
-Schwierigkeiten
-\end_layout
-
-\begin_layout Standard
--
-\end_layout
-
-\begin_layout Section
-Auswertung
+Experimente und Auswertung
 \end_layout
 
 \begin_layout Standard
