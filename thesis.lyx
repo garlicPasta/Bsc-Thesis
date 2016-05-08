@@ -7,6 +7,7 @@
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{titlesec}
+\usepackage{pdfpages}
 
 
 
@@ -87,7 +88,7 @@ Zweitgutachten:\\ }
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\listings_params "language=Java,frame=lrbt,numbers=left,showstringspaces=false,breaklines=true,xleftmargin=15pt,basicstyle={\ttfamily},keywordstyle={\color{blue}\ttfamily},stringstyle={\color{red}\ttfamily},commentstyle={\color{green}\ttfamily}"
+\listings_params "language=Java,frame=lrbt,numbers=left,showstringspaces=false,breaklines=true,xleftmargin=15pt,tabsize=2,basicstyle={\fontsize{9}{11}\ttfamily},keywordstyle={\color{blue}\ttfamily},stringstyle={\color{red}\ttfamily},commentstyle={\color{green}\ttfamily}"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -134,6 +135,13 @@ vfill{}
 
 \backslash
 end{titlepage}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includepdf[pages={1}]{pdf/erklaerung.pdf}
 \end_layout
 
 \begin_layout Plain Layout
@@ -340,10 +348,6 @@ Ein weiteres Ziel der Arbeit ist es, die Architektur möglichst modular und
  Dabei soll die Applikation möglichst intuitiv benutzbar sein.
 \end_layout
 
-\begin_layout Chapter
-Theorie und verwandte Arbeiten
-\end_layout
-
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -358,7 +362,7 @@ Punktwolken diskutieren, Formate ply, nvm.
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Theorie
 \begin_inset CommandInset label
 LatexCommand label
@@ -369,46 +373,46 @@ name "sec:Theorie"
 
 \end_layout
 
-\begin_layout Subsection
-Punktwolken
-\end_layout
-
-\begin_layout Paragraph*
-Definition 
-\end_layout
-
-\begin_layout Standard
-Im Rahmen dieser Arbeitet ist ein Punkt 
-\begin_inset Formula $p$
-\end_inset
-
- wie folgt definiert: 
-\begin_inset Formula 
-\begin{eqnarray*}
-p & \in & \{x,y,z,r,g,b\}\\
-x,y,z & \mathbb{\in} & \mathbb{R}\\
-r,g,b & \in & [0,1]
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-X,y und z entspricht der Position im euklidischen Raum.
- R,g und b sind Farbwerte aus dem RGB-Farbraum.
-\end_layout
-
-\begin_layout Paragraph
-Definition
-\end_layout
-
-\begin_layout Standard
-Eine Punktwolke ist eine Menge von Punkten p.
+\begin_layout Section
+Grundlagen der 3D Grafik
 \end_layout
 
 \begin_layout Subsection
+Normalen
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Subsection
+Orthogonalprojektion
+\end_layout
+
+\begin_layout Standard
+In der Geometrie ist eine Orthogonal Projektion die Abbildung eines Punkts
+ auf eine Gerade oder eine Ebene, sodass die Verbindungslinie zwischen dem
+ Punkt und seinem Abbild mit dieser Gerade oder Ebene einen rechten Winkel
+ bildet.
+\end_layout
+
+\begin_layout Subsection
+View Frustum
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Subsection
+Grafikpipeline
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Section
 Einführung in die 3D Rekonstruktion
 \end_layout
 
@@ -441,7 +445,7 @@ key "ladikos2011real"
  unterscheiden.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Aktive Rekonstruktion
 \end_layout
 
@@ -555,7 +559,7 @@ The Digital Michelangelo
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Passive Rekonstruktion
 \end_layout
 
@@ -575,41 +579,303 @@ Das Stereo Verfahren ist eines der Ersten in diesem Feld.
 metrie die Tiefe des Punkte berechnen.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 VisualSFM
 \end_layout
 
 \begin_layout Standard
--
+Bei VisualSFM
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ccwu.me/vsfm/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ handelt es sich um ein 3D Rekonstruktionssystem.
+ Es verfügt über eine grafische Benutzeroberfläche und zeichnet sich mit
+ Skalierbarkeit durch Nutzung der nVidia oder ATI Grafikkarten des Computers
+ aus.
+\end_layout
+
+\begin_layout Standard
+Entwickelt wurde das Programm von dem Studenten Changchang Wu
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ccwu.me/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, welcher mittlerweile bei google beschäftigt ist.
+ VisualSFM wird von dem Archaeocopter Projekt zur 3D Rekonstruktion benutzt.
+\end_layout
+
+\begin_layout Section
+Repräsentationen von Punktwolken
+\end_layout
+
+\begin_layout Standard
+Punkt basierende geometrische Oberflächen können als Stichprobenmenge einer
+ kontinuierlichen Oberfläche verstanden werden.
+ Dabei entstehen dreidimensionale Raumkoordinaten 
+\begin_inset Formula $p_{i}\text{\in\mathbb{R}}^{3}$
+\end_inset
+
+.
+ Oft existieren noch weiter Daten zu dem Punkt wie eine Normale 
+\begin_inset Formula $n_{i}$
+\end_inset
+
+ oder eine Farbe 
+\begin_inset Formula $c_{i}$
+\end_inset
+
+.
+ Eine Punktwolke 
+\begin_inset Formula $S$
+\end_inset
+
+ ist eine Menge solcher Punkte.
 \end_layout
 
 \begin_layout Subsection
-Dynamic Octree
+QSplat Verfahren
+\end_layout
+
+\begin_layout Standard
+Erste Vorschläge zur Darstellung von sehr großer Punktmengen wurden durch
+ das QSplat Verfahren gemacht 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rusinkiewicz:2000:QMP:344779.344940"
+
+\end_inset
+
+.
+ Splat bedeutet Klecks wie von Farbklecks.
+\end_layout
+
+\begin_layout Standard
+Die Punktmenge wird durch eine Hierarchie auf Basis von Kugeln modelliert.
+ Jede Kugel repräsentiert einen Knoten in einem binär Baum.
+ Jeder Knoten enthält den Mittelpunkt seiner Kugel, den Radius, die Normale
+ und die Breite des Normalen Kegels und optional eine Farbe.
+ Die Datenstruktur wird zu Beginn erstellt.
+ Der Konstruktionsalgorithmus kann entweder auf einer Punktwolke oder besser
+ einem triangulierten Modell angewendet werden.
+ Bei letzterem ist es leichter die Normalen zu berechnen.
+ Für den Radius der Kugeln wird die Länge der Längsten anliegenden Kante
+ gewählt.
+ Mit Hilfe folgendem Algorithmus kann nun die Datenstruktur erstellt werden.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+BuildTree(vertices[begin..end]) { 
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (begin == end) 
+\end_layout
+
+\begin_layout Plain Layout
+
+		return Sphere(vertices[begin]) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	else
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		midpoint = PartitionAlongLongestAxis(vertices[begin..end]) 		
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		leftsubtree  = BuildTree(vertices[begin..midpoint]) 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		rightsubtree = BuildTree(vertices[midpoint+1..end]) 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+		return BoundingSphere(leftsubtree, rightsubtree) 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sobald die Datenstruktur aufgebaut ist, kann die Punktmenge gezeichnet werden
+ mit folgendem Algorithmus
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+TraverseHierarchy(node) { 
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (node not visible) 
+\end_layout
+
+\begin_layout Plain Layout
+
+		skip this branch of the tree 
+\end_layout
+
+\begin_layout Plain Layout
+
+	else if (node is a leaf node) 
+\end_layout
+
+\begin_layout Plain Layout
+
+		draw a splat 
+\end_layout
+
+\begin_layout Plain Layout
+
+	else if (benefit of recursing further is too low) 
+\end_layout
+
+\begin_layout Plain Layout
+
+		draw a splat 
+\end_layout
+
+\begin_layout Plain Layout
+
+	else 
+\end_layout
+
+\begin_layout Plain Layout
+
+		for each child in children(node) 
+\end_layout
+
+\begin_layout Plain Layout
+
+			TraverseHierarchy(child) 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zuerst wird getestet ob die Kugel des Knoten sichtbar ist.
+ Dafür wird getestet ob die Kugle in dem Sichtbarkeits Frustum liegt.
+ Falls nicht muss der Knoten und seine Kinder nicht beachtet werden und
+ die Rekursion wird abgebrochen.
+ QSplat führt auch Backface Culling aus mit Hilfe der Normalen Kegeln.
+\end_layout
+
+\begin_layout Standard
+QSplat entscheidet anhand der Größe der projektierten Kugel auf die View
+ Ebene.
+ Überschreitet diese einen gewissen Schwellwert wird die Rekursion beendet
+ und der aktuelle Knoten wird gezeichnet.
+ 
+\end_layout
+
+\begin_layout Standard
+Das Verfahren kann modifiziert auch zum Streaming von Punktwolken genutzt
+ werden 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rusinkiewicz:2001:SQV:364338.364350"
+
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Subsection
+Octree
 \end_layout
 
 \begin_layout Standard
 Octrees sind eine Datenstruktur um dreidimensionale Daten hierarchisch zu
  untergliedern.
- Sie wurde 1980 von Donal Maegher
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Quelle
-\end_layout
+ Sie wurde 1980 von Donal Maegher beschrieben 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "meagher1982geometric"
 
 \end_inset
 
- beschrieben.
- Octrees sind im dreidimensionalen das was im eindimensionalen Binarytrees
- oder im zweidimensionalen die Quadtrees sind.
+.
+ Octrees sind Analog im dreidimensionalen zu Quadtrees im zweidimensionalen.
 \end_layout
 
 \begin_layout Standard
-Jeder Knoten repräsentiert einen Würfel welcher alle eingefügten 3D Punkte
- beinhaltet.
+Jeder Knoten repräsentiert einen Würfel welcher alle in den Knoten eingefügten
+ 3D Punkte beinhaltet.
  Jeder innere Knoten besitzt immer 8 Kinder.
- Diese unterteilen den Raum des Knoten in 8 gleichgroße Octanten usw.
+ Diese unterteilen den Würfel des Knoten in 8 gleichgroße Oktanten usw.
  (siehe Abb.
  
 \begin_inset CommandInset ref
@@ -623,11 +889,11 @@ reference "fig:Octree"
 
 \begin_layout Standard
 Die eigentlichen Punktdaten sind in den äußeren Knoten gespeichert.
- Äußeren Knoten können auch leer sein.
+ Äußere Knoten können auch leer sein.
 \end_layout
 
 \begin_layout Standard
-Der dynamische Octree unterstützt das inkrementelle Einfügen von Punkten.
+Der Octree unterstützt das Einfügen von Punkten.
 \end_layout
 
 \begin_layout Standard
@@ -637,6 +903,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename img/Octree2.svg
 	width 12cm
@@ -763,7 +1030,7 @@ iert.
 
 \begin_layout Standard
 Der Farbwert entspricht dem des zuerst hinzugefügten Punktes der Zelle.
- Als Koordinate wird der Wert der Hashfunktion benutzt.
+ 
 \end_layout
 
 \begin_layout Paragraph
@@ -783,10 +1050,11 @@ Beim Einfügen können zwei Fälle auftreten.
 \begin_layout Standard
 Nun muss die bestehende Wurzel so lange erweitert werden bis sie den neuen
  Punkt mit einschließt.
+ 
 \end_layout
 
 \begin_layout Standard
-Die Größe der Wurzel verdoppelt sich dabei bei jedem Schritt.
+Die Breite sowie Höhe der Wurzel verdoppelt sich dabei in jedem Schritt.
 \end_layout
 
 \begin_layout Standard
@@ -833,12 +1101,13 @@ width "45text%"
 special "none"
 height "1in"
 height_special "totalheight"
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename img/img-003.ppm
-	width 100text%
+	width 70text%
 	scaleBeforeRotation
 
 \end_inset
@@ -847,7 +1116,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Schema der Rasterung
+Schema der Rasterung.
+ Quelle: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wand:2008:SSP:1363373.1363581"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -876,254 +1153,301 @@ height_special "totalheight"
 status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename img/img-004.ppm
-	width 100text%
+	width 70text%
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Schema nach einer Einfüge Operation
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Section
-Verwandte Arbeiten
-\end_layout
-
-\begin_layout Standard
-Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
- von modernen 3D Scanner und der 3D Rekonstruktion in den letzten Jahrzehnt
- stark gewachsen.
- Durch den Anstieg der Leistungsfähigkeit von Tablets wurde schon einige
- Ansätze für die Darstellung von sehr großen Punktwolken gemacht.
- Allerdings kann keine bestehende Arbeit alle Anforderungen erfüllen.
-\end_layout
-
-\begin_layout Subsection
-KiwiViewer
-\end_layout
-
-\begin_layout Standard
-KiwiViewer 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://www.kiwiviewer.org/
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- ist eine freie 'open-source' App zum erkunden von Punktwolken.
- Die App ist für Android sowie iOS verfügbar.
- Multi-Touch Gestensteuerung wird unterstützt.
- KiwiViewer bedient sich der 
-\begin_inset Quotes eld
-\end_inset
-
-Point Cloud Library
-\begin_inset Quotes erd
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://pointclouds.org/
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- für seine Kernfunktionen.
- Die Punktmenge wird entweder über eine SD-Karte, eMail oder URL geladen.
-\end_layout
-
-\begin_layout Paragraph
-
-\emph on
-Abgrenzung
-\end_layout
-
-\begin_layout Standard
-Die App speichert die geladenen Punkte direkt auf dem Tablet.
- Modelle werden nicht vereinfacht.
- Daher treffen Modelle mit mehreren Millionen Punkten schnell an die Grenzen
- der GPU.
-\end_layout
-
-\begin_layout Subsection
-QSplat Verfahren
-\end_layout
-
-\begin_layout Standard
-Erste Vorschläge zur Darstellung von sehr großer Punktmengen wurden durch
- das QSplat 
+Schema nach einer Einfüge Operation.
+ Quelle:
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Rusinkiewicz:2000:QMP:344779.344940"
-
-\end_inset
-
- Verfahren gemacht.
- Die Punkteenge wird durch eine 'Multiresolution' Hierarchie auf Basis von
- 'bounding spheres' modelliert.
- Abhängig von der Kameraposition wird die Struktur bis zu einer gewissen
- Tiefe (Detailstufe) durchlaufen.
- Das Verfahren kann modifiziert auch zum Streaming von Punktwolken genutzt
- werden 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rusinkiewicz:2001:SQV:364338.364350"
-
-\end_inset
-
- .
- 
-\end_layout
-
-\begin_layout Paragraph
-Abgrenzung
-\end_layout
-
-\begin_layout Standard
-Für HD Displays ist der Algorithmus zu rechenintensiv weil die Berechnung
- pro Display Punkt von der CPU erledigt wird.
- 
-\end_layout
-
-\begin_layout Subsection
-Multiresolution Octree
-\end_layout
-
-\begin_layout Standard
-Moderne Ansätze benutzen einen Multiresolution Octree 
-\begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "Wand:2008:SSP:1363373.1363581"
 
 \end_inset
 
-.
- Diese Datenstruktur speichert die Punkte in ihren äußeren Knoten.
- Die inneren Knoten beinhalten gröbere Präsentationen von ihren direkten
- Kindern.
+
 \end_layout
 
-\begin_layout Standard
-Die Punktdaten werden 'out-of-core' verwaltet, also dynamisch auf die Festplatte
- ausgelagert sobald der RAM erschöpft ist.
- Die Datenstruktur bietet den Vorteil, das Punkte dynamisch hinzugefügt
- werden können.
- 
+\end_inset
+
+
 \end_layout
 
-\begin_layout Paragraph
-Abgrenzung
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-Das Paper beschreibt ein Verfahren für Desktop Systeme.
- Eigenarten von mobilen Geräten wie Netzwerkverkehr sind nicht berücksichtigt.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Knn-Tree iOS
+Surface Splats
 \end_layout
 
 \begin_layout Standard
-Eine weitere Möglichkeit ist ein Knn-Tree zu verwenden 
+-
+\end_layout
+
+\begin_layout Subsection
+Moving Least-Squares Surfaces
+\end_layout
+
+\begin_layout Standard
+Das moving least-squares (MLS) Verfahren wurde von Levin 1998 vorgestellt
+ 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "VAST:VAST12:057-064"
+LatexCommand citep
+key "levin1998approximation"
 
 \end_inset
 
 .
- Allerdings mit der Beschränkung, dass die Punktmenge von Anfang an vollständig
+ Das Verfahren wurde erstmalig 2001 durch Alexa zur Darstellung von Punktwolken
+ benutzt 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Alexa:2001:PSS:601671.601673"
+
+\end_inset
+
+.
+ Die Grundidee der Arbeit ist, das die gegebene Menge Punkte 
+\begin_inset Formula $S$
+\end_inset
+
+ indirekt eine Oberfläche 
+\begin_inset Formula $S_{A}$
+\end_inset
+
+ definiert.
+ Es wird eine Projektion 
+\begin_inset Formula $\phi:U\rightarrow\mathbb{R}^{3}$
+\end_inset
+
+ vorgestellt welche einen beliebigen Punkt aus der Umgebung 
+\begin_inset Formula $U$
+\end_inset
+
+ von 
+\begin_inset Formula $S$
+\end_inset
+
+ auf eine Oberfläche 
+\begin_inset Formula $S_{A}$
+\end_inset
+
+, welche das Objekt lokal beschreibt, projektiert.
+ Alle Punkt die auf sich Selbst abbilden ergeben die Abgeschätzte Oberfläche
+ 
+\begin_inset Formula $S_{A}$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\[
+S_{A}:=\{x\in\mathbb{R}^{3}|\phi(x)=x\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U$
+\end_inset
+
+ kann man als eine Vereinigung von Kugeln mit Radius 
+\begin_inset Formula $r_{k}$
+\end_inset
+
+, dessen Mittelpunkt ein Punkt aus 
+\begin_inset Formula $S$
+\end_inset
+
+ ist, beschreiben.
+\begin_inset Formula 
+\[
+U:=\bigcup_{i}\{x\in\mathbb{R}^{3}|\lVert x-p_{i}\rVert<r_{K}\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Projektion eines Punktes 
+\begin_inset Formula $r$
+\end_inset
+
+ wird in 3 Schritten ermittelt.
+\end_layout
+
+\begin_layout Enumerate
+Ermittle eine Referenzebene 
+\begin_inset Formula $H=\{x|\langle n,x\rangle-D=0,x\in\mathbb{R}^{3}\},n\in\mathbb{R}^{3},\lVert n\rVert=1$
+\end_inset
+
+ durch Minimierung des Ausdrucks
+\begin_inset Formula 
+\[
+\sum_{i=1}^{N}(\langle n,p_{i}\rangle-D)^{2}\Theta(\lVert p_{i}-q\rVert)
+\]
+
+\end_inset
+
+ wobei 
+\begin_inset Formula $q$
+\end_inset
+
+ die Projektion von 
+\begin_inset Formula $r$
+\end_inset
+
+ auf 
+\begin_inset Formula $H$
+\end_inset
+
  ist.
+ Bei 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ handelt es sich um eine monoton, radial, fallende Funktion mit positiven
+ Wertebereich.
+ Typischer weise 
+\begin_inset Formula $\Theta(d)=e^{\frac{d^{2}}{h^{2}}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $h$
+\end_inset
+
+ ist typischer Weise der durchschnittliche Abstand von benachbarten Punkten
+ und hat einen direkten Einfluss wie glatt die Oberfläche erscheint.
+\end_layout
+
+\begin_layout Enumerate
+Mit Hilfe von 
+\begin_inset Formula $H$
+\end_inset
+
+ kann nun ein zwei zweidimensionales Polynom zum Abschätzen der Umgebung
+ von 
+\begin_inset Formula $S_{A}$
+\end_inset
+
+ in der Nähe von 
+\begin_inset Formula $r$
+\end_inset
+
+ gefunden werden.
+\begin_inset Formula 
+\[
+\sum_{i=1}^{N}(g(x_{i},y_{i})-f_{i})^{2}\Theta(\lVert p_{i}-q\rVert))
+\]
+
+\end_inset
+
+Hier ist 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ der kürzeste Weg von 
+\begin_inset Formula $H$
+\end_inset
+
+ zu 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+.
+ Bei 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+und 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+handelt es sich um die Koordinaten von Punkt 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Die Projektion von 
+\begin_inset Formula $r$
+\end_inset
+
+ ist schlussendlich wie folgt definiert.
+\begin_inset Formula 
+\[
+\phi(r)=q+g(0,0)n
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Diese Arbeit richtet sich besonders an die Darstellung auf mobilen Geräten.
- Die Datenstruktur selbst wird auf einem Server gespeichert.
- Knoten werden auf Anfrage eines Klienten übertragen.
-\end_layout
-
-\begin_layout Standard
-Übertragende Knoten werden mit Hilfe eines LRU-Cache gespeichert.
- Die Implementierung erfolgte in C++ und OpenGl ES.
- Für die Netzwerkkommunikation wir 'http pipelining' sowie eine Wavletkompressio
-n verwendet.
+Neben dem Darstellen von Punkten kann das Verfahren auch eingesetzt werden
+ um weitere Punkte zu generieren.
  
 \end_layout
 
-\begin_layout Paragraph
-Abgrenzung
+\begin_layout Standard
+Beim rendern wird eine Datenstruktur wie bei dem QSplat Verfahren verwendet.
+ Unterscheiden tun sich die Blätter.
+ In denen werden zusätzlich zur Position, Radius, Normalen und Farbe auch
+ eine Referenzebene 
+\begin_inset Formula $H$
+\end_inset
+
+ sowie die Koeffizienten des Polynoms gespeichert.
 \end_layout
 
 \begin_layout Standard
-Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
- Anfang an fest stehen.
- Implementierung erfolgte in C++ und für iOS.
- Die Datenstruktur bietet den Vorteil das sie eine geringe Tiefe besitzt.
+Wenn bei dem Render Vorgang ein Blatt erreicht wird und wenn mehr als ein
+ Punkt benötigt wird werden mit Hilfe des Polynoms weiter Punkte für die
+ Umgebung generiert.
 \end_layout
 
 \begin_layout Section
-Frameworks und Formate
+Minimum bounding box
 \end_layout
 
 \begin_layout Standard
-Im folgendem werden die Technologien, Begriffe und Frameworks vorgestellt
- welche in der Arbeit verwendet werden.
+In der Geometrie versteht man unter einer 
+\begin_inset Quotes gld
+\end_inset
+
+minimum bounding box
+\begin_inset Quotes grd
+\end_inset
+
+ ein Rechteck(2d) oder Box(3d) welches eine Menge von Punkten umschließt.
+ Dabei ist der die Fläche bzw.
+ das Volumen minimal.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proxy Design Pattern
 \begin_inset CommandInset label
 LatexCommand label
@@ -1193,17 +1517,20 @@ name "fig:UML-Proxy-Pattern"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Representational state transfer
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Representational-state-transfer"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1349,18 +1676,428 @@ Der Klient soll lediglich die Schnittstelle kennen.
  Schichten dahinter bleiben ihm verborgen.
 \end_layout
 
-\begin_layout Subsection
-Google Protocol Buffers
-\begin_inset Note Note
+\begin_layout Chapter
+Verwandte Arbeiten
+\end_layout
+
+\begin_layout Standard
+Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
+ von modernen 3D Scanner und der 3D Rekonstruktion in den letzten Jahrzehnt
+ stark gewachsen.
+ Durch den Anstieg der Leistungsfähigkeit von Tablets wurde schon einige
+ Ansätze für die Darstellung von sehr großen Punktwolken gemacht.
+ Allerdings kann keine bestehende Arbeit alle Anforderungen erfüllen.
+\end_layout
+
+\begin_layout Section
+KiwiViewer
+\end_layout
+
+\begin_layout Standard
+KiwiViewer 
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Quelle
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.kiwiviewer.org/
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+ ist eine freie quelloffene Applikation zur Erkundung von Punktwolken.
+ Die App ist für Android sowie iOS verfügbar.
+ Multi-Touch Gestensteuerung wird unterstützt.
+ KiwiViewer bedient sich der 
+\begin_inset Quotes eld
+\end_inset
+
+Point Cloud Library
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://pointclouds.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ für seine Kernfunktionen.
+ Die Punktmenge wird entweder über eine SD-Karte, eMail oder URL geladen.
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die App speichert die geladenen Punkte direkt auf dem Tablet.
+ Modelle werden nicht vereinfacht.
+ Daher treffen Modelle mit mehreren Millionen Punkten schnell an die Grenzen
+ der GPU.
+\end_layout
+
+\begin_layout Section
+LiMo
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Section
+QSplat Verfahren
+\end_layout
+
+\begin_layout Standard
+Erste Vorschläge zur Darstellung von sehr großer Punktmengen wurden durch
+ das QSplat 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rusinkiewicz:2000:QMP:344779.344940"
+
+\end_inset
+
+ Verfahren gemacht.
+ Die Punkteenge wird durch eine 'Multiresolution' Hierarchie auf Basis von
+ 'bounding spheres' modelliert.
+ Abhängig von der Kameraposition wird die Struktur bis zu einer gewissen
+ Tiefe (Detailstufe) durchlaufen.
+ Das Verfahren kann modifiziert auch zum Streaming von Punktwolken genutzt
+ werden 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rusinkiewicz:2001:SQV:364338.364350"
+
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Paragraph
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Für HD Displays ist der Algorithmus zu rechenintensiv weil die Berechnung
+ pro Display Punkt von der CPU erledigt wird.
+ 
+\end_layout
+
+\begin_layout Section
+Multiresolution Octree
+\end_layout
+
+\begin_layout Standard
+Die Arbeit 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wand:2008:SSP:1363373.1363581"
+
+\end_inset
+
+ war eine Kooperation zwischen der Stanford Universität und der Universität
+ Tübingen.
+\end_layout
+
+\begin_layout Standard
+Die Veröffentlichung stellte einen Multiresolution Octree (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Multiresolution-Octree"
+
+\end_inset
+
+) gekoppelt mit out-of-core Mechanismen vor zur Darstellung von enorm großen
+ Punktwolken vor.
+ Für das das out-of-core Verfahren wird ein Last recently used Cache verwendet.
+ Sind angeforderte Daten nicht im Cache enthalten werden sie von der Festplatte
+ geladen.
+ Dadurch ist die Größe der Punktdaten lediglich nur durch dieses Speichermedium
+ beschränkt.
+ Anders als bestehende Ansätze bietet die Datenstruktur Operation wie Löschen
+ und Einfügen von Punkten unabhängig von der Komplexität der Szene.
+ Des weiteren wird ein System zum Bearbeiten von Punktwolken diskutiert.
+\end_layout
+
+\begin_layout Paragraph
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die Arbeit beschreibt ein Verfahren für Desktop Systeme.
+ Eigenarten von mobilen Geräten werden nicht berücksichtigt.
+ Das Verfahren ist sehr speicherintensiv und kann daher nicht ohne weiter
+ auf ein mobiles Gerät übertragen werden.
+\end_layout
+
+\begin_layout Section
+Knn-Tree iOS
+\end_layout
+
+\begin_layout Standard
+Eine weitere Möglichkeit ist ein Knn-Tree zu verwenden 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "VAST:VAST12:057-064"
+
+\end_inset
+
+.
+ Allerdings mit der Beschränkung, dass die Punktmenge von Anfang an vollständig
+ ist.
+\end_layout
+
+\begin_layout Standard
+Diese Arbeit richtet sich besonders an die Darstellung auf mobilen Geräten.
+ Die Datenstruktur selbst wird auf einem Server gespeichert.
+ Knoten werden auf Anfrage eines Klienten übertragen.
+\end_layout
+
+\begin_layout Standard
+Übertragende Knoten werden mit Hilfe eines LRU-Cache gespeichert.
+ Die Implementierung erfolgte in C++ und OpenGl ES.
+ Für die Netzwerkkommunikation wir 'http pipelining' sowie eine Wavletkompressio
+n verwendet.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
+ Anfang an fest stehen.
+ Implementierung erfolgte in C++ und für iOS.
+ Die Datenstruktur bietet den Vorteil das sie eine geringe Tiefe besitzt.
+\end_layout
+
+\begin_layout Chapter
+Frameworks, Programmiersprachen und Laufzeitumgebung
+\end_layout
+
+\begin_layout Standard
+Im folgendem werden die Technologien, Begriffe und Frameworks vorgestellt
+ welche in der Arbeit verwendet werden.
+\end_layout
+
+\begin_layout Section
+Java
+\end_layout
+
+\begin_layout Standard
+Bei Java 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "gosling1995java"
+
+\end_inset
+
+ handelt es sich um eine 1995 von Sun Microsystems veröffentliche Programmierspr
+ache.
+ Entwickelt wurde die Sprache von James Gosling.
+ Java ist Objektorientiert, nebenläufig und plattformunabhängig.
+ Letzteres wird erreicht indem Java Code, genauer gesagt Java Byte Code,
+ auf einer virtuellen Maschine (JVM) interpiretiert wird.
+ Moderne Implementierungen der JVM unterstützen sogenannte 
+\begin_inset Quotes gld
+\end_inset
+
+Just in Time
+\begin_inset Quotes grd
+\end_inset
+
+ Kompilierung.
+ Das bedeutet, dass eine Übersetzung in Maschinencode während der Laufzeit
+ vorgenommen wird.
+\end_layout
+
+\begin_layout Standard
+Des weiteren kümmert die Laufzeitumgebung von Java um das Speicher Management.
+ Nach dem Tiobe Index zu urteilen ist Java eine der populärsten Programmiersprac
+hen der Welt
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.tiobe.com/tiobe_index?page=Java
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Android
+\end_layout
+
+\begin_layout Standard
+Android
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.android.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ ist ein mobiles Betriebssystem welches momentan von Google entwickelt wird.
+ Es wurde mit 33 Mitgliedern der Open Handset Alliance entwickelt.
+ Ziel war es einen offenen Standard für mobile Geräte zu schaffen
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.openhandsetalliance.com/press_110507.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Android baut auf dem Linux Kernel auf und ist für eine Bedienung über Touchdispl
+ays ausgelegt.
+ Daher werden Eingaben hauptsächlich über Gesten und Tippen am Display vorgenomm
+en.
+ Android verfügt über Ableger für Fernseher(Android TV), Autos (Android
+ Auto) sowie Smartwatches(Android Wear).
+ Android hat seit mehreren Jahren einen dominanten Marktanteil
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.idc.com/prodserv/smartphone-os-market-share.jsp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ bei mobile Geräten und ist das mit Abstand meist genutzt Betriebssystem
+ weltweit
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://en.wikipedia.org/wiki/Usage_share_of_operating_systems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Java ist die bevorzugte wenn auch nicht einzig mögliche Programmiersprache
+ für Android.
+ Allerdings kommt bei Android keine Standard JVM zum Einsatz sondern eine
+ modifizierte Version.
+ Bis Android 4.4 kam die Virtuelle Maschine Dalivk zum Einstatz.
+ Diese wurde vollständig in Android 5.0 ersetzt durch Android Runtime(ART)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://developer.android.com/about/versions/android-5.0-changes.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Google Protocol Buffers
 \end_layout
 
 \begin_layout Standard
@@ -1384,38 +2121,129 @@ https://developers.google.com/protocol-buffers/
 
 \end_inset
 
- handelt es sich um eine Plattform unabhängige Datenstruktur von Google.
- Die Datenstruktur wird in einem einheitlichen Format festgelegt.
- Nun kann für jede unterstützte Sprache Klassen generiert werden welche
- die Daten (de)serializieren.
- Das macht es möglich Clienten in anderen Sprachen zu schreiben.
- Ausserdem verringert es den Overhead merklich im Vergleich zu JSON oder
- XML.
- Nachteilig ist das die übertragenden Daten nicht ohne weiteres für einen
- Menschen lesbar sind.
-\end_layout
-
-\begin_layout Subsection
-Open Graphics Library for Embedded Systems(OpenGL ES)
+ handelt es sich um eine Plattform unabhängige Datenstruktur zum Serialisieren
+ von Daten.
+ 
 \end_layout
 
 \begin_layout Standard
-OpenGL Es ist eine sprachenunabhängige Programmierschnittstelle zur Entwicklung
- von 3D-Computergrafik.
- Die Spezifikation beschreibt eine vereinfachte Version der OpenGL-Spezifikation
-, welche sich besonders für den Einsatz im Bereich von eingebetteten Systemen
- eignet.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "OpenGLESWiki"
+Die Datenstruktur wird in einem einheitlichen Schema festgelegt.
+ Zum Beispiel:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+message Person {   
+\end_layout
+
+\begin_layout Plain Layout
+
+	required string name = 1;   
+\end_layout
+
+\begin_layout Plain Layout
+
+	required int32 id = 2;   
+\end_layout
+
+\begin_layout Plain Layout
+
+	optional string email = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+Das Schema definiert Namespaces über diese dann die eigentlich Daten ausgelesen
+ werden können.
+ In dem Beispiel hat der Datentyp Person drei Felder.
+ Jedes dieser Felder ist getypt und mit einem Schlüsselwort versehen welches
+ angibt ob das Feld Pflicht ist.
+\end_layout
+
+\begin_layout Standard
+Es besitzt also jede Person einen String für den Namen aber nicht immer
+ einen String für die Mail.
+\end_layout
+
+\begin_layout Standard
+Aus dem Schema kann für jede unterstützte Programmiersprache(Java, C++,
+ Python, JavaNano, Ruby, Objective-C und C#) Klassen generiert werden welche
+ die Daten (de)serialisieren.
+ Das macht es möglich Clienten in anderen Sprachen zu schreiben.
+\end_layout
+
+\begin_layout Standard
+Protocol Buffers sind komplett abwärtskompatibel.
+ Die Schema können problemlos erweitert werden.
+\end_layout
+
+\begin_layout Standard
+Ein weiter Vorteil ist der merklich verringerte Overhead im Vergleich zu
+ JSON oder XML.
+ Nachteilig ist das die übertragenden Daten nicht ohne weiteres für einen
+ Menschen lesbar sind.
+ Protocol Buffers werden intensiv intern bei Google selbst eingesetzt.
+ Ein weiter prominenter Nutzer ist Blizzard beim 
+\begin_inset Quotes gld
+\end_inset
+
+BATTLE.NET
+\begin_inset Quotes grd
+\end_inset
+
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://news.ycombinator.com/item?id=11444846
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Open Graphics Library for Embedded Systems
+\end_layout
+
+\begin_layout Standard
+Open Graphics Library for Embedded Systems (OpenGL ES) bietet ein offenes
+ Interface für Grafikhardware.
+ Dieses besteht aus einer Sammlung von Prozeduren und Funktion die es dem
+ Programmierer ermöglichen Shaderprgramme, Objekte und Operation zu spezifiziere
+n um dreidimensionale Farbbilder zu produzieren.
+ Viele der Funktion von OpenGL ES implementieren das Zeichnen von geometrischen
+ Objekten wie Punkte oder Linien.
+ OpenGL ES setzt voraus das die Grafikhardware über einen Framebuffer verfügt.
+\end_layout
+
+\begin_layout Section
 NanoHTTPD
 \begin_inset CommandInset label
 LatexCommand label
@@ -1448,14 +2276,14 @@ https://github.com/NanoHttpd/nanohttpd
 \end_inset
 
  bezeichnet sich selbst als einen schlanker HTTP Server welche darauf ausgericht
-et ist sich einfach in bestehende Anwendungen einbetten zu lassen.
+et ist, sich einfach in bestehende Anwendungen einbetten zu lassen.
 \end_layout
 
 \begin_layout Standard
 Das Project ist Open Source und wird aktiv auf github entwickelt.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 la4j
 \end_layout
 
@@ -1480,10 +2308,12 @@ http://la4j.org/
 
 \end_inset
 
-ist eine offene Java Bibliothek für Lineare Algebra.
+ist eine aus einem Studentenprojekt entstandene offene Java Bibliothek.
+ Die Bibliothek liefert Objekte für Lineare Algebra(Matrizen und Vektoren)
+ und Algorithmen.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 DEFLATE
 \end_layout
 
@@ -1504,7 +2334,7 @@ key "Deutsch:1996:DCD:RFC1951"
  Der Algorithmus findet zum Beispiel im .png Format Anwendung.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Volley 
 \begin_inset CommandInset label
 LatexCommand label
@@ -1575,9 +2405,9 @@ Mobile Geräte verfügen über begrenzte Ressourcen was Rechenleistung und
  Speicher angeht.
  Punktwolken mit mehr als einer Million Punkte bringen die GPU schnell an
  Ihre Grenzen.
- Daher wurde ein Ansatz gewählt der es ermöglicht präzise Punkte auszuwählen.
+ Daher wurde ein Ansatz gewählt, der es ermöglicht präzise Punkte auszuwählen.
  Darin unterscheiden wir zwischen 2 Dimension.
- Einmal die Sichtbarkeit und zum anderen die Detailstufe der Punkte.
+ Zum einem die Sichtbarkeit und zum anderen die Detailstufe der Punkte.
  Zum ermitteln der Punkt unter diesen Kriterien kommt ein Multi-Resolution
  Octree(siehe Section 
 \begin_inset CommandInset ref
@@ -1593,7 +2423,15 @@ reference "sub:Multiresolution-Octree"
 
 \begin_layout Standard
 Die Defizite beim Speicher werden durch eine Client-Server Architektur ausgeglic
-hen.
+hen (siehe Abb.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Übersicht"
+
+\end_inset
+
+).
  Das eigentliche Model wird von einem Server verwaltet.
  Der Mobile Client hat selber nur den momentan benötigten Satz Punkte gespeicher
 t.
@@ -1619,8 +2457,9 @@ vertex buffer object
 \end_layout
 
 \begin_layout Standard
-Also Programmiersprache wurde Java gewählt aufgrund ihres guten Kompromisses
- aus Portabilität und Performance.
+Als Programmiersprache wurde Java gewählt aufgrund des guten Kompromisses
+ aus Portabilität und Performance sowie der guten Integration in das Android
+ Betriebssystem.
 \end_layout
 
 \begin_layout Standard
@@ -1636,11 +2475,51 @@ Datenfluss Diagram
 
 \end_layout
 
-\begin_layout Section
-Architektur
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/architektur.svg
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Übersicht"
+
+\end_inset
+
+Übersicht
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Server
 \end_layout
 
@@ -1674,7 +2553,7 @@ Warum nicht normaler Socketverkehr
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Multi Resolution Tree
 \end_layout
 
@@ -1812,13 +2691,25 @@ Multiresolution Tree UML
 
 \begin_layout Standard
 Damit schnelle Zugriffe bei Anfragen auf die entsprechenden Knoten bzw.
- Punkte möglich sind existiert eine Hashmap als Index.
+ Punkte möglich sind existiert eine weitere Hashmap als Index.
  Dieser bildet Ids auf die entsprechenden Knoten ab.
  Der Index wird in nach einer festen Anzahl Einfüge Operationen aktualisiert.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 RESTful API
+\end_layout
+
+\begin_layout Standard
+Unter einer RESTful API versteht man ein Webinterface welches die Beschränkungen
+ von REST (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Representational-state-transfer"
+
+\end_inset
+
+) einhält.
 \end_layout
 
 \begin_layout Standard
@@ -1846,7 +2737,7 @@ mode
  Die Anfragen werden im folgenden vorgestellt.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 MRT-Proxy Anfrage
 \begin_inset CommandInset label
 LatexCommand label
@@ -1862,11 +2753,10 @@ Da die Ermittlung gebrauchten Punkte auf dem Klienten geschieht muss auch
  dieser in Kenntnis über die Struktur der MRTs sein.
  Aus diesem Grund Stellt der Server ein MRT-Proxy zur Verfügung.
  Der MRT-Proxy ist im Prinzip der gespeicherte Multiresolution Octree allerdings
- haben seine Knoten keine Punkte bzw Rasterung gespeichert, sondern nur
+ haben seine Knoten keine Punkte oder Rasterung gespeichert, sondern nur
  Ids um beim Server die entsprechenden Punkte anzufragen.
  Diese können entweder Original Punkte aus Blättern sein oder Punkte aus
  der Rasterung.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1958,7 +2848,7 @@ message MRTree{
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Punktanfrage
 \end_layout
 
@@ -2062,7 +2952,7 @@ Alle Protocol Buffer Objekte werden bevor sie über das Netzwerk versendet
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Client
 \end_layout
 
@@ -2082,7 +2972,7 @@ Der Client verfolgt eine eventbasierte Architektur.
 \begin_layout Standard
 Die Menge der momentan zu zeichnenden Punkte wird im folgenden als aktive
  Punkte bezeichnet.
- Die Knoten welche die aktiven Punkte beinhalten werden als aktive Knoten
+ Die Knoten, welche die aktiven Punkte beinhalten, werden als aktive Knoten
  bezeichnet.
 \end_layout
 
@@ -2143,7 +3033,7 @@ UML Diagram
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Scene Klasse
 \end_layout
 
@@ -2167,7 +3057,7 @@ Alle zu zeichnenden Objekte werden in modelList gespeichert.
  der Liste ausgelöst.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 RemotePointClusterGL
 \end_layout
 
@@ -2178,15 +3068,19 @@ RemotePointClusterGL kümmert sich um das Ermitteln und Speichern aktiver
  MRT Proxy zu fragen oder nach neuen Punkten.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Ermittlung der aktiven Knoten
+\end_layout
+
+\begin_layout Standard
+*** WIP ***
 \end_layout
 
 \begin_layout Standard
 Bevor etwas gerendert werden kann, muss bestimmt werden, welche Punkte sichtbar
  sind und in welcher Detailstufe man diese darstellen möchte.
- Dafür ist der MRT-Proxy nötig, daher wird dieser beim Start der App angefordert
- (siehe Kapitel 
+ Dafür ist der MRT-Proxy nötig, daher wird dieser beim Start der App vom
+ Server angefordert (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:MRT-Proxy-Anfrage"
@@ -2301,8 +3195,23 @@ private void _getIdsViewDependent(OctreeNodeGL currentNode, List<String>
 \end_layout
 
 \begin_layout Standard
-Salop gesagt besuche alle sichtbaren Knoten solange bis entweder ein Blatt
- erreicht ist oder eine ausreichende Detailstufe.
+Salop gesagt besuche Knoten solange sichtbar bis entweder ein Blatt erreicht
+ ist oder eine ausreichende Detailstufe.
+ Bei dem Test auf Sichtbarkeit wird lediglich geprüft ob die projektierte
+ Box (von einem Knoten) sich mit dem Display schneidet.
+ Der 
+\begin_inset Formula $detaiFactor()$
+\end_inset
+
+ berechnet sich wie folgt.
+\begin_inset Formula 
+\[
+Area(boundingBox(projektionO(Knoten)))*\frac{1}{z^{2}}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2318,7 +3227,7 @@ Nachdem alle nötigen Knoten festgestellt wurden, wird geprüft ob sich diese
  Falls nicht müssen diese vom Server angefordert werden.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 DataAcessLayer Klasse
 \end_layout
 
@@ -2344,11 +3253,11 @@ reference "sub:Volley"
  Volley ermöglicht es die Callback Funktion beim Eintreffen einer Anfrage
  zu überschreiben, um eigene Logik zu definieren.
  Sobald ein Anfrage empfangen wurde wird diese entpackt und deserialsiert.
- Anschliessend wird wenn es sich um Punktdaten handel dem Cache hinzugefügt
+ Anschließend wird wenn es sich um Punktdaten handel dem Cache hinzugefügt
  oder bei einem Proxy Objekt wird das alte überschrieben.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Rendering
 \end_layout
 
@@ -2356,7 +3265,7 @@ Rendering
 Das Rendering ist mit OpenGL realisiert.
  Jeder Knoten im Cache zeigt auf einem Buffer gefüllt mir Positions-, Farb-
  und Gewichtswerten.
- Beim zeichen werden alle aktiven Knoten ,welche im Cache sind, gezeichnet.
+ Beim zeichen werden alle aktiven Knoten, welche im Cache sind, gezeichnet.
  Dabei wird jeder Buffer einmalig als Vertex Buffer Object(VBO) in den Speicher
  der GPU geschrieben.
  Das verbessert die Performance enorm weil so nicht in jedem Frame die Daten
@@ -2369,6 +3278,14 @@ Das Rendering ist mit OpenGL realisiert.
 
 \begin_layout Chapter
 Experimente und Auswertung
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Chapter
+Zusammenfassung und Ausblick
 \end_layout
 
 \begin_layout Standard
