@@ -374,7 +374,181 @@ name "sec:Theorie"
 \end_layout
 
 \begin_layout Section
-Grundlagen der 3D Grafik
+Grundlagen der 3D Computer Grafik
+\end_layout
+
+\begin_layout Standard
+Bei 3D Computer Grafik geht es um das darstellen und bearbeiten von Modellen
+ welche durch dreidimensional geometrische Daten repräsentiert werden.
+\end_layout
+
+\begin_layout Standard
+Im wesentlichen lässt sich die Computer Grafik in zwei Teilbereiche unterglieder
+n:
+\end_layout
+
+\begin_layout Paragraph
+Geometrische Modellierung
+\end_layout
+
+\begin_layout Standard
+bezeichnet die computergestützte Beschreibung der Form geometrischer Objekte.
+ Diese müssen dafür geeignet sein bildhafte Darstellungen daraus ableiten
+ zu können.
+ Ein typisches Beispiel ist ein Polygonnetz.
+\end_layout
+
+\begin_layout Paragraph
+Bildsynthese (engl.
+ Rendering)
+\end_layout
+
+\begin_layout Standard
+bezeichnet die automatische Projektion der geometrischen Modelle auf ein
+ Ausgabemedium wie einem Monitor.
+\end_layout
+
+\begin_layout Subsection
+Grafikpipeline
+\end_layout
+
+\begin_layout Standard
+Der Vorgang der Bildsynthese lässt sich vereinfacht als Datenverarbeitung
+ von nacheinander folgenden Stufen darstellen.
+\end_layout
+
+\begin_layout Paragraph
+3D geometric primitives
+\end_layout
+
+\begin_layout Paragraph
+Modell- und Kameratransformationen
+\end_layout
+
+\begin_layout Standard
+Die Daten werden von dem Lokalen Koordinaten System des Objekts in das Koordinat
+en System der Welt übertragen.
+ Anschließen wird das Objekt auf in das Kamera Koordinatensystem, in welcher
+ die Kameraposition den Ursprung definiert.
+\end_layout
+
+\begin_layout Paragraph
+Beleuchtung
+\end_layout
+
+\begin_layout Standard
+Die Beleuchtung durch Lichtquellen und Reflektionen werden berechnet.
+\end_layout
+
+\begin_layout Paragraph
+Projektion
+\end_layout
+
+\begin_layout Standard
+Bei der Projektion werden die Welt Koordinaten auf die View Ebene der Kamera
+ abgebildet.
+ Meistens wird eine perspektivische Projektion (entfernte Objekte werden
+ kleiner) oder eine Orthogonale Projektion(entfernte Objekte haben die gleiche
+ Größe wie nahe Objekte) verwendet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/projectionPerspectiv.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Perspektivische Projektion.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/projectionOrtho.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Orthogonale Projektion.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Clipping
+\end_layout
+
+\begin_layout Paragraph
+Rasterization
 \end_layout
 
 \begin_layout Subsection
@@ -404,10 +578,6 @@ View Frustum
 -
 \end_layout
 
-\begin_layout Subsection
-Grafikpipeline
-\end_layout
-
 \begin_layout Standard
 -
 \end_layout
@@ -431,7 +601,7 @@ key "klimentjew2008grundlagen"
  in welcher mit Hilfe eines Stereokamerasystems die Position des Roboters
  innerhalb seiner Umgebung feststellbar ist.
  Ein weiteres Feld ist die Archäologie und der Denkmalsschutz.
- Ein Beispiel dafür ist das Archaecopter Projekt.
+ Ein Beispiel dafür ist das Archaeocopter Projekt.
 \end_layout
 
 \begin_layout Standard
@@ -509,7 +679,7 @@ Die Methode ist sehr genau und daher für Skulpturen gut geeignet.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -826,15 +996,15 @@ TraverseHierarchy(node) {
 
 \begin_layout Standard
 Zuerst wird getestet ob die Kugel des Knoten sichtbar ist.
- Dafür wird getestet ob die Kugle in dem Sichtbarkeits Frustum liegt.
+ Dafür wird getestet ob die Kugle in dem View Frustum liegt.
  Falls nicht muss der Knoten und seine Kinder nicht beachtet werden und
  die Rekursion wird abgebrochen.
  QSplat führt auch Backface Culling aus mit Hilfe der Normalen Kegeln.
 \end_layout
 
 \begin_layout Standard
-QSplat entscheidet anhand der Größe der projektierten Kugel auf die View
- Ebene.
+QSplat entscheidet anhand der Größe der projektierten Kugel auf die View-Ebene
+ ob die Rekursion fortgesetzt wird.
  Überschreitet diese einen gewissen Schwellwert wird die Rekursion beendet
  und der aktuelle Knoten wird gezeichnet.
  
@@ -1221,7 +1391,7 @@ key "Alexa:2001:PSS:601671.601673"
 \end_inset
 
 .
- Die Grundidee der Arbeit ist, das die gegebene Menge Punkte 
+ Die Grundidee der Arbeit ist, dass die gegebene Menge Punkte 
 \begin_inset Formula $S$
 \end_inset
 
@@ -1767,7 +1937,27 @@ LiMo
 \end_layout
 
 \begin_layout Standard
--
+Bei LiMo handelt es sich um eine von OGSystems entwickelte Android Applikation
+ zum Betrachten von LiDAR Daten.
+ LiMo wurde für den professionellen Gebrauch entwickelt und ermöglicht das
+ Beobachten von Gebäuden sowie Naturszenen.
+ Daten können auch über einen eigen Webservice gestreamt werdenm weshalb
+ die App auch zu Monitoring Zwecken eingesetzt werden kann.
+\end_layout
+
+\begin_layout Standard
+Die Applikation unterstützt bis zu 5 Millionen Punkte.
+\end_layout
+
+\begin_layout Paragraph
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die App ist auf LiDAR Daten beschränkt.
+ LiDAR ist primär zum scannen von großen Objekten, wie Brücken , geeignet
+ und verfügt daher nicht über die Genauigkeit welche Beispielsweise bei
+ einer Skulptur benötigt wird.
 \end_layout
 
 \begin_layout Section
