@@ -192,7 +192,7 @@ Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
  stark gewachsen.
  Aufgrund der technologischen Entwicklungen in diesem Bereich, ist es möglich
  von kleinen Objekten, wie einem Dinosaurier Schädel, bis hin zu ganzen
- Städte in hoher Detailstufe digital zu erfassen.
+ Städte, Modele in hoher Detailstufe digital zu erfassen.
  In der Denkmalpflege werden Objekte mittlerweile aus Routine abgescannt
  und archiviert.
  
@@ -213,11 +213,7 @@ n Punkten mit Farbinformationen.
 \begin_layout Standard
 Daraus entstand eine Nachfrage durch Forschungsgruppen für eine mobile Applikati
 on zum Betrachten großer Modelle.
- 
-\end_layout
-
-\begin_layout Standard
-Die Applikation kann Beispielsweise bei 3D Rekonstruktion schnelles Feedback
+ Die Applikation kann Beispielsweise bei 3D Rekonstruktion schnelles Feedback
  liefern, vereint mit den Vorzügen eines mobilen Gerätes.
  Dadurch können schnell unvollständige oder schwer zu erfassende Bereiche
  des Modells beim Scannen erkannt werden.
@@ -260,12 +256,9 @@ Das Archaeocopter Projekt, welches 2012 von Dr.
 Die Idee war es aktuelle Verfahren aus der Computervision und künstlichen
  Intelligenz zusammen mit UAVs mit Kameras für die Datenerhebung einzusetzen.
  Das innovative Verfahren lässt sich auch Unterwasser einsetzen.
-\end_layout
-
-\begin_layout Standard
-Offiziell ging das Projekt im September 2012 mit Unterstützung von Prof.
+ Offiziell ging das Projekt im September 2012 mit Unterstützung von Prof.
  Dr.
- Raúl Rojas von Berlin's Freie Universität an den Start.
+ Raúl Rojas von Berlin's Freier Universität an den Start.
 \end_layout
 
 \begin_layout Standard
@@ -276,11 +269,7 @@ Diese Arbeit ist in Zusammenarbeit mit dem Projekt entstanden.
 \begin_inset Float figure
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -350,7 +339,7 @@ Ein weiteres Ziel der Arbeit ist es, die Architektur möglichst modular und
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Punktwolken diskutieren, Formate ply, nvm.
@@ -371,215 +360,6 @@ name "sec:Theorie"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Grundlagen der 3D Computer Grafik
-\end_layout
-
-\begin_layout Standard
-Bei 3D Computer Grafik geht es um das darstellen und bearbeiten von Modellen
- welche durch dreidimensional geometrische Daten repräsentiert werden.
-\end_layout
-
-\begin_layout Standard
-Im wesentlichen lässt sich die Computer Grafik in zwei Teilbereiche unterglieder
-n:
-\end_layout
-
-\begin_layout Paragraph
-Geometrische Modellierung
-\end_layout
-
-\begin_layout Standard
-bezeichnet die computergestützte Beschreibung der Form geometrischer Objekte.
- Diese müssen dafür geeignet sein bildhafte Darstellungen daraus ableiten
- zu können.
- Ein typisches Beispiel ist ein Polygonnetz.
-\end_layout
-
-\begin_layout Paragraph
-Bildsynthese (engl.
- Rendering)
-\end_layout
-
-\begin_layout Standard
-bezeichnet die automatische Projektion der geometrischen Modelle auf ein
- Ausgabemedium wie einem Monitor.
-\end_layout
-
-\begin_layout Subsection
-Grafikpipeline
-\end_layout
-
-\begin_layout Standard
-Der Vorgang der Bildsynthese lässt sich vereinfacht als Datenverarbeitung
- von nacheinander folgenden Stufen darstellen.
-\end_layout
-
-\begin_layout Paragraph
-3D geometric primitives
-\end_layout
-
-\begin_layout Paragraph
-Modell- und Kameratransformationen
-\end_layout
-
-\begin_layout Standard
-Die Daten werden von dem Lokalen Koordinaten System des Objekts in das Koordinat
-en System der Welt übertragen.
- Anschließen wird das Objekt auf in das Kamera Koordinatensystem, in welcher
- die Kameraposition den Ursprung definiert.
-\end_layout
-
-\begin_layout Paragraph
-Beleuchtung
-\end_layout
-
-\begin_layout Standard
-Die Beleuchtung durch Lichtquellen und Reflektionen werden berechnet.
-\end_layout
-
-\begin_layout Paragraph
-Projektion
-\end_layout
-
-\begin_layout Standard
-Bei der Projektion werden die Welt Koordinaten auf die View Ebene der Kamera
- abgebildet.
- Meistens wird eine perspektivische Projektion (entfernte Objekte werden
- kleiner) oder eine Orthogonale Projektion(entfernte Objekte haben die gleiche
- Größe wie nahe Objekte) verwendet.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align left
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "45text%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/projectionPerspectiv.png
-	width 100text%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Perspektivische Projektion.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "45text%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/projectionOrtho.png
-	width 100text%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Orthogonale Projektion.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Clipping
-\end_layout
-
-\begin_layout Paragraph
-Rasterization
-\end_layout
-
-\begin_layout Subsection
-Normalen
-\end_layout
-
-\begin_layout Standard
--
-\end_layout
-
-\begin_layout Subsection
-Orthogonalprojektion
-\end_layout
-
-\begin_layout Standard
-In der Geometrie ist eine Orthogonal Projektion die Abbildung eines Punkts
- auf eine Gerade oder eine Ebene, sodass die Verbindungslinie zwischen dem
- Punkt und seinem Abbild mit dieser Gerade oder Ebene einen rechten Winkel
- bildet.
-\end_layout
-
-\begin_layout Subsection
-View Frustum
-\end_layout
-
-\begin_layout Standard
--
-\end_layout
-
-\begin_layout Standard
--
 \end_layout
 
 \begin_layout Section
@@ -623,9 +403,9 @@ Aktive Rekonstruktion
 Bei aktiver Rekonstruktion wird aktiv mit einem Sensors das Objekt abgetastet
  um die Struktur zu ermitteln.
  3D Scanner sind ein Vertreter dieser Gattung.
- Sie sind der Kamera ähnlich.
+ Im Grunde sind sie der Kamera ähnlich.
  Genau wie diese besitzen sie ein Sichtfeld.
- Allerdings liefern sie statt Farbwert Abstandswert von seinem Sichtfeld.
+ Allerdings liefern sie statt Farbwert Abstandswert von ihrem Sichtfeld.
  Die Abstandswerte können entweder über die 
 \begin_inset Quotes gld
 \end_inset
@@ -659,8 +439,8 @@ Bei der Triangulierungsmethode wird von einem Laser ein Punkte auf das das
  Dieser Punkt wird von einer Kamera erfasst.
  In Abhängigkeit von der Entfernung erscheint der Laserpunkt im Sichtfeld
  der Kamera.
- Um das Verfahren zu beschleunigen kann statt einem Punkt auf eine Linie
- verwendet werden.(siehe Abb.
+ Um das Verfahren zu beschleunigen kann statt einem Punkt eine Linie verwendet
+ werden.(siehe Abb.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -716,7 +496,19 @@ The Digital Michelangelo
 \begin_inset Quotes grd
 \end_inset
 
- Projekt
+ Projekt.
+ Quelle: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://graphics.stanford.edu/projects/mich/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -802,7 +594,7 @@ http://ccwu.me/
 \end_inset
 
 , welcher mittlerweile bei google beschäftigt ist.
- VisualSFM wird von dem Archaeocopter Projekt zur 3D Rekonstruktion benutzt.
+ VisualSFM wird von dem Archaeocopter Projekt zur 3D Rekonstruktion verwendet.
 \end_layout
 
 \begin_layout Section
@@ -1093,7 +885,7 @@ name "fig:Octree"
 
 \end_inset
 
-Schematische Darstellung eines Octrees
+Schematische Darstellung eines Octrees Quelle:?
 \end_layout
 
 \end_inset
@@ -1693,6 +1485,21 @@ name "fig:UML-Proxy-Pattern"
 \end_layout
 
 \begin_layout Section
+Singleton Pattern
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Singleton-Pattern"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Section
 Representational state transfer
 \begin_inset CommandInset label
 LatexCommand label
@@ -1738,7 +1545,7 @@ key "Andrews:1991:PPI:103162.103164"
  ist der Client ein auslösender Prozess und der Server ein reagierender
  Prozess.
  Clienten stellen Anfragen auf welcher der Server reagiert.
- Der Klient kann entscheiden wann er mit dem Server interagiert.
+ Der Client kann entscheiden wann er mit dem Server interagiert.
  Der Server wiederum muss auf Anfragen warten und dann auf diese reagieren.
  Oft ist ein Server auf nicht endender Prozess welcher auf mehrere Clienten
  reagiert.
@@ -1753,7 +1560,7 @@ Jede Anfrage vom Clienten muss alle Informationen enthalten welche Notwendig
  sind um die Anfrage zu verarbeiten.
  Des weiteren darf kein gespeicherter Kontext auf dem Server vorliegen auf
  welchen Bezug genommen wird.
- Alle Zustände werden auf dem Klienten gespeichert.
+ Alle Zustände werden auf dem Clienten gespeichert.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1842,7 +1649,7 @@ Mehrschichtige Systeme
 \end_layout
 
 \begin_layout Standard
-Der Klient soll lediglich die Schnittstelle kennen.
+Der Client soll lediglich die Schnittstelle kennen.
  Schichten dahinter bleiben ihm verborgen.
 \end_layout
 
@@ -2027,7 +1834,7 @@ reference "sub:Multiresolution-Octree"
 
 ) gekoppelt mit out-of-core Mechanismen vor zur Darstellung von enorm großen
  Punktwolken vor.
- Für das das out-of-core Verfahren wird ein Last recently used Cache verwendet.
+ Für das das out-of-core Verfahren wird ein Least recently used Cache verwendet.
  Sind angeforderte Daten nicht im Cache enthalten werden sie von der Festplatte
  geladen.
  Dadurch ist die Größe der Punktdaten lediglich nur durch dieses Speichermedium
@@ -2068,7 +1875,7 @@ key "VAST:VAST12:057-064"
 \begin_layout Standard
 Diese Arbeit richtet sich besonders an die Darstellung auf mobilen Geräten.
  Die Datenstruktur selbst wird auf einem Server gespeichert.
- Knoten werden auf Anfrage eines Klienten übertragen.
+ Knoten werden auf Anfrage eines Clients übertragen.
 \end_layout
 
 \begin_layout Standard
@@ -2135,11 +1942,11 @@ Des weiteren kümmert die Laufzeitumgebung von Java um das Speicher Management.
  Nach dem Tiobe Index zu urteilen ist Java eine der populärsten Programmiersprac
 hen der Welt
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2163,11 +1970,11 @@ Android
 \begin_layout Standard
 Android
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2420,6 +2227,16 @@ https://news.ycombinator.com/item?id=11444846
 
 \begin_layout Section
 Open Graphics Library for Embedded Systems
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Quelle
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2431,6 +2248,136 @@ n um dreidimensionale Farbbilder zu produzieren.
  Viele der Funktion von OpenGL ES implementieren das Zeichnen von geometrischen
  Objekten wie Punkte oder Linien.
  OpenGL ES setzt voraus das die Grafikhardware über einen Framebuffer verfügt.
+\end_layout
+
+\begin_layout Subsection
+Vertex
+\end_layout
+
+\begin_layout Standard
+Unter einem Vertex(plural die Vertices) versteht man eine Datenstruktur
+ welche einen zwei- oder dreidimensinalen Punkt im Raum beschreibt.
+\end_layout
+
+\begin_layout Subsection
+Shader
+\end_layout
+
+\begin_layout Standard
+Bei Shadern handelt es sich um vom Nutzer geschriebene Programme welche
+ an unterschiedlichen Station der Rendering Pipeline aufgerufen werden.
+ Shader werden in der C nahen OpenGL Shading Language geschrieben.
+\end_layout
+
+\begin_layout Subsection
+Pipeline
+\end_layout
+
+\begin_layout Standard
+Der Vorgang des Renderings lässt sich vereinfacht als Datenverarbeitung
+ von nacheinander folgenden Stufen darstellen.
+\end_layout
+
+\begin_layout Paragraph
+Vertex Spezifikation
+\end_layout
+
+\begin_layout Standard
+In diesem Schritt werden wird ein Stream von Vertices für OpenGL vorbereitet.
+ Dazu muss festgelegt werden, um was für ein Grundobjekt(Primitive) die
+ Daten darstellen.
+ Beispiele sind Punkte, Linien oder Dreiecke.
+\end_layout
+
+\begin_layout Paragraph
+Vertex Shader
+\end_layout
+
+\begin_layout Standard
+Dieser Shader erhält einzelne Elemente aus dem Vertexstream und gibt dann
+ ein einzelnes Vertex aus.
+ Der Shader wird vom Benutzer Programmiert.
+ Typischer Weise wird hier die Projektionsmatrix auf die Punkte angewendet.
+\end_layout
+
+\begin_layout Paragraph
+Tessellation
+\end_layout
+
+\begin_layout Standard
+In dieser optionalen Stufe werden Patch(ein Primitve für Tesselation) in
+ mehrere kleinere Primitives zerlegt.
+\end_layout
+
+\begin_layout Paragraph
+Geometry Shader
+\end_layout
+
+\begin_layout Standard
+Der optionale Geometry Shader erhält als Eingabe eine Primitive und gibt
+ keine oder mehr Primitives zurück.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Vertex Post-Processing
+\end_layout
+
+\begin_layout Standard
+In diesem Schritt werden Teile außerhalb des Kamerafensters verworfen, dieser
+ Prozess nennt sich Clipping.
+ In dieser Stufe werden werden die dreidimensionalen Koordinaten zu zweidimensio
+nalen Kamerakoordinaten umgerechnet.
+\end_layout
+
+\begin_layout Paragraph
+Primitive Assembly
+\end_layout
+
+\begin_layout Standard
+Diese Stufe erstellt teilt Primitves zu einer Sammlung von finalen kleinsten
+ Primitves.
+ Zum Bespiel wird aus einer Liste von Vertices vom Primitive Typ GL_LINE_STRIP
+ mit 8 Mitglieder 7 neue Primitives vom Typ 
+\begin_inset Quotes gld
+\end_inset
+
+line base
+\begin_inset Quotes grd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Rasterization
+\end_layout
+
+\begin_layout Standard
+In diesem Schritt werden die Primitives in diskrete Elemente unterteilt(geraster
+t).
+ Diese nennt man Fragmente.
+\end_layout
+
+\begin_layout Paragraph
+Fragment Shader
+\end_layout
+
+\begin_layout Standard
+Die Fragmente aus der Raster bildet den Input dieses Shaders.
+ Die Ausgabe ist ein Farb-, Tiefen und sogenannter Stencilwert.
+\end_layout
+
+\begin_layout Paragraph
+Per-Sample Operations
+\end_layout
+
+\begin_layout Standard
+Anschließend kann für den Output vom Fragment Shader eine Anzahl von Test
+ ausführen.
+ Beispielsweise der Tiefen Test(Depth Test) um zu vermeiden das Objekte
+ welche verdeckt sind gezeichnet werden.
+ Andere Test sind Scissor Test, Stencil Test und der Pixel Ownership Test.
 \end_layout
 
 \begin_layout Section
@@ -2478,9 +2425,9 @@ la4j
 \end_layout
 
 \begin_layout Standard
-La4j 
+La4j
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -2498,7 +2445,7 @@ http://la4j.org/
 
 \end_inset
 
-ist eine aus einem Studentenprojekt entstandene offene Java Bibliothek.
+ ist eine aus einem Studentenprojekt entstandene offene Java Bibliothek.
  Die Bibliothek liefert Objekte für Lineare Algebra(Matrizen und Vektoren)
  und Algorithmen.
 \end_layout
@@ -2538,7 +2485,7 @@ name "sub:Volley"
 \begin_layout Standard
 Bei Volley 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -2565,7 +2512,7 @@ g und einiges mehr.
 \begin_layout Standard
 Die Bibliothek ist frei und wird unter diesem Link 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -2596,9 +2543,9 @@ Mobile Geräte verfügen über begrenzte Ressourcen was Rechenleistung und
  Punktwolken mit mehr als einer Million Punkte bringen die GPU schnell an
  Ihre Grenzen.
  Daher wurde ein Ansatz gewählt, der es ermöglicht präzise Punkte auszuwählen.
- Darin unterscheiden wir zwischen 2 Dimension.
+ Dabei unterscheiden wir zwischen 2 Dimension.
  Zum einem die Sichtbarkeit und zum anderen die Detailstufe der Punkte.
- Zum ermitteln der Punkt unter diesen Kriterien kommt ein Multi-Resolution
+ Zum ermitteln der Punkte nach diesen Kriterien kommt ein Multi-Resolution
  Octree(siehe Section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2630,7 +2577,7 @@ t.
 \begin_inset Quotes gld
 \end_inset
 
-Last Recently Used
+Least recently used
 \begin_inset Quotes grd
 \end_inset
 
@@ -2644,25 +2591,13 @@ vertex buffer object
 \end_inset
 
  in den Speicher der GPU geschrieben und anschließend gezeichnet.
+ Ein Vorteil der Client Sever Architektur ist das mehrere
 \end_layout
 
 \begin_layout Standard
 Als Programmiersprache wurde Java gewählt aufgrund des guten Kompromisses
  aus Portabilität und Performance sowie der guten Integration in das Android
  Betriebssystem.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Datenfluss Diagram
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2716,20 +2651,20 @@ Server
 \begin_layout Standard
 Der Server hat drei Aufgaben.
  Zum ersten erstellt er aus gegebenen Punkten einen MRT.
- Seine zweite Aufgabe ist es aus den Knoten des MRT auf Anfrage zu verschicken
- und als letztes einen eine Proxy Objekt (siehe Kapitel 
+ Seine zweite Aufgabe ist es Punktanfragen zu bedienen und als letztes ein
+ Proxy Objekt (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Proxy-Design-Pattern"
 
 \end_inset
 
-) des MRTs an die Klienten zu verteilen.
+) des MRT an die Klienten zu verteilen.
 \end_layout
 
 \begin_layout Standard
-Zur Interaktion stellt der Server ein Interface auf Basis des HTTP Protokolls
- bereit.
+Zur Interaktion stellt der Server ein RESTful Interface auf Basis des HTTP
+ Protokolls bereit.
  
 \begin_inset Note Note
 status open
@@ -2795,7 +2730,7 @@ reference "sub:Multiresolution-Octree"
 \end_inset
 
 Array Speicherplatz gespart.
- Die eigentliche Rastervorgang wird durch die folgende Hashfunktion erreicht.
+ Der eigentliche Rastervorgang wird durch die folgende Hashfunktion erreicht.
 \end_layout
 
 \begin_layout Standard
@@ -2915,6 +2850,141 @@ reference "sub:NanoHTTPD"
 \end_layout
 
 \begin_layout Standard
+Ressourcen werden über GET Anfragen mit folgender Form abgerufen
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+GET SERVER_IP:PORT/?parameter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Werte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erklärung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes gld
+\end_inset
+
+proxy
+\begin_inset Quotes grd
+\end_inset
+
+, 
+\begin_inset Quotes gld
+\end_inset
+
+samples
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Definiert den Typ der Anfrage
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+id
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Id für Punktdaten
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Prinzipiell wird bei jeder Anfrage eine Fallunterscheidung an dem 
 \begin_inset Quotes eld
 \end_inset
@@ -2924,10 +2994,10 @@ mode
 \end_inset
 
  Parameter gemacht.
- Die Anfragen werden im folgenden vorgestellt.
+ Die Anfragetypen werden im folgenden vorgestellt.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 MRT-Proxy Anfrage
 \begin_inset CommandInset label
 LatexCommand label
@@ -2939,14 +3009,33 @@ name "sub:MRT-Proxy-Anfrage"
 \end_layout
 
 \begin_layout Standard
-Da die Ermittlung gebrauchten Punkte auf dem Klienten geschieht muss auch
- dieser in Kenntnis über die Struktur der MRTs sein.
+Da die Ermittlung gebrauchten Punkte auf dem Klienten statt findet muss
+ auch dieser in Kenntnis über die Struktur des MRTs sein.
  Aus diesem Grund Stellt der Server ein MRT-Proxy zur Verfügung.
- Der MRT-Proxy ist im Prinzip der gespeicherte Multiresolution Octree allerdings
+ Der MRT-Proxy ist im Prinzip gleich dem Multiresolution Octree, allerdings
  haben seine Knoten keine Punkte oder Rasterung gespeichert, sondern nur
  Ids um beim Server die entsprechenden Punkte anzufragen.
  Diese können entweder Original Punkte aus Blättern sein oder Punkte aus
  der Rasterung.
+\end_layout
+
+\begin_layout Standard
+Eine Anfrage wäre zum Beispiel:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+GET 192.168.2.1:8080/?mode=tree
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3038,7 +3127,7 @@ message MRTree{
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Punktanfrage
 \end_layout
 
@@ -3052,7 +3141,7 @@ Der 2.
 \begin_layout Standard
 Falls es sich um ein inneren Knoten handelt wird die Rasterung zu einer
  Liste von Punkten exportiert.
- Beim einem Blatt wird lediglich auch die vorhandene Punktliste zugegriffen.
+ Beim einem Blatt wird lediglich auf die vorhandene Punktliste zugegriffen.
  
 \end_layout
 
@@ -3147,8 +3236,8 @@ Client
 \end_layout
 
 \begin_layout Standard
-Bei dem Klienten handelt es um eine Android Anwendung.
- Der Klient ist verantwortlich für das Darstellen der Punktwolke und reagiert
+Bei dem Client handelt es um eine Android Anwendung.
+ Der Client ist verantwortlich für das Darstellen der Punktwolke und reagiert
  auf Eingaben des Users.
 \end_layout
 
@@ -3201,10 +3290,6 @@ name "fig:Client-UML"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -3224,6 +3309,220 @@ UML Diagram
 \end_layout
 
 \begin_layout Subsection
+Netzwerkverkehr
+\end_layout
+
+\begin_layout Subsubsection
+DataAcessLayer Klasse
+\end_layout
+
+\begin_layout Standard
+Bei der DataAcessLayer Klasse handelt es sich um ein Singleton(siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Singleton-Pattern"
+
+\end_inset
+
+)welches als Schnittstelle für jeglichen Netzwerkverkehr fungiert.
+ Sie verfügt über Funktion zum Anfordern von Punkten oder des MRT Proxy.
+ Für asynchronen Anfragen kommt das 
+\begin_inset Quotes gld
+\end_inset
+
+Volley Framework
+\begin_inset Quotes grd
+\end_inset
+
+ zum Einsatz.
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Volley"
+
+\end_inset
+
+).
+ Das Framework stellt eine Prioritätswarteschlange für HTTP Anfragen zur
+ Verfügung.
+ Volley ermöglicht es die Callback Funktion, welche nach Eintreffen einer
+ Antwort aufgerufen wird, zu überschreiben, um eigene Logik zu definieren.
+\end_layout
+
+\begin_layout Standard
+Die zwei Methoden der Klasse werden im folgendem vorgestellt.
+\end_layout
+
+\begin_layout Paragraph
+buildMultiResTreeProtos(owner:MultiResTreeOwner)
+\end_layout
+
+\begin_layout Standard
+Die Methode dekoriert eine Instanz welche das MultiResTreeOwner Interface
+ implementiert (z.B RemotePointClusterGL) mit dem MRT-Proxy.
+ 
+\end_layout
+
+\begin_layout Standard
+Als erster Schritt wird eine HTTP-Anfrage für den MRT Proxy an den Server
+ gesendet.
+ Beim Empfangen der Antwort werden die Daten deserialisiert und im Anschluss
+ mit Hilfe einer Factory Methode zum MRT-Proxy gebaut.
+ Die als Parameter übergebene Instanz erhält einen Zeiger auf den Proxy.
+\end_layout
+
+\begin_layout Paragraph
+getSamples(id:String, cache:LRUDrawableCache)
+\end_layout
+
+\begin_layout Standard
+Die Methode fordert Punktdaten vom Server an und speichert diese in einem
+ Cache Objekt welches später zum Zeichnen der Punkte verwendet wird.
+ Bei erhalten der Antwort werden die Daten zuerst dekomprimiert(DEFLATE)
+ und deserialisiert.
+ Im Anschluss werden die Farb-, Positions- und Gewichtswerte in einen nativen
+ Buffer geschrieben damit OpenGL bei Bedarf darauf zugreifen kann.
+\end_layout
+
+\begin_layout Subsection
+Rendering
+\end_layout
+
+\begin_layout Subsubsection
+Shader
+\end_layout
+
+\begin_layout Standard
+Die Shader sind als Textdatei in dem Android Ressourcen gespeichert.
+ Bei der Initialisierung der OpenGL View Instanz werden sie kompiliert und
+ gelinkt.
+ Im folgendem werden die Shader vorgestellt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# vertex_shader.glsl
+\end_layout
+
+\begin_layout Plain Layout
+
+attribute vec3 a_Position; 
+\end_layout
+
+\begin_layout Plain Layout
+
+attribute vec3 a_Color; 
+\end_layout
+
+\begin_layout Plain Layout
+
+attribute float a_Size; 
+\end_layout
+
+\begin_layout Plain Layout
+
+uniform mat4 u_Matrix; 
+\end_layout
+
+\begin_layout Plain Layout
+
+varying vec4 v_Color;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main() {     
+\end_layout
+
+\begin_layout Plain Layout
+
+	v_Color = vec4(a_Color, 1.0);     
+\end_layout
+
+\begin_layout Plain Layout
+
+	gl_Position = u_Matrix * (vec4(a_Position, 1.0));     
+\end_layout
+
+\begin_layout Plain Layout
+
+	gl_PointSize = min(4.0, sqrt(a_Size)); 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In dem Vertex Shader werden die Postionen der Punkte mit der Projektionsmatrix
+ multipliziert und an die nächste Stufe der OpenGL Pipeline weiter gegeben.
+ Des weiteren wird die Größe der zu zeichnenden Punktes berechnet.
+ Es wird die Wurzel gezogen um sehr große Werte abzuschwächen.
+ Durch die min() Funktion wird eine obere Grenze von 4 eingeführt.
+ Das ist nötig den bei sehr detaillierten Objekten kann das Gewicht schnell
+ sehr groß werden.
+ Die Farbwerte werden einfach an den Fragment Shader durch eine varying
+ Variable weitergereicht.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+precision mediump float;
+\end_layout
+
+\begin_layout Plain Layout
+
+varying vec4 v_Color;
+\end_layout
+
+\begin_layout Plain Layout
+
+void main() {     
+\end_layout
+
+\begin_layout Plain Layout
+
+	gl_FragColor = v_Color; 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Fragment Shader empfängt die Farbwerte und gibt sie weiter an die vorgegeben
+e Variable gl_FragColor und legt damit den Farbwert des Fragmentes fest.
+\end_layout
+
+\begin_layout Subsubsection
 Scene Klasse
 \end_layout
 
@@ -3236,56 +3535,71 @@ reference "fig:Client-UML"
 \end_inset
 
 )ist die Schnittstelle für alle Rendering relevanten Aktionen.
+ Alle zu zeichnenden Objekte sowie die Kamera sind in dieser Klasse gespeichert.
  Nutzereingaben werden von dieser Klasse entgegengenommen und entsprechend
- weitergeleitet.
- Die Kamera mit Projektions Matrix ist hier gespeichert.
+ verarbeitet.
+\end_layout
+
+\begin_layout Paragraph
+drawScene()
 \end_layout
 
 \begin_layout Standard
-Alle zu zeichnenden Objekte werden in modelList gespeichert.
- Bei Aufruf der drawScene Methode wird die draw Methode von jedem Element
- der Liste ausgelöst.
+Beim Aufruf der Methode wird die draw() Methode von jedem Element der Liste
+ ausgelöst.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
+CameraGL Klasse
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Subsubsection
 RemotePointClusterGL
 \end_layout
 
 \begin_layout Standard
-RemotePointClusterGL kümmert sich um das Ermitteln und Speichern aktiver
- Punkte im MRT, dafür hat sie einen Verweise auf den Cache und dem MRT-Proxy.
- Desweiteren greift die Klasse auf den DataLayer zu um entweder nach dem
- MRT Proxy zu fragen oder nach neuen Punkten.
-\end_layout
-
-\begin_layout Subsection
-Ermittlung der aktiven Knoten
-\end_layout
-
-\begin_layout Standard
-*** WIP ***
+Die RemotePointClusterGL kümmert sich um das Ermitteln aktiver Punkte mit
+ Hilfe des MRT, dafür sind Verweise auf den Cache und dem MRT-Proxy gespeichert.
+ Des weiteren greift die Klasse auf die DataAccesLayer Instanz zu, um entweder
+ den MRT Proxy zu aktualisieren oder neuen Punkten anzufordern.
+ Bei Initialisierung der Instanz wird der Proxy vom Server erfragt.
+ Der gespeicherte LRU-Cache beinhaltet die Punktdaten
 \end_layout
 
 \begin_layout Standard
-Bevor etwas gerendert werden kann, muss bestimmt werden, welche Punkte sichtbar
- sind und in welcher Detailstufe man diese darstellen möchte.
- Dafür ist der MRT-Proxy nötig, daher wird dieser beim Start der App vom
- Server angefordert (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:MRT-Proxy-Anfrage"
+Immer wenn sich die Kameraposition ändert wird die updateCache() aufgerufen
+ um den aktiven Knoten zu ermitteln.
+\end_layout
 
-\end_inset
-
-).
+\begin_layout Paragraph
+updateCache()
 \end_layout
 
 \begin_layout Standard
-Nach jeder Kamerabewegung kann sich die Menge der aktiven Punkte ändern,
- dann wird update cache ausgeführt.
- Rotiert der Nutzer etwa die Szene wird der MRT-Proxy mit Hilfe des folgenden
- Algorithmus traversiert um die Ids von aktiven Knoten zu ermitteln.
- 
+Die Methode bestimmt die momentan aktiven Punkten bzw.
+ Knoten mit Hilfe des Proxy Objektes.
+\end_layout
+
+\begin_layout Standard
+Knoten(mit ihren Punkten) werden zu den aktiven Knoten hinzugefügt wenn
+ folgende Kriterien erfüllt sind:
+\end_layout
+
+\begin_layout Itemize
+die Punkte sind sichtbar
+\end_layout
+
+\begin_layout Itemize
+die Auflösung der Punkte ist ausreichen oder schon Maximal
+\end_layout
+
+\begin_layout Standard
+Um das zu erreichen wird der Proxy mit Hilfe des folgenden Algorithmus traversie
+rt.
 \end_layout
 
 \begin_layout Standard
@@ -3385,19 +3699,69 @@ private void _getIdsViewDependent(OctreeNodeGL currentNode, List<String>
 \end_layout
 
 \begin_layout Standard
-Salop gesagt besuche Knoten solange sichtbar bis entweder ein Blatt erreicht
+Einfach gesagt, besuche Knoten solange sichtbar bis entweder ein Blatt erreicht
  ist oder eine ausreichende Detailstufe.
- Bei dem Test auf Sichtbarkeit wird lediglich geprüft ob die projektierte
- Box (von einem Knoten) sich mit dem Display schneidet.
+ Bei dem Test auf Sichtbarkeit wird geprüft ob die projektierte Box (von
+ einem Knoten) sich mit der View-Ebene schneidet.
+ In jedem Schritt wird der detailFactor() ermitteln und mit einem festgelegten
+ Schwellwert verglichen.
  Der 
-\begin_inset Formula $detaiFactor()$
+\end_layout
+
+\begin_layout Standard
+Schwellwert ist experimentell ermittelt und kann abhängig von der Leistung
+ des Gerätes gewählt werden.
+ Sobald der detailFactor klein genug ist, gilt der Knoten als ausreichend
+ aufgelöst und wird gezeichnet.
+ Der 
+\begin_inset Formula $\mbox{detaiFactor()}$
 \end_inset
 
- berechnet sich wie folgt.
-\begin_inset Formula 
-\[
-Area(boundingBox(projektionO(Knoten)))*\frac{1}{z^{2}}
-\]
+berechnet sich wie folgt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+\align left
+
+public float getDetailFactor(ModelGl m){             
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	float[] boundingBox = getBoundingBox(projectPoints(edgePoints,m.camera.projection
+Matrix, m.camera.viewMatrix, m.getModelMatrix()));             
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	float[] centerProj = projectPoint(center, m.camera.projectionMatrix, m.camera.viewM
+atrix, m.getModelMatrix());             
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	float zNorm = centerProj[2];             
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+	return getArea(boundingBox) * 1/(zNorm * zNorm);        
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+
+}
+\end_layout
 
 \end_inset
 
@@ -3405,8 +3769,8 @@ Area(boundingBox(projektionO(Knoten)))*\frac{1}{z^{2}}
 \end_layout
 
 \begin_layout Standard
-Der Vorgang findet in eigenem Thread statt damit der Nutzer nicht warten
- muss um neue Eingabe zu machen.
+Der komplette Vorgang findet in einem eigenem Thread statt, damit der Nutzer
+ nicht warten muss um neue Eingabe zu machen.
  Für die Verwaltung weiterer Threads kommt die von Java mitgelieferte ThreadPool
 Executor Klasse zum Einsatz.
 \end_layout
@@ -3414,56 +3778,97 @@ Executor Klasse zum Einsatz.
 \begin_layout Standard
 Nachdem alle nötigen Knoten festgestellt wurden, wird geprüft ob sich diese
  schon im Cache befinden.
- Falls nicht müssen diese vom Server angefordert werden.
+ Falls nicht werde diese vom Server angefordert.
 \end_layout
 
-\begin_layout Subsection
-DataAcessLayer Klasse
+\begin_layout Paragraph
+draw()
 \end_layout
 
 \begin_layout Standard
-Zum asynchronen nachladen von Punkten kommt das 
-\begin_inset Quotes gld
+Zum zeichnen des Models wird die draw Methode aller aktiven Knoten im Cache
+ aufgerufen.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Drawable-Cache Klasse
+\end_layout
+
+\begin_layout Standard
+Diese Klasse speichert und cached die Punktdaten vom Server.
+ Des weiteren sendet sie Punktdaten als Vertex Buffer Object(VBO) an die
+ GPU.
+ Der Vorteil von VBOs liegt darin, dass Punktdaten nicht bei jedem Frame
+ neu übermittelt werden müssen.
+ Was die Performance stark verbessert.
+ Schlussendlich wird in dieser Klasse das Zeichnen durch OpenGL initiiert.
+\end_layout
+
+\begin_layout Standard
+Der Cache besitzt eine Prioritätswarteschlange von Knoten nach dem zuletzt
+ benutzt Prinzip.
+ Die Knoten besitzen die Punktdaten und einen Vermerk ob diese schon im
+ Speicher der GPU gelandet sind.
+ Die Positions-, Farb- und Gewichtsdaten werden in einem einzigen Buffer
+ pro Knoten ineinander abgespeichert um die Performance zu verbessern 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://developer.apple.com/library/ios/documentation/3DDrawing/Conceptual/OpenGLE
+S_ProgrammingGuide/TechniquesforWorkingwithVertexData/TechniquesforWorkingwithVe
+rtexData.html
+\end_layout
+
 \end_inset
 
-Volley Framework
-\begin_inset Quotes grd
+
+\end_layout
+
 \end_inset
 
 .
- (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Volley"
+\end_layout
+
+\begin_layout Standard
+Beim zeichnen wird zuerst geprüft ob die Daten des Knoten schon als VBO
+ auf der GPU sind.
+ Falls ja werden die Punkte mit der folgenden Methode gezeichnet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+    public void draw(){
+\end_layout
+
+\begin_layout Plain Layout
+
+        glDrawArrays(GL_POINTS, 0, pointCount);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
 
 \end_inset
 
-).
- Das Framework stellt ein RequestQueue zur Verfügung.
- Volley ermöglicht es die Callback Funktion beim Eintreffen einer Anfrage
- zu überschreiben, um eigene Logik zu definieren.
- Sobald ein Anfrage empfangen wurde wird diese entpackt und deserialsiert.
- Anschließend wird wenn es sich um Punktdaten handel dem Cache hinzugefügt
- oder bei einem Proxy Objekt wird das alte überschrieben.
+
 \end_layout
 
 \begin_layout Subsection
-Rendering
-\end_layout
-
-\begin_layout Standard
-Das Rendering ist mit OpenGL realisiert.
- Jeder Knoten im Cache zeigt auf einem Buffer gefüllt mir Positions-, Farb-
- und Gewichtswerten.
- Beim zeichen werden alle aktiven Knoten, welche im Cache sind, gezeichnet.
- Dabei wird jeder Buffer einmalig als Vertex Buffer Object(VBO) in den Speicher
- der GPU geschrieben.
- Das verbessert die Performance enorm weil so nicht in jedem Frame die Daten
- neu übertragen werden müssen.
-\end_layout
-
-\begin_layout Standard
--
+User Interface
 \end_layout
 
 \begin_layout Chapter
