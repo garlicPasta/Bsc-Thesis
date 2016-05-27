@@ -20,6 +20,7 @@ jakobkrause@zedat.fu-berlin.de\\\\
 Betreuung und Erstgutachten:\\ Prof. Dr. Marco Block-Berlitz\\
 Zweitgutachten:\\ }
 \date{\today}
+\urlstyle{same}
 \end_preamble
 \options ngerman
 \use_default_options true
@@ -179,20 +180,16 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Chapter
-Einführung
-\end_layout
-
-\begin_layout Section
-Motivation
+Einleitung und Motivation
 \end_layout
 
 \begin_layout Standard
 Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
- von günstigen 3D Scanner und der 3D Rekonstruktion in den letzten Jahrzehnt
+ von günstigen 3D-Scannern und der 3D-Rekonstruktion in den letzten Jahrzehnten
  stark gewachsen.
- Aufgrund der technologischen Entwicklungen in diesem Bereich, ist es möglich
- von kleinen Objekten, wie einem Dinosaurier Schädel, bis hin zu ganzen
- Städte, Modele in hoher Detailstufe digital zu erfassen.
+ Aufgrund der technologischen Entwicklungen in diesem Bereich ist es möglich,
+ von kleinen Objekten wie einem Dinosaurier Schädel bis hin zu ganzen Städten
+ Modelle in hoher Detailstufe digital zu erfassen.
  In der Denkmalpflege werden Objekte mittlerweile aus Routine abgescannt
  und archiviert.
  
@@ -203,9 +200,9 @@ Für gewöhnlich sind die erzeugten Modelle enorm groß und daher nicht ohne
  weiteres darstellbar.
  Die Modelle bestehen meist aus einer ungeordneten Sammlung von dreidimensionale
 n Punkten mit Farbinformationen.
- Desktop Lösung verlassen sich zur Lösung des Problems auf Level-of-Detail(LOD)
- Konzepte kombiniert mit Out-of-core Verfahren und klugen Caching Strategien
- um der hohen Datenmenge Herr zu werden.
+ Desktop-Lösungen verlassen sich zur Lösung des Problems auf Level-of-Detail
+ (LOD) Konzepte kombiniert mit Out-of-core Verfahren und klugen Caching
+ Strategien, um der hohen Datenmenge Herr zu werden.
  Durch das Aufkommen von leistungsstarken Smartphones entstand eine neue
  Plattform zum Darstellen von Modellen.
 \end_layout
@@ -213,24 +210,24 @@ n Punkten mit Farbinformationen.
 \begin_layout Standard
 Daraus entstand eine Nachfrage durch Forschungsgruppen für eine mobile Applikati
 on zum Betrachten großer Modelle.
- Die Applikation kann Beispielsweise bei 3D Rekonstruktion schnelles Feedback
+ Die Applikation kann beispielsweise bei 3D-Rekonstruktion schnelles Feedback
  liefern, vereint mit den Vorzügen eines mobilen Gerätes.
  Dadurch können schnell unvollständige oder schwer zu erfassende Bereiche
  des Modells beim Scannen erkannt werden.
- Des weiteren kann die Applikation zur Präsentation von Modellen eingesetzt
+ Des Weiteren kann die Applikation zur Präsentation von Modellen eingesetzt
  werden.
 \end_layout
 
 \begin_layout Standard
-Die Herausforderung bestand darin trotz der Limitierungen eines Tablets
- durch seinen geringen Arbeitsspeicher und der Vergleichsweisen schwache
- GPU Punktwolken mit mehreren Millionen Punkten flüssig darzustellen.
- Dabei sollte es möglich sein jederzeit neue Punkte in die bestehende Darstellun
-g hinzuzufügen.
+Die Herausforderung bestand darin, trotz der Limitierungen eines Tablets
+ durch seinen geringen Arbeitsspeicher und der relativ schwachen GPU, Punktwolke
+n mit mehreren Millionen Punkten flüssig darzustellen.
+ Dabei sollte es möglich sein, jederzeit neue Punkte in die bestehende Darstellu
+ng hinzuzufügen.
  Zur Zeit existieren nur bedingt geeignet Softwarelösungen für das Problem.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Archaeocopter und Archaeonautic Projekt
 \begin_inset CommandInset label
 LatexCommand label
@@ -245,17 +242,17 @@ name "sub:Archaeocopter-Projekt"
 Das Archaeocopter Projekt, welches 2012 von Dr.
  Benjamin Ducke und Prof.
  Dr.
- Marco Block-Berlitz ins Leben gerufen wurde, hat es sich zum Ziel gesetzt
- eine unbemanntes Flugobjekt (UAV) zu entwickeln, welcher durch halb-autonome
+ Marco Block-Berlitz ins Leben gerufen wurde, hat es sich zum Ziel gesetzt,
+ eine unbemanntes Flugobjekt (UAV) zu entwickeln, welches durch halb-autonome
  Flüge Archäologen bei ihrer Arbeit durch Luftaufnahmen unterstützt.
- Aus diesen Aufnahmen lassen sich durch 3d Rekonstruktion Modelle generieren.
- Die Technik wird auch zum Denkmalschutz angewandt.
+ Aus diesen Aufnahmen lassen sich durch 3D- Rekonstruktion Modelle generieren.
+ Diese Technik wird auch zum Denkmalschutz angewandt.
 \end_layout
 
 \begin_layout Standard
-Die Idee war es aktuelle Verfahren aus der Computervision und künstlichen
+Die Idee war es, aktuelle Verfahren aus der Computervision und künstlichen
  Intelligenz zusammen mit UAVs mit Kameras für die Datenerhebung einzusetzen.
- Das innovative Verfahren lässt sich auch Unterwasser einsetzen.
+ Das innovative Verfahren lässt sich auch unter Wasser einsetzen.
  Offiziell ging das Projekt im September 2012 mit Unterstützung von Prof.
  Dr.
  Raúl Rojas von Berlin's Freier Universität an den Start.
@@ -285,15 +282,11 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Archaeocopter Projekt
+Ein UAV scannt die Umgebung von ??? ab
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -320,30 +313,36 @@ Ziele
 \end_layout
 
 \begin_layout Standard
-Ziel dieser Arbeit ist es ein mobile Applikation für das Android Betriebssystem
- zu entwickeln, welche in der Lage ist Punktwolken mit mehreren Millionen
+Ziel dieser Arbeit ist es, eine mobile Applikation für das Android Betriebssyste
+m zu entwickeln, welche in der Lage ist, Punktwolken mit mehreren Millionen
  Punkten performant darzustellen.
- Dabei soll es möglich sein Punkte in die bestehende Darstellung zur Laufzeit
+ Dabei soll es möglich sein, Punkte in die bestehende Darstellung zur Laufzeit
  hinzuzufügen.
 \end_layout
 
 \begin_layout Standard
 Ein weiteres Ziel der Arbeit ist es, die Architektur möglichst modular und
- plattformunabhängig zu gestalten um dadurch Austauschbarkeit und Wartbarkeit
+ plattformunabhängig zu gestalten, um dadurch Austauschbarkeit und Wartbarkeit
  der einzelnen Komponenten zu gewährleisten.
  Es sollte möglichst einfach sein, eine Applikation für iOS oder ein anderes
  mobiles Betriebssystem nachzureichen.
- Des weiteren soll eine moderne Auswahl von Frameworks getroffen werden.
+ Des Weiteren soll eine moderne Auswahl von Frameworks getroffen werden.
  Dabei soll die Applikation möglichst intuitiv benutzbar sein.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+Der Quellcode soll nach Abschluss dieser Arbeit über die Entwicklungsplattform
+ github
+\begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Punktwolken diskutieren, Formate ply, nvm.
- visualsfm
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+www.github.com
 \end_layout
 
 \end_inset
@@ -351,8 +350,13 @@ Punktwolken diskutieren, Formate ply, nvm.
 
 \end_layout
 
+\end_inset
+
+ frei zugänglich gemacht werden.
+\end_layout
+
 \begin_layout Chapter
-Theorie
+Theorie und verwandte Arbeiten
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Theorie"
@@ -362,23 +366,32 @@ name "sec:Theorie"
 
 \end_layout
 
+\begin_layout Standard
+In diesem Kapitel werden Grundlagen zum Verstehen der Arbeit und des Kontextes
+ vorgestellt.
+ Es wird eine kurze Einführung in die 3D-Rekonstruktion gemacht.
+ Des Weiteren werden Punktwolken sowie deren Repräsentationen diskutiert.
+ Anschließend werden bestehende Arbeiten diskutiert.
+ Zum Abschluss werden genutzte Entwurfsmuster und Architekturstille vorgestellt.
+\end_layout
+
 \begin_layout Section
 Einführung in die 3D Rekonstruktion
 \end_layout
 
 \begin_layout Standard
-Die Idee aus einer Folge von Bilder ein 3D Model zu errechnen ist eines
+Die Idee, aus einer Folge von Bildern ein 3D-Modell zu errechnen, ist eines
  der Kernthemen der Computervision.
  Verwendungen dieser Technik sind vielfältig und finden sich in der Wissenschaft
  und Wirtschaft wieder.
- Anwendungen existieren zum Beispiel in der Robotik, 
+ Anwendungen existieren zum Beispiel in der Robotik 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "klimentjew2008grundlagen"
 
 \end_inset
 
- in welcher mit Hilfe eines Stereokamerasystems die Position des Roboters
+, in welcher mit Hilfe eines Stereokamerasystems die Position des Roboters
  innerhalb seiner Umgebung feststellbar ist.
  Ein weiteres Feld ist die Archäologie und der Denkmalsschutz.
  Ein Beispiel dafür ist das Archaeocopter Projekt.
@@ -393,6 +406,7 @@ key "ladikos2011real"
 \end_inset
 
  unterscheiden.
+ Die beiden Verfahren werden im Anschluss kurz vorgestellt.
 \end_layout
 
 \begin_layout Subsection
@@ -400,47 +414,32 @@ Aktive Rekonstruktion
 \end_layout
 
 \begin_layout Standard
-Bei aktiver Rekonstruktion wird aktiv mit einem Sensors das Objekt abgetastet
+Bei aktiver Rekonstruktion wird aktiv mit einem Sensor das Objekt abgetastet,
  um die Struktur zu ermitteln.
- 3D Scanner sind ein Vertreter dieser Gattung.
+ 3D-Scanner sind ein Vertreter dieser Gattung.
  Im Grunde sind sie der Kamera ähnlich.
  Genau wie diese besitzen sie ein Sichtfeld.
  Allerdings liefern sie statt Farbwert Abstandswert von ihrem Sichtfeld.
- Die Abstandswerte können entweder über die 
-\begin_inset Quotes gld
-\end_inset
-
-Time of Flight
-\begin_inset Quotes grd
-\end_inset
-
- oder die Triangulierungmethode ermittelt werden.
+ Die Abstandswerte können entweder über die Time -of-Flight oder die Triangulier
+ungsmethode ermittelt werden.
 \end_layout
 
 \begin_layout Standard
-Bei der 
-\begin_inset Quotes gld
-\end_inset
-
-Time of Flight
-\begin_inset Quotes grd
-\end_inset
-
- Methode wird ein Laserstrahl versendet.
- Aus der Dauer bis die Reflektion ihren Ausgangspunkt erreicht kann die
+Bei der Time-of-Flight Methode wird ein Laserstrahl versendet.
+ Aus der Dauer bis die Reflexion ihren Ausgangspunkt erreicht, kann die
  Entfernung ermittelt werden.
- Diese Methode ist bei nahen und feinen Objekten ungenau weil die Zeit nur
- zu einer gewissen Genauigkeit gemessen werden kann.
+ Diese Methode ist bei nahen und feinen Objekten ungenau, weil die Zeit
+ nur zu einer gewissen Genauigkeit gemessen werden kann.
 \end_layout
 
 \begin_layout Standard
-Bei der Triangulierungsmethode wird von einem Laser ein Punkte auf das das
- Objekt projektiert.
+Bei der Triangulierungsmethode wird von einem Laser ein Punkt auf das Objekt
+ projizieren.
  Dieser Punkt wird von einer Kamera erfasst.
  In Abhängigkeit von der Entfernung erscheint der Laserpunkt im Sichtfeld
  der Kamera.
- Um das Verfahren zu beschleunigen kann statt einem Punkt eine Linie verwendet
- werden.(siehe Abb.
+ Um das Verfahren zu beschleunigen, kann statt einem Punkt eine Linie verwendet
+ werden (siehe Abb.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -448,7 +447,7 @@ reference "fig:TriangulierungBild"
 
 \end_inset
 
-)
+).
 \end_layout
 
 \begin_layout Standard
@@ -488,7 +487,7 @@ name "fig:TriangulierungBild"
 
 \end_inset
 
-Triangulierungsmethode beim 
+Anwendung der Triangulierungsmethode mit Hilfe einer Scanline beim 
 \begin_inset Quotes gld
 \end_inset
 
@@ -497,18 +496,15 @@ The Digital Michelangelo
 \end_inset
 
  Projekt.
- Quelle: 
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://graphics.stanford.edu/projects/mich/
-\end_layout
+ (Abb.
+ aus 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "MichelangeloProject"
 
 \end_inset
 
-
+)
 \end_layout
 
 \end_inset
@@ -526,29 +522,26 @@ Passive Rekonstruktion
 \end_layout
 
 \begin_layout Standard
-Unter passiver Rekonstruktion versteht man Methoden welche nicht aktiv eine
- Szene abtasten, sondern vorhandene photometrische Information(z.B Photos)
- nutzen um die Tiefe zu berechnen.
-\end_layout
-
-\begin_layout Standard
-Das Stereo Verfahren ist eines der Ersten in diesem Feld.
- Man geht von 2 auf der x-Achse verschoben Bildern einer Szene aus.
- Nun gilt es Punktpaare zwischen den beiden Bilder zu finden.
+Unter passiver Rekonstruktion versteht man Methoden, welche nicht aktiv
+ eine Szene abtasten, sondern vorhandene photometrische Informationen (z.B.
+ Fotos) nutzen, um die Tiefe zu berechnen.
+ Das Stereo-Verfahren ist eines der ersten in diesem Feld.
+ Ausgehend von zwei auf der x-Achse verschobenen Bildern einer Szene gilt
+ es Punktpaare zwischen den beiden Bildern zu finden.
  Um das zu vereinfachen sucht man nach einer Abbildung von Punkten aus Bild
  1 zu Bild 2.
  Aufgrund der Verschiebung der Bilder auf der x-Achse kann man durch Epipolargeo
-metrie die Tiefe des Punkte berechnen.
+metrie die Tiefe der Punkte berechnen.
 \end_layout
 
 \begin_layout Subsection
-VisualSFM
+VisualSFM, 
 \end_layout
 
 \begin_layout Standard
 Bei VisualSFM
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -561,21 +554,20 @@ http://ccwu.me/vsfm/
 
 \end_inset
 
-
+.
+ Aufg.
+ am 24.05.2016
 \end_layout
 
 \end_inset
 
- handelt es sich um ein 3D Rekonstruktionssystem.
- Es verfügt über eine grafische Benutzeroberfläche und zeichnet sich mit
- Skalierbarkeit durch Nutzung der nVidia oder ATI Grafikkarten des Computers
- aus.
-\end_layout
-
-\begin_layout Standard
-Entwickelt wurde das Programm von dem Studenten Changchang Wu
+ handelt es sich um ein 3D-Rekonstruktionssystem.
+ Es verfügt über eine grafische Benutzeroberfläche und zeichnet sich durch
+ Skalierbarkeit aus auf Grundlage der Nutzung von nVidia oder ATI Grafikkarten
+ des Computers.
+ Entwickelt wurde das Programm von dem Studenten Changchang Wu
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -588,13 +580,26 @@ http://ccwu.me/
 
 \end_inset
 
-
+.
+ Aufg.
+ am 24.05.2016
 \end_layout
 
 \end_inset
 
 , welcher mittlerweile bei google beschäftigt ist.
- VisualSFM wird von dem Archaeocopter Projekt zur 3D Rekonstruktion verwendet.
+ VisualSFM wird von dem Archaeocopter Projekt zur 3D-Rekonstruktion verwendet.
+\end_layout
+
+\begin_layout Section
+Minimum Bounding-Box
+\end_layout
+
+\begin_layout Standard
+In der Geometrie versteht man unter einer Minimum Bounding-Box ein Rechteck(2D)
+ oder Box(3D) welches eine Menge von Punkten umschließt.
+ Dabei ist der die Fläche bzw.
+ das Volumen minimal.
 \end_layout
 
 \begin_layout Section
@@ -609,7 +614,7 @@ Punkt basierende geometrische Oberflächen können als Stichprobenmenge einer
 \end_inset
 
 .
- Oft existieren noch weiter Daten zu dem Punkt wie eine Normale 
+ Oft existieren noch weitere Daten zu dem Punkt, wie eine Normale 
 \begin_inset Formula $n_{i}$
 \end_inset
 
@@ -623,6 +628,8 @@ Punkt basierende geometrische Oberflächen können als Stichprobenmenge einer
 \end_inset
 
  ist eine Menge solcher Punkte.
+ Im folgenden wird eine Auswahl von Ansätze vorgestellt und für das Projekt
+ evaluiert.
 \end_layout
 
 \begin_layout Subsection
@@ -630,7 +637,7 @@ QSplat Verfahren
 \end_layout
 
 \begin_layout Standard
-Erste Vorschläge zur Darstellung von sehr großer Punktmengen wurden durch
+Erste Vorschläge zur Darstellung von sehr großen Punktmengen wurden durch
  das QSplat Verfahren gemacht 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -644,16 +651,16 @@ key "Rusinkiewicz:2000:QMP:344779.344940"
 
 \begin_layout Standard
 Die Punktmenge wird durch eine Hierarchie auf Basis von Kugeln modelliert.
- Jede Kugel repräsentiert einen Knoten in einem binär Baum.
+ Jede Kugel repräsentiert einen Knoten in einem Binärbaum.
  Jeder Knoten enthält den Mittelpunkt seiner Kugel, den Radius, die Normale
  und die Breite des Normalen Kegels und optional eine Farbe.
  Die Datenstruktur wird zu Beginn erstellt.
  Der Konstruktionsalgorithmus kann entweder auf einer Punktwolke oder besser
  einem triangulierten Modell angewendet werden.
- Bei letzterem ist es leichter die Normalen zu berechnen.
- Für den Radius der Kugeln wird die Länge der Längsten anliegenden Kante
+ Bei letzterem ist es leichter, die Normalen zu berechnen.
+ Für den Radius der Kugeln wird die Länge der längsten anliegenden Kante
  gewählt.
- Mit Hilfe folgendem Algorithmus kann nun die Datenstruktur erstellt werden.
+ Mit Hilfe folgendem Algorithmus kann nun die Datenstruktur erstellt werden:
 \end_layout
 
 \begin_layout Standard
@@ -718,7 +725,7 @@ BuildTree(vertices[begin..end]) {
 
 \begin_layout Standard
 Sobald die Datenstruktur aufgebaut ist, kann die Punktmenge gezeichnet werden
- mit folgendem Algorithmus
+ mit folgendem Algorithmus:
 \end_layout
 
 \begin_layout Standard
@@ -787,17 +794,17 @@ TraverseHierarchy(node) {
 \end_layout
 
 \begin_layout Standard
-Zuerst wird getestet ob die Kugel des Knoten sichtbar ist.
- Dafür wird getestet ob die Kugle in dem View Frustum liegt.
- Falls nicht muss der Knoten und seine Kinder nicht beachtet werden und
+Zuerst wird getestet, ob die Kugel des Knotens sichtbar ist.
+ Dafür wird getestet, ob die Kugel in dem View-Frustum liegt.
+ Falls nicht, muss der Knoten samt seiner Kinder nicht beachtet werden und
  die Rekursion wird abgebrochen.
- QSplat führt auch Backface Culling aus mit Hilfe der Normalen Kegeln.
+ QSplat führt auch Backface-Culling aus mit Hilfe der Normalen Kegel.
 \end_layout
 
 \begin_layout Standard
-QSplat entscheidet anhand der Größe der projektierten Kugel auf die View-Ebene
+Anhand der Größe der projizierten Kugel auf die View-Ebene wird entschieden,
  ob die Rekursion fortgesetzt wird.
- Überschreitet diese einen gewissen Schwellwert wird die Rekursion beendet
+ Überschreitet diese einen gewissen Schwellenwert, wird die Rekursion beendet
  und der aktuelle Knoten wird gezeichnet.
  
 \end_layout
@@ -815,13 +822,18 @@ key "Rusinkiewicz:2001:SQV:364338.364350"
  
 \end_layout
 
+\begin_layout Standard
+Für HD-Displays ist der Algorithmus zu rechenintensiv, weil die Berechnung
+ pro Pixel von der CPU erledigt wird.
+\end_layout
+
 \begin_layout Subsection
 Octree
 \end_layout
 
 \begin_layout Standard
-Octrees sind eine Datenstruktur um dreidimensionale Daten hierarchisch zu
- untergliedern.
+Octrees sind eine Datenstruktur, um dreidimensionale Daten hierarchisch
+ zu untergliedern.
  Sie wurde 1980 von Donal Maegher beschrieben 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -830,14 +842,14 @@ key "meagher1982geometric"
 \end_inset
 
 .
- Octrees sind Analog im dreidimensionalen zu Quadtrees im zweidimensionalen.
+ Octrees sind analog im Dreidimensionalen zu Quadtrees im Zweidimensionalen.
 \end_layout
 
 \begin_layout Standard
-Jeder Knoten repräsentiert einen Würfel welcher alle in den Knoten eingefügten
- 3D Punkte beinhaltet.
+Jeder Knoten repräsentiert einen Würfel, welcher alle in den Knoten eingefügten
+ 3D-Punkte beinhaltet.
  Jeder innere Knoten besitzt immer 8 Kinder.
- Diese unterteilen den Würfel des Knoten in 8 gleichgroße Oktanten usw.
+ Diese unterteilen den Würfel des Knotens in 8 gleich große Oktanten usw.
  (siehe Abb.
  
 \begin_inset CommandInset ref
@@ -885,7 +897,15 @@ name "fig:Octree"
 
 \end_inset
 
-Schematische Darstellung eines Octrees Quelle:?
+Schematische Darstellung eines Octrees (Abb aus.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "OctreeWiki"
+
+\end_inset
+
+)
 \end_layout
 
 \end_inset
@@ -925,27 +945,17 @@ key "Wand:2008:SSP:1363373.1363581"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Die Datenstruktur unterstützt einfügen, löschen und bietet unterschiedlich
+.
+ Die Datenstruktur unterstützt Einfügen, Löschen und bietet unterschiedlich
  detaillierte Darstellungen des Ausgangsmodells.
- 
-\end_layout
-
-\begin_layout Standard
-Im folgendem wird die Datenstruktur vorgestellt.
+ Im Folgenden wird die Datenstruktur vorgestellt.
 \end_layout
 
 \begin_layout Standard
 Der Multiresolution Octree(MRT) kann als eine spezielle Form des Octree
  verstanden werden.
  Wie beim Octree enthalten die äußeren Knoten alle Punkte.
-\end_layout
-
-\begin_layout Standard
-Die Tiefe ergibt sich aus der Eigenschaft das kein Blatt mehr als 
+ Die Tiefe ergibt sich aus der Eigenschaft, dass kein Blatt mehr als 
 \begin_inset Formula $n_{max}$
 \end_inset
 
@@ -954,39 +964,36 @@ Die Tiefe ergibt sich aus der Eigenschaft das kein Blatt mehr als
 \begin_inset Formula $n_{max}$
 \end_inset
 
- nach einer Einfüge Operation überschritten wird das Kind geteilt und die
+ nach einer Einfüge-Operation überschritten, wird das Kind geteilt und die
  bestehenden Punkte werden auf die 8 neuen Kinder verteilt.
 \end_layout
 
 \begin_layout Standard
 Die inneren Knoten sollen eine vereinfachte bzw.
  gröbere Version ihrer Kinder liefern.
-\end_layout
-
-\begin_layout Standard
-Dafür haben diese eine dreidimensionale Rasterung gespeichert.
+ Dafür haben diese eine dreidimensionale Rasterung gespeichert.
  Das Raster unterteilt den Würfel in 
 \begin_inset Formula $k^{3}$
 \end_inset
 
- gleichgroße Rasterzellen (z.B.
+ gleich große Rasterzellen (z.B.
  
 \begin_inset Formula $k\text{=128}$
 \end_inset
 
 ).
- Jeder Rasterzelle hat zusätzlich ein Gewicht und ein Farbe als RGB Wert
+ Jede Rasterzelle hat zusätzlich ein Gewicht und eine Farbe als RGB-Wert
  gespeichert.
  Das Raster selbst ist nicht als einfaches Array gespeichert, sondern als
- Hashtabelle um Speicherplatz zu sparen.
- Auf diese Art werden nur die Zellen gespeichert welche Punkte enthalten.
+ Hashtabelle, um Speicherplatz zu sparen.
+ Auf diese Art werden nur die Zellen gespeichert, welche Punkte enthalten.
  
 \end_layout
 
 \begin_layout Standard
-Zellen mit hohem Gewicht werden beim rendern größer gezeichnet.
- Sobald ein weiterer Punkt in die gleiche Zelle fällt wird das Gewicht inkrement
-iert.
+Zellen mit hohem Gewicht werden beim Rendern größer gezeichnet.
+ Sobald ein weiterer Punkt in die gleiche Zelle fällt, wird das Gewicht
+ inkrementiert.
  
 \end_layout
 
@@ -1010,7 +1017,7 @@ Beim Einfügen können zwei Fälle auftreten.
 \end_layout
 
 \begin_layout Standard
-Nun muss die bestehende Wurzel so lange erweitert werden bis sie den neuen
+Nun muss die bestehende Wurzel so lange erweitert werden, bis sie den neuen
  Punkt mit einschließt.
  
 \end_layout
@@ -1020,7 +1027,7 @@ Die Breite sowie Höhe der Wurzel verdoppelt sich dabei in jedem Schritt.
 \end_layout
 
 \begin_layout Standard
-Sobald der Punkt in der Wurzel liegt tritt der 2.
+Sobald der Punkt in der Wurzel liegt, tritt der 2.
  Fall ein.
 \end_layout
 
@@ -1031,16 +1038,16 @@ Sobald der Punkt in der Wurzel liegt tritt der 2.
 
 \begin_layout Standard
 Zuerst wird der Punkt der Rasterung hinzugefügt.
- Sprich das Gewicht in der entsprechende Rasterzelle wird um 1 erhöht und
+ Sprich, das Gewicht in der entsprechende Rasterzelle wird um 1 erhöht und
  die Farbe des Punkten wird gegebenenfalls gespeichert.
- Dann wird ermittelt in welchem der Kinder der Punkt liegt.
- Nun wird der Vorgang beim Kind wiederholt bis ein äußerer Knoten erreicht
+ Dann wird ermittelt, in welchem der Kinder der Punkt liegt.
+ Nun wird der Vorgang beim Kind wiederholt, bis ein äußerer Knoten erreicht
  wird.
  Falls die maximale Anzahl Punkte 
 \begin_inset Formula $n_{max}$
 \end_inset
 
- überschritten wurde muss der Knoten gespalten werden.
+ überschritten wurde, muss der Knoten gespalten werden.
  Alle bisher gespeicherten Punkte und der neue Punkt werden nun auf die
  neuen Kinder verteilt.
 \end_layout
@@ -1049,7 +1056,7 @@ Zuerst wird der Punkt der Rasterung hinzugefügt.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Box Frameless
@@ -1071,23 +1078,6 @@ status collapsed
 	filename img/img-003.ppm
 	width 70text%
 	scaleBeforeRotation
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Schema der Rasterung.
- Quelle: 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Wand:2008:SSP:1363373.1363581"
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -1123,18 +1113,25 @@ status collapsed
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Schema nach einer Einfüge Operation.
- Quelle:
+Abb.
+ Links: Die Rasterung ist schematisch dargestellt., Rechts: Das Schema nach
+ dem einfügen eines weiteren Punkten (Abb.
+ aus 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Wand:2008:SSP:1363373.1363581"
 
 \end_inset
 
-
+)
 \end_layout
 
 \end_inset
@@ -1145,19 +1142,6 @@ key "Wand:2008:SSP:1363373.1363581"
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Surface Splats
-\end_layout
-
-\begin_layout Standard
--
 \end_layout
 
 \begin_layout Subsection
@@ -1165,7 +1149,7 @@ Moving Least-Squares Surfaces
 \end_layout
 
 \begin_layout Standard
-Das moving least-squares (MLS) Verfahren wurde von Levin 1998 vorgestellt
+Das Moving-Least-Squares (MLS) Verfahren wurde von Levin 1998 vorgestellt
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1174,7 +1158,7 @@ key "levin1998approximation"
 \end_inset
 
 .
- Das Verfahren wurde erstmalig 2001 durch Alexa zur Darstellung von Punktwolken
+ Das Verfahren wurde erstmals 2001 durch Alexa zur Darstellung von Punktwolken
  benutzt 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1183,6 +1167,7 @@ key "Alexa:2001:PSS:601671.601673"
 \end_inset
 
 .
+ Die Arbeit wird im Folgenden kurz vorgestellt.
  Die Grundidee der Arbeit ist, dass die gegebene Menge Punkte 
 \begin_inset Formula $S$
 \end_inset
@@ -1196,7 +1181,7 @@ key "Alexa:2001:PSS:601671.601673"
 \begin_inset Formula $\phi:U\rightarrow\mathbb{R}^{3}$
 \end_inset
 
- vorgestellt welche einen beliebigen Punkt aus der Umgebung 
+ vorgestellt, welche einen beliebigen Punkt aus der Umgebung 
 \begin_inset Formula $U$
 \end_inset
 
@@ -1208,14 +1193,13 @@ key "Alexa:2001:PSS:601671.601673"
 \begin_inset Formula $S_{A}$
 \end_inset
 
-, welche das Objekt lokal beschreibt, projektiert.
- Alle Punkt die auf sich Selbst abbilden ergeben die Abgeschätzte Oberfläche
+, welche das Objekt lokal beschreibt, projiziert.
+ Alle Punkte, die auf sich selbst abbilden, ergeben die abgeschätzte Oberfläche
  
 \begin_inset Formula $S_{A}$
 \end_inset
 
-.
- 
+: 
 \begin_inset Formula 
 \[
 S_{A}:=\{x\in\mathbb{R}^{3}|\phi(x)=x\}
@@ -1238,7 +1222,7 @@ S_{A}:=\{x\in\mathbb{R}^{3}|\phi(x)=x\}
 \begin_inset Formula $S$
 \end_inset
 
- ist, beschreiben.
+ ist, beschreiben:
 \begin_inset Formula 
 \[
 U:=\bigcup_{i}\{x\in\mathbb{R}^{3}|\lVert x-p_{i}\rVert<r_{K}\}
@@ -1262,7 +1246,7 @@ Ermittle eine Referenzebene
 \begin_inset Formula $H=\{x|\langle n,x\rangle-D=0,x\in\mathbb{R}^{3}\},n\in\mathbb{R}^{3},\lVert n\rVert=1$
 \end_inset
 
- durch Minimierung des Ausdrucks
+ durch Minimierung des Ausdrucks,
 \begin_inset Formula 
 \[
 \sum_{i=1}^{N}(\langle n,p_{i}\rangle-D)^{2}\Theta(\lVert p_{i}-q\rVert)
@@ -1287,9 +1271,9 @@ Ermittle eine Referenzebene
 \begin_inset Formula $\Theta$
 \end_inset
 
- handelt es sich um eine monoton, radial, fallende Funktion mit positiven
+ handelt es sich um eine monoton, radial, fallende Funktion mit positivem
  Wertebereich.
- Typischer weise 
+ Typischerweise 
 \begin_inset Formula $\Theta(d)=e^{\frac{d^{2}}{h^{2}}}$
 \end_inset
 
@@ -1298,8 +1282,9 @@ Ermittle eine Referenzebene
 \begin_inset Formula $h$
 \end_inset
 
- ist typischer Weise der durchschnittliche Abstand von benachbarten Punkten
- und hat einen direkten Einfluss wie glatt die Oberfläche erscheint.
+ ist typischer weise der durchschnittliche Abstand von benachbarten Punkten
+ und hat einen direkten Einfluss darauf, wie glatt die Oberfläche erscheint.Typis
+cherweise
 \end_layout
 
 \begin_layout Enumerate
@@ -1307,8 +1292,8 @@ Mit Hilfe von
 \begin_inset Formula $H$
 \end_inset
 
- kann nun ein zwei zweidimensionales Polynom zum Abschätzen der Umgebung
- von 
+ kann nun ein zweidimensionales Polynom zum Abschätzen der Umgebung von
+ 
 \begin_inset Formula $S_{A}$
 \end_inset
 
@@ -1357,7 +1342,7 @@ Die Projektion von
 \begin_inset Formula $r$
 \end_inset
 
- ist schlussendlich wie folgt definiert.
+ ist schlussendlich wie folgt definiert:
 \begin_inset Formula 
 \[
 \phi(r)=q+g(0,0)n
@@ -1369,48 +1354,330 @@ Die Projektion von
 \end_layout
 
 \begin_layout Standard
-Neben dem Darstellen von Punkten kann das Verfahren auch eingesetzt werden
+Neben dem Darstellen von Punkten kann das Verfahren auch eingesetzt werden,
  um weitere Punkte zu generieren.
  
 \end_layout
 
 \begin_layout Standard
-Beim rendern wird eine Datenstruktur wie bei dem QSplat Verfahren verwendet.
- Unterscheiden tun sich die Blätter.
- In denen werden zusätzlich zur Position, Radius, Normalen und Farbe auch
- eine Referenzebene 
+Beim Rendern wird eine Datenstruktur wie bei dem QSplat-Verfahren verwendet.
+ Es unterscheiden sich die Blätter, in denen zusätzlich zur Position, Radius,
+ Normalen und Farbe auch eine Referenzebene 
 \begin_inset Formula $H$
 \end_inset
 
- sowie die Koeffizienten des Polynoms gespeichert.
+ sowie die Koeffizienten des Polynoms gespeichert werden.
 \end_layout
 
 \begin_layout Standard
-Wenn bei dem Render Vorgang ein Blatt erreicht wird und wenn mehr als ein
- Punkt benötigt wird werden mit Hilfe des Polynoms weiter Punkte für die
+Wenn bei dem Rendervorgang ein Blatt erreicht wird und wenn mehr als ein
+ Punkt benötigt wird, werden mit Hilfe des Polynoms weiter Punkte für die
  Umgebung generiert.
 \end_layout
 
-\begin_layout Section
-Minimum bounding box
+\begin_layout Subsection
+Tetraedertree
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Tetraedertree"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-In der Geometrie versteht man unter einer 
-\begin_inset Quotes gld
+Die Arbeit 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "rodriguez2013compressionDiamond"
+
 \end_inset
 
-minimum bounding box
-\begin_inset Quotes grd
-\end_inset
+ stellt eine weiter offline Datenstruktur zum Verwalten von Triangulierten
+ Punkten vor.
+ Die Datenstruktur unterteilt den Raum in einzelne Tetraeder.
+ Durch die Tetraeder können Punkte durch baryzentriche Koordinaten repräsentiert
+ werden.
+\end_layout
 
- ein Rechteck(2d) oder Box(3d) welches eine Menge von Punkten umschließt.
- Dabei ist der die Fläche bzw.
- das Volumen minimal.
+\begin_layout Standard
+In der Vorverarbeitung wird top-down eine Diamanten Hierachie aufgebaut.
+ Wobei jeder Diamant aus einer Menge von Tetraedern besteht.
+ Die Eingabe erfolgt offline als eine Menge von Dreiecken.
+ Zu Beginn wird die Bounding-Box in 6 Tetraeder unterteil wobei die Diagonale
+ von allen Tetraedern geteilt wird.
+ Sobald ein eingefügtes Dreieck zwischen mehrere Tetraeder (Blätter) fällt,
+ wird es an dem Rand des Tetraeder abgeschnitten.
+ Die neuen Dreiecke werden dann in sein entsprechendes Blatt hinzugefügt.
+ Sobald in einem Blatt mehr als eine vorher festgelegte Menge Dreiecke enthalten
+ sind, wird es anhand einer Ebene, welche durch den Mittelpunkt der längsten
+ Kante und seiner gegenüberliegenden Kante verläuft, geteilt.
+ Im Anschluss werden die Dreiecke auf die zwei Kinder verteilt.
+ Der nächste Schritt vereinfacht die Kinder Button-Up.
+ Jeder Diamant wird dabei unabhängig abgearbeitet.
+ Dafür muss beachtet werden das Vertices welche an den Außenwänden liegen
+ nicht Verändert werden dürfen.
+ Bei Vertices an den Innenwänden muss auch der korrespondierende Vertex
+ beim Nachbarn mit einbezogen werden.
+ Ist beides nicht der Fall kann beliebig vereinfacht werden.
+ Da die Diamanten unabhängig vereinfacht werden ist es einfach die Datenstruktur
+ zu parallelisieren.
 \end_layout
 
 \begin_layout Section
-Proxy Design Pattern
+Bestehende Applikationen
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Silke Ende
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Idee, Punktwolken auf mobilen Geräten zu betrachten, ist nicht neu.
+ Daher existieren schon einige Vorschläge zum Lösen des Problems.
+ Im Folgenden werden einige dieser Arbeiten vorgestellt.
+ 
+\end_layout
+
+\begin_layout Subsection
+KiwiViewer
+\end_layout
+
+\begin_layout Standard
+KiwiViewer 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.kiwiviewer.org/
+\end_layout
+
+\end_inset
+
+.
+ Besucht am 19.05.2016
+\end_layout
+
+\end_inset
+
+ ist eine freie quelloffene Applikation zur Erkundung von Punktwolken.
+ Die App ist für Android sowie iOS verfügbar.
+ Multi-Touch Gestensteuerung wird unterstützt.
+ KiwiViewer bedient sich der 
+\begin_inset Quotes eld
+\end_inset
+
+Point Cloud Library
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://pointclouds.org/
+\end_layout
+
+\end_inset
+
+.
+ Besucht am 22.05.2016
+\end_layout
+
+\end_inset
+
+ für seine Kernfunktionen.
+ Die Punktmenge wird entweder über eine SD-Karte, eMail oder URL geladen.
+\end_layout
+
+\begin_layout Paragraph
+
+\emph on
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die App speichert die geladenen Punkte direkt auf dem Tablet.
+ Modelle werden nicht vereinfacht.
+ Daher treffen Modelle mit mehreren Millionen Punkten schnell an die Grenzen
+ der GPU.
+\end_layout
+
+\begin_layout Subsection
+LiMo
+\end_layout
+
+\begin_layout Standard
+Bei LiMo handelt es sich um eine von OGSystems entwickelte Android Applikation
+ zum Betrachten von LiDAR Daten.
+ LiMo wurde für den professionellen Gebrauch entwickelt und ermöglicht das
+ Beobachten von Gebäuden sowie Naturszenen.
+ Daten können auch über einen eigenen Webservice gestreamt werden weshalb
+ die App auch zu Monitoring Zwecken eingesetzt werden kann.
+ Die Applikation unterstützt bis zu 5 Millionen Punkte.
+\end_layout
+
+\begin_layout Paragraph
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die Anwendung ist auf LiDAR Daten beschränkt.
+ LiDAR ist primär zum scannen von großen Objekten, wie Brücken , geeignet
+ und verfügt daher nicht über die Genauigkeit welche Beispielsweise bei
+ einer Skulptur benötigt wird.
+\end_layout
+
+\begin_layout Subsection
+Knn Baum
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Knn-Baum"
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Mehr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine weitere Möglichkeit ist ein Knn-Tree zu verwenden 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "VAST:VAST12:057-064"
+
+\end_inset
+
+.
+ Allerdings mit der Beschränkung, dass die Punktmenge von Anfang an vollständig
+ ist.
+\end_layout
+
+\begin_layout Standard
+Diese Arbeit richtet sich besonders an die Darstellung auf mobilen Geräten.
+ Die Datenstruktur selbst wird auf einem Server gespeichert.
+ Knoten werden auf Anfrage eines Clients übertragen.
+ Übertragende Knoten werden mit Hilfe eines LRU-Cache gespeichert.
+ Die Implementierung erfolgte in C++ und OpenGl ES.
+ Für die Netzwerkkommunikation wir 'http pipelining' sowie eine Wavletkompressio
+n verwendet.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
+ Anfang an fest stehen.
+ Implementierung erfolgte in C++ und für iOS.
+ Die Datenstruktur bietet den Vorteil das sie eine geringe Tiefe besitzt.
+\end_layout
+
+\begin_layout Subsection
+HuMoRS
+\end_layout
+
+\begin_layout Standard
+Das HuMoRs (Huge models Mobile Rendering System) wurde von der Visual Computing
+ Gruppe
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.crs4.it/vic/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ des CRS4 (Center for Advanced Studies, Research and Development in Sardinia)
+ entwickelt.
+ Die Applikation beherscht das Darstellen von Modellen mit mehr als 70 Millionen
+ Punkten bzw.
+ Dreiecken.
+ Die Anwendung läuft auf Android und wurde mit mehreren Geräten sowie Versionen
+ getestet.
+ Besonderes Augenmerk wurde in der Arbeit auf Navigation gelegt.
+ Der Rotationspunkt wird dynamisch berechnet.
+ Des Weiteren  werden zu jedem Modell eine Thumbnails generiert um zu interessan
+ten Abschnitten des Modells springen zu können.
+ Die Anwendung folgt dem gleichen Client-Server Ansatz wie die iOS Applikation
+ aus Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Knn-Baum"
+
+\end_inset
+
+.
+ Als Datenstruktur wird ein Tetraederbaum(siehe 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Knn-Baum"
+
+\end_inset
+
+) verwendet.
+ Diese ermöglicht eine Kompression welche einen Vertex mit Position, Farbe
+ und Normale auf 64Bit komprimiert.
+\end_layout
+
+\begin_layout Standard
+Auf der Client Seite wird einen LRU-Cache verwendet um den Netzwerkverkehr
+ niedrig zu halten.
+ Die Applikation wurde in C++ mit Hilfe des Qt Frameworks programmiert.
+\end_layout
+
+\begin_layout Paragraph
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die Arbeit bietet gute Ansätze besonders was die Bedienung angeht.
+ Allerdings ist die Datenstruktur offline weshalb keine Punkt nach dem erstellen
+ mehr hinzugefügt werden können.
+\end_layout
+
+\begin_layout Section
+Proxy Entwurfsmuster
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Proxy-Design-Pattern"
@@ -1455,8 +1722,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/Proxy_pattern_diagram.svg
-	width 50text%
+	filename uml/proxy.svg
+	height 4.5cm
 
 \end_inset
 
@@ -1464,7 +1731,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-UML Proxy Pattern
+Das Diagramm zeigt wie das Reale Subjekt durch ein Proxy Objekt Repräsentiert
+ wird, auf das der Client zugreift.() 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:UML-Proxy-Pattern"
@@ -1485,7 +1753,7 @@ name "fig:UML-Proxy-Pattern"
 \end_layout
 
 \begin_layout Section
-Singleton Pattern
+Singleton Entwurfsmuster
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Singleton-Pattern"
@@ -1496,7 +1764,48 @@ name "sec:Singleton-Pattern"
 \end_layout
 
 \begin_layout Standard
--
+Man spricht von einem Singleton wenn von einer Klasse nur eine eine einzige
+ oder beschränkte Anzahl Instanzen erlaubt ist.
+ Typisch Vertreter sind Objekte die einen Zustand oder globale Variablen
+ speichern wie das Android Kontext Objekt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename uml/singleton.svg
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Das Singleton Objekt welches die einzige Instanz beherbergt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1556,11 +1865,11 @@ Zustandslosigkeit
 \end_layout
 
 \begin_layout Standard
-Jede Anfrage vom Clienten muss alle Informationen enthalten welche Notwendig
+Jede Anfrage vom Client muss alle Informationen enthalten, welche Notwendig
  sind um die Anfrage zu verarbeiten.
  Des weiteren darf kein gespeicherter Kontext auf dem Server vorliegen auf
  welchen Bezug genommen wird.
- Alle Zustände werden auf dem Clienten gespeichert.
+ Alle Zustände werden auf dem Client gespeichert.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1667,147 +1976,6 @@ Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
 \end_layout
 
 \begin_layout Section
-KiwiViewer
-\end_layout
-
-\begin_layout Standard
-KiwiViewer 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://www.kiwiviewer.org/
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- ist eine freie quelloffene Applikation zur Erkundung von Punktwolken.
- Die App ist für Android sowie iOS verfügbar.
- Multi-Touch Gestensteuerung wird unterstützt.
- KiwiViewer bedient sich der 
-\begin_inset Quotes eld
-\end_inset
-
-Point Cloud Library
-\begin_inset Quotes erd
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://pointclouds.org/
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- für seine Kernfunktionen.
- Die Punktmenge wird entweder über eine SD-Karte, eMail oder URL geladen.
-\end_layout
-
-\begin_layout Paragraph
-
-\emph on
-Abgrenzung
-\end_layout
-
-\begin_layout Standard
-Die App speichert die geladenen Punkte direkt auf dem Tablet.
- Modelle werden nicht vereinfacht.
- Daher treffen Modelle mit mehreren Millionen Punkten schnell an die Grenzen
- der GPU.
-\end_layout
-
-\begin_layout Section
-LiMo
-\end_layout
-
-\begin_layout Standard
-Bei LiMo handelt es sich um eine von OGSystems entwickelte Android Applikation
- zum Betrachten von LiDAR Daten.
- LiMo wurde für den professionellen Gebrauch entwickelt und ermöglicht das
- Beobachten von Gebäuden sowie Naturszenen.
- Daten können auch über einen eigen Webservice gestreamt werdenm weshalb
- die App auch zu Monitoring Zwecken eingesetzt werden kann.
-\end_layout
-
-\begin_layout Standard
-Die Applikation unterstützt bis zu 5 Millionen Punkte.
-\end_layout
-
-\begin_layout Paragraph
-Abgrenzung
-\end_layout
-
-\begin_layout Standard
-Die App ist auf LiDAR Daten beschränkt.
- LiDAR ist primär zum scannen von großen Objekten, wie Brücken , geeignet
- und verfügt daher nicht über die Genauigkeit welche Beispielsweise bei
- einer Skulptur benötigt wird.
-\end_layout
-
-\begin_layout Section
-QSplat Verfahren
-\end_layout
-
-\begin_layout Standard
-Erste Vorschläge zur Darstellung von sehr großer Punktmengen wurden durch
- das QSplat 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rusinkiewicz:2000:QMP:344779.344940"
-
-\end_inset
-
- Verfahren gemacht.
- Die Punkteenge wird durch eine 'Multiresolution' Hierarchie auf Basis von
- 'bounding spheres' modelliert.
- Abhängig von der Kameraposition wird die Struktur bis zu einer gewissen
- Tiefe (Detailstufe) durchlaufen.
- Das Verfahren kann modifiziert auch zum Streaming von Punktwolken genutzt
- werden 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rusinkiewicz:2001:SQV:364338.364350"
-
-\end_inset
-
- .
- 
-\end_layout
-
-\begin_layout Paragraph
-Abgrenzung
-\end_layout
-
-\begin_layout Standard
-Für HD Displays ist der Algorithmus zu rechenintensiv weil die Berechnung
- pro Display Punkt von der CPU erledigt wird.
- 
-\end_layout
-
-\begin_layout Section
 Multiresolution Octree
 \end_layout
 
@@ -1855,50 +2023,8 @@ Die Arbeit beschreibt ein Verfahren für Desktop Systeme.
  auf ein mobiles Gerät übertragen werden.
 \end_layout
 
-\begin_layout Section
-Knn-Tree iOS
-\end_layout
-
-\begin_layout Standard
-Eine weitere Möglichkeit ist ein Knn-Tree zu verwenden 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "VAST:VAST12:057-064"
-
-\end_inset
-
-.
- Allerdings mit der Beschränkung, dass die Punktmenge von Anfang an vollständig
- ist.
-\end_layout
-
-\begin_layout Standard
-Diese Arbeit richtet sich besonders an die Darstellung auf mobilen Geräten.
- Die Datenstruktur selbst wird auf einem Server gespeichert.
- Knoten werden auf Anfrage eines Clients übertragen.
-\end_layout
-
-\begin_layout Standard
-Übertragende Knoten werden mit Hilfe eines LRU-Cache gespeichert.
- Die Implementierung erfolgte in C++ und OpenGl ES.
- Für die Netzwerkkommunikation wir 'http pipelining' sowie eine Wavletkompressio
-n verwendet.
- 
-\end_layout
-
-\begin_layout Paragraph
-Abgrenzung
-\end_layout
-
-\begin_layout Standard
-Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
- Anfang an fest stehen.
- Implementierung erfolgte in C++ und für iOS.
- Die Datenstruktur bietet den Vorteil das sie eine geringe Tiefe besitzt.
-\end_layout
-
 \begin_layout Chapter
-Frameworks, Programmiersprachen und Laufzeitumgebung
+Frameworks und Architektur
 \end_layout
 
 \begin_layout Standard
@@ -1907,7 +2033,7 @@ Im folgendem werden die Technologien, Begriffe und Frameworks vorgestellt
 \end_layout
 
 \begin_layout Section
-Java
+Java und Android
 \end_layout
 
 \begin_layout Standard
@@ -1935,10 +2061,7 @@ Just in Time
  Kompilierung.
  Das bedeutet, dass eine Übersetzung in Maschinencode während der Laufzeit
  vorgenommen wird.
-\end_layout
-
-\begin_layout Standard
-Des weiteren kümmert die Laufzeitumgebung von Java um das Speicher Management.
+ Des weiteren kümmert die Laufzeitumgebung von Java um das Speicher Management.
  Nach dem Tiobe Index zu urteilen ist Java eine der populärsten Programmiersprac
 hen der Welt
 \begin_inset Foot
@@ -1946,7 +2069,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1955,16 +2078,13 @@ http://www.tiobe.com/tiobe_index?page=Java
 
 \end_inset
 
-
+.
+ Besucht am 17.05.2016
 \end_layout
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Section
-Android
 \end_layout
 
 \begin_layout Standard
@@ -1974,7 +2094,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1983,7 +2103,8 @@ https://www.android.com/
 
 \end_inset
 
-
+.
+ Besucht am 19.05.2016
 \end_layout
 
 \end_inset
@@ -2005,7 +2126,8 @@ http://www.openhandsetalliance.com/press_110507.html
 
 \end_inset
 
-
+.
+ Besucht am 23.05.2016
 \end_layout
 
 \end_inset
@@ -2035,7 +2157,8 @@ http://www.idc.com/prodserv/smartphone-os-market-share.jsp
 
 \end_inset
 
-
+.
+ Besucht am 21.05.2016
 \end_layout
 
 \end_inset
@@ -2056,7 +2179,8 @@ https://en.wikipedia.org/wiki/Usage_share_of_operating_systems
 
 \end_inset
 
-
+.
+ Besucht am 21.05.2016
 \end_layout
 
 \end_inset
@@ -2072,7 +2196,7 @@ Java ist die bevorzugte wenn auch nicht einzig mögliche Programmiersprache
  Bis Android 4.4 kam die Virtuelle Maschine Dalivk zum Einstatz.
  Diese wurde vollständig in Android 5.0 ersetzt durch Android Runtime(ART)
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -2085,7 +2209,8 @@ http://developer.android.com/about/versions/android-5.0-changes.html
 
 \end_inset
 
-
+.
+ Besucht am 23.05.2016
 \end_layout
 
 \end_inset
@@ -2164,8 +2289,8 @@ message Person {
 \end_layout
 
 \begin_layout Standard
-Das Schema definiert Namespaces über diese dann die eigentlich Daten ausgelesen
- werden können.
+Das Schema definiert eine Namespaces, über diese dann die eigentlich Daten
+ ausgelesen werden können.
  In dem Beispiel hat der Datentyp Person drei Felder.
  Jedes dieser Felder ist getypt und mit einem Schlüsselwort versehen welches
  angibt ob das Feld Pflicht ist.
@@ -2194,7 +2319,7 @@ Ein weiter Vorteil ist der merklich verringerte Overhead im Vergleich zu
  Nachteilig ist das die übertragenden Daten nicht ohne weiteres für einen
  Menschen lesbar sind.
  Protocol Buffers werden intensiv intern bei Google selbst eingesetzt.
- Ein weiter prominenter Nutzer ist Blizzard beim 
+ Ein weiterer prominenter Nutzer ist Blizzard beim 
 \begin_inset Quotes gld
 \end_inset
 
@@ -2212,7 +2337,8 @@ status open
 
 \begin_layout Plain Layout
 
-https://news.ycombinator.com/item?id=11444846
+https://news.ycombinator.com/item?id=11444846 .
+ Besucht am 23.05.2016
 \end_layout
 
 \end_inset
@@ -2226,22 +2352,18 @@ https://news.ycombinator.com/item?id=11444846
 \end_layout
 
 \begin_layout Section
-Open Graphics Library for Embedded Systems
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Quelle
-\end_layout
-
-\end_inset
-
-
+Open-Graphics-Library for Embedded-Systems
 \end_layout
 
 \begin_layout Standard
-Open Graphics Library for Embedded Systems (OpenGL ES) bietet ein offenes
- Interface für Grafikhardware.
+Open Graphics Library for Embedded Systems (OpenGL ES) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "openGlES"
+
+\end_inset
+
+ bietet ein offenes Interface für Grafikhardware.
  Dieses besteht aus einer Sammlung von Prozeduren und Funktion die es dem
  Programmierer ermöglichen Shaderprgramme, Objekte und Operation zu spezifiziere
 n um dreidimensionale Farbbilder zu produzieren.
@@ -2256,16 +2378,16 @@ Vertex
 
 \begin_layout Standard
 Unter einem Vertex(plural die Vertices) versteht man eine Datenstruktur
- welche einen zwei- oder dreidimensinalen Punkt im Raum beschreibt.
+ welche einen zwei- oder dreidimensionalen Punkt im Raum beschreibt.
 \end_layout
 
 \begin_layout Subsection
-Shader
+Shader 
 \end_layout
 
 \begin_layout Standard
 Bei Shadern handelt es sich um vom Nutzer geschriebene Programme welche
- an unterschiedlichen Station der Rendering Pipeline aufgerufen werden.
+ an unterschiedlichen Station der Rendering-Pipeline aufgerufen werden.
  Shader werden in der C nahen OpenGL Shading Language geschrieben.
 \end_layout
 
@@ -2275,70 +2397,57 @@ Pipeline
 
 \begin_layout Standard
 Der Vorgang des Renderings lässt sich vereinfacht als Datenverarbeitung
- von nacheinander folgenden Stufen darstellen.
-\end_layout
+ von nacheinander folgenden Stufen darstellen 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "OpenGlPipeline"
 
-\begin_layout Paragraph
-Vertex Spezifikation
+\end_inset
+
+.
+ Die Stufen werden im folgendem kurz vorgestellt.
 \end_layout
 
 \begin_layout Standard
-In diesem Schritt werden wird ein Stream von Vertices für OpenGL vorbereitet.
- Dazu muss festgelegt werden, um was für ein Grundobjekt(Primitive) die
- Daten darstellen.
+Denn Anfang macht die Vertex Spezifikation.
+ In diesem Schritt wird ein Stream von Vertices für OpenGL vorbereitet.
+ Dazu muss festgelegt werden, was für ein Grundobjekt(Primitive) die Daten
+ darstellen.
  Beispiele sind Punkte, Linien oder Dreiecke.
-\end_layout
-
-\begin_layout Paragraph
-Vertex Shader
-\end_layout
-
-\begin_layout Standard
-Dieser Shader erhält einzelne Elemente aus dem Vertexstream und gibt dann
- ein einzelnes Vertex aus.
- Der Shader wird vom Benutzer Programmiert.
+ Darauf folgt der Vertex Shader.
+ Dieser erhält einzelne Elemente aus dem Vertexstream und gibt nach dem
+ Ausführen des Shader ein einzelnes Vertex aus.
+ Der Shader wird vom Benutzer programmiert.
  Typischer Weise wird hier die Projektionsmatrix auf die Punkte angewendet.
 \end_layout
 
-\begin_layout Paragraph
-Tessellation
-\end_layout
-
 \begin_layout Standard
-In dieser optionalen Stufe werden Patch(ein Primitve für Tesselation) in
+Als nächster Schritt kann eine Tessellation angewendet werden.
+ In dieser optionalen Stufe werden Patch(ein Primitve für Tesselation) in
  mehrere kleinere Primitives zerlegt.
 \end_layout
 
-\begin_layout Paragraph
-Geometry Shader
-\end_layout
-
 \begin_layout Standard
-Der optionale Geometry Shader erhält als Eingabe eine Primitive und gibt
- keine oder mehr Primitives zurück.
+Nun folgt der Geometry Shader.
+ Dieser optionale Shader erhält als Eingabe einen Primitive und gibt keine
+ oder mehre Primitives zurück.
  
 \end_layout
 
-\begin_layout Paragraph
-Vertex Post-Processing
-\end_layout
-
 \begin_layout Standard
-In diesem Schritt werden Teile außerhalb des Kamerafensters verworfen, dieser
- Prozess nennt sich Clipping.
+Im Anschluss wird das Vertex Post-Processing ausgeführt.
+ In diesem Schritt werden Teile außerhalb des Kamerafensters verworfen,
+ dieser Prozess nennt sich Clipping.
  In dieser Stufe werden werden die dreidimensionalen Koordinaten zu zweidimensio
 nalen Kamerakoordinaten umgerechnet.
 \end_layout
 
-\begin_layout Paragraph
-Primitive Assembly
-\end_layout
-
 \begin_layout Standard
-Diese Stufe erstellt teilt Primitves zu einer Sammlung von finalen kleinsten
- Primitves.
- Zum Bespiel wird aus einer Liste von Vertices vom Primitive Typ GL_LINE_STRIP
- mit 8 Mitglieder 7 neue Primitives vom Typ 
+In der nächsten Stufe folgt das Primitve Assembly.
+ Hier werden die erstellten Primitives zu einer Sammlung von finalen kleineren
+ Primitives zerteilt.
+ Zum Beispiel werden aus einer Liste von Vertices vom Primitive Typ GL_LINE_STRI
+P mit 8 Mitglieder 7 neue Primitives vom Typ 
 \begin_inset Quotes gld
 \end_inset
 
@@ -2349,34 +2458,15 @@ line base
 .
 \end_layout
 
-\begin_layout Paragraph
-Rasterization
-\end_layout
-
 \begin_layout Standard
-In diesem Schritt werden die Primitives in diskrete Elemente unterteilt(geraster
-t).
- Diese nennt man Fragmente.
-\end_layout
-
-\begin_layout Paragraph
-Fragment Shader
-\end_layout
-
-\begin_layout Standard
-Die Fragmente aus der Raster bildet den Input dieses Shaders.
- Die Ausgabe ist ein Farb-, Tiefen und sogenannter Stencilwert.
-\end_layout
-
-\begin_layout Paragraph
-Per-Sample Operations
-\end_layout
-
-\begin_layout Standard
-Anschließend kann für den Output vom Fragment Shader eine Anzahl von Test
- ausführen.
- Beispielsweise der Tiefen Test(Depth Test) um zu vermeiden das Objekte
- welche verdeckt sind gezeichnet werden.
+Im Anschluss werden die Primitives in diskrete Elemente unterteilt(gerastert).
+ Diese Elemente nennt man Fragmente und werden an den Fragment Shader weitergere
+icht.
+ Die Ausgabe des Shaders ist ein Farb-, Tiefen und sogenannter Stencilwert.
+ Im letzten Schritt werden für die Ausgabewerte des Shader eine handvoll
+ Tests durchgeführt.
+ Beispielsweise der Tiefen Test(Depth Test) um zu vermeiden das verdeckte
+ Objekte gezeichnet werden.
  Andere Test sind Scissor Test, Stencil Test und der Pixel Ownership Test.
 \end_layout
 
@@ -2534,7 +2624,7 @@ https://android.googlesource.com/platform/frameworks/volley
 \end_layout
 
 \begin_layout Chapter
-Gewählter Lösungsansatz
+dotViewer
 \end_layout
 
 \begin_layout Standard
@@ -2582,16 +2672,9 @@ Least recently used
 \end_inset
 
  Prinzip gespeichert.
- Zum Rendern werden die Punkte als 
-\begin_inset Quotes gld
-\end_inset
-
-vertex buffer object
-\begin_inset Quotes grd
-\end_inset
-
- in den Speicher der GPU geschrieben und anschließend gezeichnet.
- Ein Vorteil der Client Sever Architektur ist das mehrere
+ Zum Rendern werden die Punkte als Vertex-Buffer-Object in den Speicher
+ der GPU geschrieben und anschließend gezeichnet.
+ Ein Vorteil der Client der Architektur ist das für mehrere Klienten 
 \end_layout
 
 \begin_layout Standard
@@ -2601,10 +2684,14 @@ Als Programmiersprache wurde Java gewählt aufgrund des guten Kompromisses
 \end_layout
 
 \begin_layout Standard
+Als Entwicklungsumgebung wurde für den Client Android-Studio 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2667,7 +2754,7 @@ Zur Interaktion stellt der Server ein RESTful Interface auf Basis des HTTP
  Protokolls bereit.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Warum nicht normaler Socketverkehr
@@ -2702,7 +2789,8 @@ MultiResolutionTree
 
  dient als Schnittstelle für alle äußeren Komponenten.
  Dadurch ist eine sinnvolle Kapselung gewährleistet.
- Sie beherbergt einen Zeiger auf den Wurzelknoten des MRT.
+ Sie beherbergt einen Zeiger auAllerdings kann keine dieses App alle Anforderung
+enf den Wurzelknoten des MRT.
  Des weiteren legt sie einen Index von den Knoten an um schnellen Zugriff
  zu ermöglichen.
  Zusätzlich existiert einer Factory Methode zum erstellen von Google Protocol
@@ -3312,10 +3400,6 @@ UML Diagram
 Netzwerkverkehr
 \end_layout
 
-\begin_layout Subsubsection
-DataAcessLayer Klasse
-\end_layout
-
 \begin_layout Standard
 Bei der DataAcessLayer Klasse handelt es sich um ein Singleton(siehe Kapitel
  
@@ -3547,14 +3631,6 @@ drawScene()
 \begin_layout Standard
 Beim Aufruf der Methode wird die draw() Methode von jedem Element der Liste
  ausgelöst.
-\end_layout
-
-\begin_layout Subsubsection
-CameraGL Klasse
-\end_layout
-
-\begin_layout Standard
--
 \end_layout
 
 \begin_layout Subsubsection
@@ -3792,7 +3868,7 @@ Zum zeichnen des Models wird die draw Methode aller aktiven Knoten im Cache
 \end_layout
 
 \begin_layout Subsubsection
-Drawable-Cache Klasse
+DrawableCache Klasse
 \end_layout
 
 \begin_layout Standard
@@ -3813,7 +3889,7 @@ Der Cache besitzt eine Prioritätswarteschlange von Knoten nach dem zuletzt
  Die Positions-, Farb- und Gewichtsdaten werden in einem einzigen Buffer
  pro Knoten ineinander abgespeichert um die Performance zu verbessern 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -3868,11 +3944,46 @@ status open
 \end_layout
 
 \begin_layout Subsection
-User Interface
+Benutzer Interface
+\end_layout
+
+\begin_layout Standard
+Die Applikation unterstützt 3 Gesten zum erkunden der Modelle.
+ Einfaches Scrollen wird das Rotation interpretiert.
+ Zwei Finger Scrollen zum Zoomen und das zusammen ziehen von zwei Fingern(Pinch)
+ als Skalieren.
+ 
+\end_layout
+
+\begin_layout Standard
+Für das verarbeiten des Scrollens mit einem oder zwei Fingern, werden Benutzer
+ Eingaben an GestureListener weitergeleitet.
+ Dieser Klasse implementiert das von Android mitgelieferten GestureDetector.OnGes
+tureListener Interface.
+ Bei Pinch Eingaben vom Benutzer kommt die ScaleListener Klasse zum Einsatz.
+ Diese implementiert das vorgegebene ScaleGestureDetector.OnScaleGestureListener
+ Interface.
+ Die Listener Klassen besitzen Zeiger auf das Scene Singleton.
+ Die Call-Back Methoden der Listener Klasse rufen die die entsprechenden
+ Transformationsmethoden auf(z.B rotateScene())
+\end_layout
+
+\begin_layout Standard
+Des weiteren bietet die Applikation in seinem Aktionbar(schwarzer Menübalken
+ am oberen Bildschirm) einen Zugang zum Settings Menü.
+ Dort kann die IP des Servers, sowie ein Schwellenwert für die Detailstufe
+ eingetragen werden.
 \end_layout
 
 \begin_layout Chapter
-Experimente und Auswertung
+Experimente und Auswertungen
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Experimente-und-Auswertungen"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3883,16 +3994,81 @@ Experimente und Auswertung
 Zusammenfassung und Ausblick
 \end_layout
 
-\begin_layout Standard
--
+\begin_layout Section
+Zusammenfassung
 \end_layout
 
 \begin_layout Standard
-\begin_inset FloatList figure
+In der vorliegenden Bachelorarbeit wurde eine Implementierung zum Betrachten
+ von großer Punktemenge auf Android Geräten vorgestellt.
+ 
+\end_layout
+
+\begin_layout Standard
+Im Kapitel Grundlagen und verwandte Arbeiten wurde eine Einführung in die
+ 3D- Rekonstruktion gegeben.
+ Des Weiteren wurden unterschiedliche Repräsentationen von Punktwolken disuktier
+t und auf ihre Eignung für das Ziel geprüft .
+ Im folgenden wurde bestehende Lösungen untersucht.
+ Dabei wurde geprüft ob alle Anforderungen erfüllt sind und ob die Applikation
+ frei zugänglich ist.
+ Aktuelle Arbeiten konnten große Punktmengen mit mehr als 100 Millionen
+ Punkten bewältigen.
+ Allerdings wurden offline Datenstrukturen für die Punktverwaltung verwendet.
+ Daher musst die Punktwolken beim erstellen schon vollständig vorliegen.
+\end_layout
+
+\begin_layout Standard
+Im Kapitel Frameworks und Architektur wurden die für das Projekt relevanten
+ Frameworks, Programmiersprache und Laufzeitumgebung vorgestellt.
+\end_layout
+
+\begin_layout Standard
+Im folgendem Kapitel wird die Implementierung des dotViewers vorgestellt.
+ Die in Kapitel 2 vorgestellte MRT Datenstruktur kommt über eine RESTful
+ API zum Einsatz.
+\end_layout
+
+\begin_layout Standard
+Mit Hilfe des Proxy Patterns wird der Klient über die Datenstruktur in Kenntnis
+ gesetzt.
+ Die Netzwerk Anfragen zwischen Client und Server sind asynchron und nutzen
+ die Google Protocol Buffer Plattform mit einer Kompression durch DEFLATE.
+\end_layout
+
+\begin_layout Standard
+In Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Experimente-und-Auswertungen"
 
 \end_inset
 
+ ...
+\end_layout
 
+\begin_layout Section
+Ausblick
+\end_layout
+
+\begin_layout Standard
+Viele Bereiche der Anwendung sind einfach gehalten um den angepeilten Zeitrahmen
+ einzuhalten.
+ Der Server ist nicht an eine Datenbank gekoppelt um Daten auf die Festplatte
+ auszulagern.
+ Eine weiteres Problem ist die Kompression vor dem Netzwerkverkehr.
+ Für die Rasterung lässt sich sicherlich eine Domain angepasstere Kompression
+ finden.
+ Bei der Benutzer Führung sind intelligentere Mechanismen wie sie bei HuMors
+ vorhanden sind eine sinnvolle Ergänzung.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Applikation soll nach Abgabe dieser Arbeit frei zugänglich durch die
+ Entwicklungsplattform github sein.
+ Aufgrund seiner modularen Architektur sind weiter Komponenten unkompliziert
+ nachreichbar.
 \end_layout
 
 \begin_layout Standard
