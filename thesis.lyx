@@ -587,7 +587,7 @@ http://ccwu.me/
 
 \end_inset
 
-, welcher mittlerweile bei google beschäftigt ist.
+, welcher mittlerweile bei Google beschäftigt ist.
  VisualSFM wird von dem Archaeocopter Projekt zur 3D-Rekonstruktion verwendet.
 \end_layout
 
@@ -1451,7 +1451,7 @@ KiwiViewer
 \end_layout
 
 \begin_layout Standard
-KiwiViewer 
+KiwiViewer
 \begin_inset Foot
 status collapsed
 
@@ -1475,15 +1475,7 @@ http://www.kiwiviewer.org/
  ist eine freie quelloffene Applikation zur Erkundung von Punktwolken.
  Die App ist für Android sowie iOS verfügbar.
  Multi-Touch Gestensteuerung wird unterstützt.
- KiwiViewer bedient sich der 
-\begin_inset Quotes eld
-\end_inset
-
-Point Cloud Library
-\begin_inset Quotes erd
-\end_inset
-
-
+ KiwiViewer bedient sich der Point-Cloud-Library
 \begin_inset Foot
 status collapsed
 
@@ -1505,13 +1497,13 @@ http://pointclouds.org/
 \end_inset
 
  für seine Kernfunktionen.
- Die Punktmenge wird entweder über eine SD-Karte, eMail oder URL geladen.
+ Die Punktmenge wird entweder über eine SD-Karte, E-Mail oder URL geladen.
 \end_layout
 
 \begin_layout Paragraph
 
 \emph on
-Abgrenzung
+Abgrenzung 
 \end_layout
 
 \begin_layout Standard
@@ -1530,7 +1522,7 @@ Bei LiMo handelt es sich um eine von OGSystems entwickelte Android Applikation
  zum Betrachten von LiDAR Daten.
  LiMo wurde für den professionellen Gebrauch entwickelt und ermöglicht das
  Beobachten von Gebäuden sowie Naturszenen.
- Daten können auch über einen eigenen Webservice gestreamt werden weshalb
+ Daten können auch über einen eigenen Webservice gestreamt werden, weshalb
  die App auch zu Monitoring Zwecken eingesetzt werden kann.
  Die Applikation unterstützt bis zu 5 Millionen Punkte.
 \end_layout
@@ -1541,8 +1533,8 @@ Abgrenzung
 
 \begin_layout Standard
 Die Anwendung ist auf LiDAR Daten beschränkt.
- LiDAR ist primär zum scannen von großen Objekten, wie Brücken , geeignet
- und verfügt daher nicht über die Genauigkeit welche Beispielsweise bei
+ LiDAR ist primär zum Scannen von großen Objekten, wie Brücken geeignet
+ und verfügt daher nicht über die Genauigkeit, welche beispielsweise bei
  einer Skulptur benötigt wird.
 \end_layout
 
@@ -1586,7 +1578,7 @@ Diese Arbeit richtet sich besonders an die Darstellung auf mobilen Geräten.
  Knoten werden auf Anfrage eines Clients übertragen.
  Übertragende Knoten werden mit Hilfe eines LRU-Cache gespeichert.
  Die Implementierung erfolgte in C++ und OpenGl ES.
- Für die Netzwerkkommunikation wir 'http pipelining' sowie eine Wavletkompressio
+ Für die Netzwerkkommunikation wird Http- Pipelining sowie eine Wavletkompressio
 n verwendet.
  
 \end_layout
@@ -1597,9 +1589,9 @@ Abgrenzung
 
 \begin_layout Standard
 Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
- Anfang an fest stehen.
+ Anfang an feststehen.
  Implementierung erfolgte in C++ und für iOS.
- Die Datenstruktur bietet den Vorteil das sie eine geringe Tiefe besitzt.
+ Die Datenstruktur bietet den Vorteil, dass sie eine geringe Tiefe besitzt.
 \end_layout
 
 \begin_layout Subsection
@@ -1630,15 +1622,15 @@ http://www.crs4.it/vic/
 
  des CRS4 (Center for Advanced Studies, Research and Development in Sardinia)
  entwickelt.
- Die Applikation beherscht das Darstellen von Modellen mit mehr als 70 Millionen
- Punkten bzw.
+ Die Applikation beherrscht das Darstellen von Modellen mit mehr als 70
+ Millionen Punkten bzw.
  Dreiecken.
  Die Anwendung läuft auf Android und wurde mit mehreren Geräten sowie Versionen
  getestet.
  Besonderes Augenmerk wurde in der Arbeit auf Navigation gelegt.
  Der Rotationspunkt wird dynamisch berechnet.
- Des Weiteren  werden zu jedem Modell eine Thumbnails generiert um zu interessan
-ten Abschnitten des Modells springen zu können.
+ Des Weiteren  werden zu jedem Modell eine Thumbnails generiert, um zu interessa
+nten Abschnitten des Modells springen zu können.
  Die Anwendung folgt dem gleichen Client-Server Ansatz wie die iOS Applikation
  aus Kapitel 
 \begin_inset CommandInset ref
@@ -1648,7 +1640,7 @@ reference "sub:Knn-Baum"
 \end_inset
 
 .
- Als Datenstruktur wird ein Tetraederbaum(siehe 
+ Als Datenstruktur wird ein Tetraederbaum (siehe 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Knn-Baum"
@@ -1656,14 +1648,24 @@ reference "sub:Knn-Baum"
 \end_inset
 
 ) verwendet.
- Diese ermöglicht eine Kompression welche einen Vertex mit Position, Farbe
+ Diese ermöglicht eine Kompression, welche einen Vertex mit Position, Farbe
  und Normale auf 64Bit komprimiert.
 \end_layout
 
 \begin_layout Standard
-Auf der Client Seite wird einen LRU-Cache verwendet um den Netzwerkverkehr
+Auf der Client Seite wird ein LRU-Cache verwendet, um den Netzwerkverkehr
  niedrig zu halten.
- Die Applikation wurde in C++ mit Hilfe des Qt Frameworks programmiert.
+ Die Applikation wurde in C++ mit Hilfe des Qt-Frameworks 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+verweis
+\end_layout
+
+\end_inset
+
+programmiert.
 \end_layout
 
 \begin_layout Paragraph
@@ -1671,9 +1673,9 @@ Abgrenzung
 \end_layout
 
 \begin_layout Standard
-Die Arbeit bietet gute Ansätze besonders was die Bedienung angeht.
- Allerdings ist die Datenstruktur offline weshalb keine Punkt nach dem erstellen
- mehr hinzugefügt werden können.
+Die Arbeit bietet gute Ansätze, besonders in Bezug auf die Bedienung.
+ Allerdings ist die Datenstruktur offline, weshalb keine Punkte nach dem
+ Erstellen mehr hinzugefügt werden können.
 \end_layout
 
 \begin_layout Section
@@ -1688,7 +1690,7 @@ name "sub:Proxy-Design-Pattern"
 \end_layout
 
 \begin_layout Standard
-Bei einem Proxy(siehe Abb.
+Bei einem Proxy (siehe Abb.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1703,14 +1705,14 @@ key "Gamma:1995:DPE:186897"
 
 \end_inset
 
- handelt es sich um ein Objekt welches als eine Schnittstelle zu etwas anderem
+ handelt es sich um ein Objekt, welches als Schnittstelle zu etwas Anderem
  agiert.
- Zum Beispiel mit einer größeren Datei oder einer anderen teuren Ressource.
+ Typische Beispiele wären eine große Datei oder eine andere teure Ressource.
 \end_layout
 
 \begin_layout Standard
-Ein klassisches Beispiel sind Platzhalter für Bilder, welche noch nicht
- fertig geladen wurden, auf Webseiten.
+Ein klassisches Beispiel sind Platzhalter für noch nicht fertig geladen
+ Bilder auf Webseiten.
 \end_layout
 
 \begin_layout Standard
@@ -1731,7 +1733,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Das Diagramm zeigt wie das Reale Subjekt durch ein Proxy Objekt Repräsentiert
+Das Diagramm zeigt wie das reale Subjekt durch ein Proxy Objekt Repräsentiert
  wird, auf das der Client zugreift.() 
 \begin_inset CommandInset label
 LatexCommand label
@@ -1764,9 +1766,9 @@ name "sec:Singleton-Pattern"
 \end_layout
 
 \begin_layout Standard
-Man spricht von einem Singleton wenn von einer Klasse nur eine eine einzige
- oder beschränkte Anzahl Instanzen erlaubt ist.
- Typisch Vertreter sind Objekte die einen Zustand oder globale Variablen
+Man spricht von einem Singleton, wenn von einer Klasse nur eine einzige
+ oder beschränkte Anzahl Instanzen erlaubt sind.
+ Typische Vertreter sind Objekte, die einen Zustand oder globale Variablen
  speichern wie das Android Kontext Objekt.
 \end_layout
 
@@ -1817,11 +1819,21 @@ name "sub:Representational-state-transfer"
 \end_inset
 
 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Zitierstil prüfen
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Representational state transfer(REST) ist ein Programmierparadigma für Service
- orientierte verteilte Systeme.
+Representational state transfer (REST) ist ein Programmierparadigma für
+ serviceorientierte verteilte Systeme.
  REST wurde im Jahr 2000 von Roy Fielding in seiner Doktorarbeit 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1830,17 +1842,17 @@ key "Fielding:2000:ASD:932295"
 \end_inset
 
  wie folgt beschrieben.
- REST definiert sich über eine Menge von Beschränkungen bei der Kommunikation
- von Komponenten.
- Das prominentest Beispiel ist das World Wide Web.
 \end_layout
 
 \begin_layout Standard
-Die Beschränkungen werden im folgendem kurz vorgestellt.
+REST definiert sich über eine Menge von Beschränkungen bei der Kommunikation
+ von Komponenten.
+ Das prominenteste Beispiel ist das World Wide Web.
+ Die Beschränkungen werden im Folgenden kurz vorgestellt.
 \end_layout
 
 \begin_layout Subsubsection*
-Client-Server Model
+Client-Server Modell
 \end_layout
 
 \begin_layout Standard
@@ -1853,10 +1865,10 @@ key "Andrews:1991:PPI:103162.103164"
 
  ist der Client ein auslösender Prozess und der Server ein reagierender
  Prozess.
- Clienten stellen Anfragen auf welcher der Server reagiert.
- Der Client kann entscheiden wann er mit dem Server interagiert.
+ Clienten stellen Anfragen, auf welcher der Server reagiert.
+ Der Client kann entscheiden, wann er mit dem Server interagiert.
  Der Server wiederum muss auf Anfragen warten und dann auf diese reagieren.
- Oft ist ein Server auf nicht endender Prozess welcher auf mehrere Clienten
+ Oft ist ein Server ein nicht endender Prozess, welcher auf mehrere Clienten
  reagiert.
 \end_layout
 
@@ -1865,10 +1877,10 @@ Zustandslosigkeit
 \end_layout
 
 \begin_layout Standard
-Jede Anfrage vom Client muss alle Informationen enthalten, welche Notwendig
- sind um die Anfrage zu verarbeiten.
- Des weiteren darf kein gespeicherter Kontext auf dem Server vorliegen auf
- welchen Bezug genommen wird.
+Jede Anfrage vom Client muss alle Informationen enthalten, welche notwendig
+ sind, um die Anfrage zu verarbeiten.
+ Des Weiteren darf kein gespeicherter Kontext auf dem Server vorliegen,
+ auf welchen Bezug genommen wird.
  Alle Zustände werden auf dem Client gespeichert.
 \end_layout
 
@@ -1877,10 +1889,10 @@ Caching
 \end_layout
 
 \begin_layout Standard
-Server Antworten müssen implizit oder explizit als cachebar gekennzeichnet
+Serverantworten müssen implizit oder explizit als cachebar gekennzeichnet
  sein.
- Die Idee ist den Netzwerkverkehr effizienter zu machen.
- Bemerkenswert dabei ist das dadurch ganze Interaktionen wegfallen können.
+ Die Idee ist, den Netzwerkverkehr effizienter zu machen.
+ Bemerkenswert dabei ist, dass dadurch ganze Interaktionen wegfallen können.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1888,9 +1900,9 @@ Einheitliche Schnittstelle
 \end_layout
 
 \begin_layout Standard
-Ein integraler Bestandteil einer REST Architektur ist eine einheitliche
+Ein integraler Bestandteil einer REST-Architektur ist eine einheitliche
  Schnittstelle.
- Das vereinfacht die System Architektur und die Sichtbarkeit von Interaktionen
+ Das vereinfacht die Systemarchitektur und die Sichtbarkeit von Interaktionen
  ist verbessert.
  Sie ist durch 4 weitere Eigenschaften beschrieben.
 \end_layout
@@ -1902,7 +1914,7 @@ Adressierbarkeit von Ressourcen
 \begin_layout Standard
 Jede Information, die über einen URI kenntlich gemacht wurde, wird als Ressource
  gekennzeichnet.
- Die Ressource selbst wie in einer Repräsentation übertragen welche sich
+ Die Ressource selbst wird in einer Repräsentation übertragen, welche sich
  von der internen Repräsentation unterscheidet.
  Jeder REST-konforme Dienst hat eine eindeutige Adresse, den Uniform Resource
  Locator (URL).
@@ -1913,8 +1925,9 @@ Repräsentationen zur Veränderung von Ressourcen
 \end_layout
 
 \begin_layout Standard
-Wenn ein Client die Repräsentation einer Ressource besitzt mit seinen Metadaten,
- reicht dies aus um die Ressource zu modifizieren bzw zu löschen.
+Wenn ein Client die Repräsentation einer Ressource mitsamt seinen Metadaten
+ kennt, reicht dies aus, um die Ressource zu modifizieren bzw.
+ zu löschen.
  
 \end_layout
 
@@ -1923,26 +1936,28 @@ Self-descriptive messages
 \end_layout
 
 \begin_layout Standard
-Jede Nachricht enthält beschreibt wie seine Informationen zu verarbeitet
- sind.
- Z.B durch Angabe seine Internet Media Types(MIME-Type)
+Jede Nachricht beschreibt, wie seine Informationen zu verarbeitet sind,
+ z.B durch Angabe seines Internet Media Types (MIME-Type).
 \end_layout
 
 \begin_layout Subparagraph
-„Hypermedia as the Engine of Application State
-\begin_inset Quotes grd
-\end_inset
-
-
+Hypermedia as the Engine of Application State
 \end_layout
 
 \begin_layout Standard
-Bei „Hypermedia as the Engine of Application State
-\begin_inset Quotes grd
+Bei Hypermedia as the Engine of Application State (HATEOAS) navigiert der
+ Client einer
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+überarbeiten
+\end_layout
+
 \end_inset
 
- HATEOAS navigiert der Client einer REST-Schnittstelle ausschließlich über
- URLs, welche vom Server bereitgestellt werden.
+ REST-Schnittstelle ausschließlich über URLs, welche vom Server bereitgestellt
+ werden.
  Abhängig von der gewählten Repräsentation geschieht die Bereitstellung
  der URIs über Hypermedia.
  Abstrakt betrachtet stellen HATEOAS-konforme REST-Services einen endlichen
@@ -2028,7 +2043,7 @@ Frameworks und Architektur
 \end_layout
 
 \begin_layout Standard
-Im folgendem werden die Technologien, Begriffe und Frameworks vorgestellt
+Im Folgenden werden die Technologien, Begriffe und Frameworks vorgestellt,
  welche in der Arbeit verwendet werden.
 \end_layout
 
@@ -2047,22 +2062,16 @@ key "gosling1995java"
  handelt es sich um eine 1995 von Sun Microsystems veröffentliche Programmierspr
 ache.
  Entwickelt wurde die Sprache von James Gosling.
- Java ist Objektorientiert, nebenläufig und plattformunabhängig.
- Letzteres wird erreicht indem Java Code, genauer gesagt Java Byte Code,
- auf einer virtuellen Maschine (JVM) interpiretiert wird.
- Moderne Implementierungen der JVM unterstützen sogenannte 
-\begin_inset Quotes gld
-\end_inset
-
-Just in Time
-\begin_inset Quotes grd
-\end_inset
-
+ Java ist objektorientiert, nebenläufig und plattformunabhängig.
+ Letzteres wird erreicht, indem Java Code, genauer gesagt Java Byte Code,
+ auf einer virtuellen Maschine (JVM) interpretiert wird.
+ Moderne Implementierungen der JVM unterstützen sogenannte Just-in-Time
  Kompilierung.
- Das bedeutet, dass eine Übersetzung in Maschinencode während der Laufzeit
+ Das bedeutet, dass eine Übersetzung in den Maschinencode während der Laufzeit
  vorgenommen wird.
- Des weiteren kümmert die Laufzeitumgebung von Java um das Speicher Management.
- Nach dem Tiobe Index zu urteilen ist Java eine der populärsten Programmiersprac
+ Des Weiteren kümmert sich die Laufzeitumgebung von Java um das Speichermanageme
+nt.
+ Nach dem Tiobe-Index zu urteilen ist Java eine der populärsten Programmiersprac
 hen der Welt
 \begin_inset Foot
 status collapsed
@@ -2109,9 +2118,10 @@ https://www.android.com/
 
 \end_inset
 
- ist ein mobiles Betriebssystem welches momentan von Google entwickelt wird.
+ ist ein mobiles Betriebssystem, welches momentan von Google entwickelt
+ wird.
  Es wurde mit 33 Mitgliedern der Open Handset Alliance entwickelt.
- Ziel war es einen offenen Standard für mobile Geräte zu schaffen
+ Ziel war es, einen offenen Standard für mobile Geräte zu schaffen
 \begin_inset Foot
 status collapsed
 
@@ -2140,8 +2150,8 @@ Android baut auf dem Linux Kernel auf und ist für eine Bedienung über Touchdis
 ays ausgelegt.
  Daher werden Eingaben hauptsächlich über Gesten und Tippen am Display vorgenomm
 en.
- Android verfügt über Ableger für Fernseher(Android TV), Autos (Android
- Auto) sowie Smartwatches(Android Wear).
+ Android verfügt über Ableger für Fernseher (Android TV), Autos (Android
+ Auto) sowie Smartwatches (Android Wear).
  Android hat seit mehreren Jahren einen dominanten Marktanteil
 \begin_inset Foot
 status collapsed
@@ -2163,7 +2173,7 @@ http://www.idc.com/prodserv/smartphone-os-market-share.jsp
 
 \end_inset
 
- bei mobile Geräten und ist das mit Abstand meist genutzt Betriebssystem
+ bei mobilen Geräten und ist das mit Abstand meist genutzt Betriebssystem
  weltweit
 \begin_inset Foot
 status collapsed
@@ -2189,12 +2199,12 @@ https://en.wikipedia.org/wiki/Usage_share_of_operating_systems
 \end_layout
 
 \begin_layout Standard
-Java ist die bevorzugte wenn auch nicht einzig mögliche Programmiersprache
+Java ist die bevorzugte, wenn auch nicht einzig mögliche Programmiersprache
  für Android.
- Allerdings kommt bei Android keine Standard JVM zum Einsatz sondern eine
+ Allerdings kommt bei Android keine Standard JVM zum Einsatz, sondern eine
  modifizierte Version.
- Bis Android 4.4 kam die Virtuelle Maschine Dalivk zum Einstatz.
- Diese wurde vollständig in Android 5.0 ersetzt durch Android Runtime(ART)
+ Bis Android 4.4 kam die virtuelle Maschine Dalivk zum Einsatz.
+ Diese wurde vollständig in Android 5.0 ersetzt durch Android Runtime (ART)
 \begin_inset Foot
 status collapsed
 
@@ -2243,14 +2253,13 @@ https://developers.google.com/protocol-buffers/
 
 \end_inset
 
- handelt es sich um eine Plattform unabhängige Datenstruktur zum Serialisieren
+ handelt es sich um eine plattformunabhängige Datenstruktur zum Serialisieren
  von Daten.
  
 \end_layout
 
 \begin_layout Standard
-Die Datenstruktur wird in einem einheitlichen Schema festgelegt.
- Zum Beispiel:
+Die Datenstruktur wird in einem einheitlichen Schema festgelegt, zum Beispiel:
 \end_layout
 
 \begin_layout Standard
@@ -2289,45 +2298,37 @@ message Person {
 \end_layout
 
 \begin_layout Standard
-Das Schema definiert eine Namespaces, über diese dann die eigentlich Daten
- ausgelesen werden können.
+Das Schema definiert einen Namespaces, über welchen dann die eigentlichen
+ Daten ausgelesen werden können.
  In dem Beispiel hat der Datentyp Person drei Felder.
- Jedes dieser Felder ist getypt und mit einem Schlüsselwort versehen welches
- angibt ob das Feld Pflicht ist.
+ Jedes dieser Felder ist getypt und mit einem Schlüsselwort versehen, welches
+ angibt, ob das Feld Pflicht ist.
 \end_layout
 
 \begin_layout Standard
-Es besitzt also jede Person einen String für den Namen aber nicht immer
+Es besitzt also jede Person einen String für den Namen, aber nicht immer
  einen String für die Mail.
 \end_layout
 
 \begin_layout Standard
-Aus dem Schema kann für jede unterstützte Programmiersprache(Java, C++,
- Python, JavaNano, Ruby, Objective-C und C#) Klassen generiert werden welche
+Aus dem Schema können für jede unterstützte Programmiersprache (Java, C++,
+ Python, JavaNano, Ruby, Objective-C und C#) Klassen generiert werden, welche
  die Daten (de)serialisieren.
- Das macht es möglich Clienten in anderen Sprachen zu schreiben.
+ Das macht es möglich, Clienten in anderen Sprachen zu schreiben.
 \end_layout
 
 \begin_layout Standard
 Protocol Buffers sind komplett abwärtskompatibel.
- Die Schema können problemlos erweitert werden.
+ Die Schemata können problemlos erweitert werden.
 \end_layout
 
 \begin_layout Standard
-Ein weiter Vorteil ist der merklich verringerte Overhead im Vergleich zu
- JSON oder XML.
- Nachteilig ist das die übertragenden Daten nicht ohne weiteres für einen
+Ein weiterer Vorteil ist der merklich verringerte Overhead im Vergleich
+ zu JSON oder XML.
+ Nachteilig ist, dass die übertragenden Daten nicht ohne Weiteres für einen
  Menschen lesbar sind.
  Protocol Buffers werden intensiv intern bei Google selbst eingesetzt.
- Ein weiterer prominenter Nutzer ist Blizzard beim 
-\begin_inset Quotes gld
-\end_inset
-
-BATTLE.NET
-\begin_inset Quotes grd
-\end_inset
-
- 
+ Ein weiterer prominenter Nutzer ist Blizzard beim BATTLE.NET 
 \begin_inset Foot
 status collapsed
 
@@ -2356,7 +2357,7 @@ Open-Graphics-Library for Embedded-Systems
 \end_layout
 
 \begin_layout Standard
-Open Graphics Library for Embedded Systems (OpenGL ES) 
+Open-Graphics-Library for Embedded-Systems (OpenGL ES) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "openGlES"
@@ -2364,12 +2365,13 @@ key "openGlES"
 \end_inset
 
  bietet ein offenes Interface für Grafikhardware.
- Dieses besteht aus einer Sammlung von Prozeduren und Funktion die es dem
- Programmierer ermöglichen Shaderprgramme, Objekte und Operation zu spezifiziere
-n um dreidimensionale Farbbilder zu produzieren.
- Viele der Funktion von OpenGL ES implementieren das Zeichnen von geometrischen
- Objekten wie Punkte oder Linien.
- OpenGL ES setzt voraus das die Grafikhardware über einen Framebuffer verfügt.
+ Dieses besteht aus einer Sammlung von Prozeduren und Funktionen, die es
+ dem Programmierer ermöglichen, Shaderprogramme, Objekte und Operationen
+ zu spezifizieren, um dreidimensionale Farbbilder zu produzieren.
+ Viele der Funktionen von OpenGL ES implementieren das Zeichnen von geometrische
+n Objekten wie Punkte oder Linien.
+ OpenGL ES setzt voraus, dass die Grafikhardware über einen Framebuffer
+ verfügt.
 \end_layout
 
 \begin_layout Subsection
@@ -2377,8 +2379,8 @@ Vertex
 \end_layout
 
 \begin_layout Standard
-Unter einem Vertex(plural die Vertices) versteht man eine Datenstruktur
- welche einen zwei- oder dreidimensionalen Punkt im Raum beschreibt.
+Unter einem Vertex versteht man eine Datenstruktur, welche einen zwei- oder
+ dreidimensionalen Punkt im Raum beschreibt.
 \end_layout
 
 \begin_layout Subsection
@@ -2386,8 +2388,8 @@ Shader
 \end_layout
 
 \begin_layout Standard
-Bei Shadern handelt es sich um vom Nutzer geschriebene Programme welche
- an unterschiedlichen Station der Rendering-Pipeline aufgerufen werden.
+Bei Shadern handelt es sich um vom Nutzer geschriebene Programme, welche
+ an unterschiedlichen Stationen der Rendering-Pipeline aufgerufen werden.
  Shader werden in der C nahen OpenGL Shading Language geschrieben.
 \end_layout
 
@@ -2397,7 +2399,7 @@ Pipeline
 
 \begin_layout Standard
 Der Vorgang des Renderings lässt sich vereinfacht als Datenverarbeitung
- von nacheinander folgenden Stufen darstellen 
+ von aufeinanderfolgenden Stufen darstellen 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "OpenGlPipeline"
@@ -2405,25 +2407,25 @@ key "OpenGlPipeline"
 \end_inset
 
 .
- Die Stufen werden im folgendem kurz vorgestellt.
+ Die Stufen werden im Folgenden kurz vorgestellt.
 \end_layout
 
 \begin_layout Standard
-Denn Anfang macht die Vertex Spezifikation.
+Den Anfang macht die Vertex Spezifikation.
  In diesem Schritt wird ein Stream von Vertices für OpenGL vorbereitet.
- Dazu muss festgelegt werden, was für ein Grundobjekt(Primitive) die Daten
+ Dazu muss festgelegt werden, was für ein Grundobjekt (Primitive) die Daten
  darstellen.
  Beispiele sind Punkte, Linien oder Dreiecke.
  Darauf folgt der Vertex Shader.
  Dieser erhält einzelne Elemente aus dem Vertexstream und gibt nach dem
- Ausführen des Shader ein einzelnes Vertex aus.
+ Ausführen des Shaders ein einzelnes Vertex aus.
  Der Shader wird vom Benutzer programmiert.
- Typischer Weise wird hier die Projektionsmatrix auf die Punkte angewendet.
+ Typischerweise wird hier die Projektionsmatrix auf die Punkte angewendet.
 \end_layout
 
 \begin_layout Standard
 Als nächster Schritt kann eine Tessellation angewendet werden.
- In dieser optionalen Stufe werden Patch(ein Primitve für Tesselation) in
+ In dieser optionalen Stufe werden Patches (Primitves für Tesselation) in
  mehrere kleinere Primitives zerlegt.
 \end_layout
 
@@ -2438,8 +2440,8 @@ Nun folgt der Geometry Shader.
 Im Anschluss wird das Vertex Post-Processing ausgeführt.
  In diesem Schritt werden Teile außerhalb des Kamerafensters verworfen,
  dieser Prozess nennt sich Clipping.
- In dieser Stufe werden werden die dreidimensionalen Koordinaten zu zweidimensio
-nalen Kamerakoordinaten umgerechnet.
+ In dieser Stufe werden die dreidimensionalen Koordinaten zu zweidimensionalen
+ Kamerakoordinaten umgerechnet.
 \end_layout
 
 \begin_layout Standard
@@ -2447,27 +2449,19 @@ In der nächsten Stufe folgt das Primitve Assembly.
  Hier werden die erstellten Primitives zu einer Sammlung von finalen kleineren
  Primitives zerteilt.
  Zum Beispiel werden aus einer Liste von Vertices vom Primitive Typ GL_LINE_STRI
-P mit 8 Mitglieder 7 neue Primitives vom Typ 
-\begin_inset Quotes gld
-\end_inset
-
-line base
-\begin_inset Quotes grd
-\end_inset
-
-.
+P mit 8 Mitgliedern 7 neue Primitives vom Typ Line-Base.
 \end_layout
 
 \begin_layout Standard
-Im Anschluss werden die Primitives in diskrete Elemente unterteilt(gerastert).
- Diese Elemente nennt man Fragmente und werden an den Fragment Shader weitergere
-icht.
- Die Ausgabe des Shaders ist ein Farb-, Tiefen und sogenannter Stencilwert.
- Im letzten Schritt werden für die Ausgabewerte des Shader eine handvoll
+Im Anschluss werden die Primitives in diskrete Elemente unterteilt (gerastert).
+ Diese Elemente nennt man Fragmente, welche an den Fragment Shader weitergereich
+t werden.
+ Die Ausgabe des Shaders ist ein Farb-, Tiefen- und sogenannter Stencilwert.
+ Im letzten Schritt werden für die Ausgabewerte des Shaders eine Handvoll
  Tests durchgeführt.
- Beispielsweise der Tiefen Test(Depth Test) um zu vermeiden das verdeckte
+ Ein Beispiel ist der Tiefen Test (Depth-Test), um zu vermeiden, dass verdeckte
  Objekte gezeichnet werden.
- Andere Test sind Scissor Test, Stencil Test und der Pixel Ownership Test.
+ Andere Test sind Scissor-Test, Stencil-Test und der Pixel-Ownership-Test.
 \end_layout
 
 \begin_layout Section
