@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass scrreprt
 \begin_preamble
 \usepackage{url}
@@ -29,16 +31,16 @@ Zweitgutachten:\\ }
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -187,8 +189,8 @@ Einleitung und Motivation
 Das Interesse an der Darstellung von großen Punktwolken ist durch das Aufkommen
  von günstigen 3D-Scannern und der 3D-Rekonstruktion in den letzten Jahrzehnten
  stark gewachsen.
- Aufgrund der technologischen Entwicklungen in diesem Bereich ist es möglich,
- von kleinen Objekten wie einem Dinosaurier Schädel bis hin zu ganzen Städten
+ Aufgrund der technologischen Entwicklungen in diesem Bereich ist es möglich
+ von kleinen Objekten, wie einem Dinosaurierschädel bis hin zu ganzen Städten,
  Modelle in hoher Detailstufe digital zu erfassen.
  In der Denkmalpflege werden Objekte mittlerweile aus Routine abgescannt
  und archiviert.
@@ -205,6 +207,7 @@ n Punkten mit Farbinformationen.
  Strategien, um der hohen Datenmenge Herr zu werden.
  Durch das Aufkommen von leistungsstarken Smartphones entstand eine neue
  Plattform zum Darstellen von Modellen.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -224,14 +227,14 @@ Die Herausforderung bestand darin, trotz der Limitierungen eines Tablets
 n mit mehreren Millionen Punkten flüssig darzustellen.
  Dabei sollte es möglich sein, jederzeit neue Punkte in die bestehende Darstellu
 ng hinzuzufügen.
- Zur Zeit existieren nur bedingt geeignet Softwarelösungen für das Problem.
+ Zur Zeit existieren nur bedingt geeignete Softwarelösungen für das Problem.
 \end_layout
 
 \begin_layout Section
 Archaeocopter und Archaeonautic Projekt
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Archaeocopter-Projekt"
+name "subsec:Archaeocopter-Projekt"
 
 \end_inset
 
@@ -243,30 +246,27 @@ Das Archaeocopter Projekt, welches 2012 von Dr.
  Benjamin Ducke und Prof.
  Dr.
  Marco Block-Berlitz ins Leben gerufen wurde, hat es sich zum Ziel gesetzt,
- eine unbemanntes Flugobjekt (UAV) zu entwickeln, welches durch halb-autonome
+ ein unbemanntes Flugobjekt (UAV) zu entwickeln, welches durch halb-autonome
  Flüge Archäologen bei ihrer Arbeit durch Luftaufnahmen unterstützt.
- Aus diesen Aufnahmen lassen sich durch 3D- Rekonstruktion Modelle generieren.
- Diese Technik wird auch zum Denkmalschutz angewandt.
+ Aus diesen Aufnahmen lassen sich durch 3D-Rekonstruktion Modelle generieren.
+ Diese Technik wird auch im Denkmalschutz angewandt.
 \end_layout
 
 \begin_layout Standard
-Die Idee war es, aktuelle Verfahren aus der Computervision und künstlichen
- Intelligenz zusammen mit UAVs mit Kameras für die Datenerhebung einzusetzen.
+Die Idee war es, aktuelle Verfahren aus Computervision und künstlicher Intellige
+nz zusammen mit UAVs mit Kameras für die Datenerhebung einzusetzen.
  Das innovative Verfahren lässt sich auch unter Wasser einsetzen.
  Offiziell ging das Projekt im September 2012 mit Unterstützung von Prof.
  Dr.
  Raúl Rojas von Berlin's Freier Universität an den Start.
-\end_layout
-
-\begin_layout Standard
-Diese Arbeit ist in Zusammenarbeit mit dem Projekt entstanden.
+ Diese Arbeit ist in Zusammenarbeit mit dem Projekt entstanden.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -282,25 +282,14 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Ein UAV scannt die Umgebung von ??? ab
+Ein UAV beginnt mit dem Filmen einer Landschaft.
+ Aus dem Videomaterial kann später ein dreidimensionales Modell erstellt
+ werden.
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Bilder
 \end_layout
 
 \end_inset
@@ -309,30 +298,71 @@ Bilder
 \end_layout
 
 \begin_layout Section
-Ziele
+Ziele und Aufbau der Arbeit
 \end_layout
 
 \begin_layout Standard
-Ziel dieser Arbeit ist es, eine mobile Applikation für das Android Betriebssyste
-m zu entwickeln, welche in der Lage ist, Punktwolken mit mehreren Millionen
- Punkten performant darzustellen.
- Dabei soll es möglich sein, Punkte in die bestehende Darstellung zur Laufzeit
- hinzuzufügen.
+Ziel dieser Arbeit ist eine mobile Applikation für das Android Betriebssystem
+ zu entwickeln, welche die folgenden Anforderungen erfüllen soll:
+\end_layout
+
+\begin_layout Enumerate
+flüssige Darstellung von Punktwolken mit mehreren Millionen Punkten 
+\end_layout
+
+\begin_layout Enumerate
+neue Punkte können zur Laufzeit in die Darstellung hinzugefügt werden
+\end_layout
+
+\begin_layout Enumerate
+Implementierung in Java
+\end_layout
+
+\begin_layout Enumerate
+modularer Aufbau
+\end_layout
+
+\begin_layout Enumerate
+einfache Nutzung
 \end_layout
 
 \begin_layout Standard
-Ein weiteres Ziel der Arbeit ist es, die Architektur möglichst modular und
- plattformunabhängig zu gestalten, um dadurch Austauschbarkeit und Wartbarkeit
- der einzelnen Komponenten zu gewährleisten.
- Es sollte möglichst einfach sein, eine Applikation für iOS oder ein anderes
- mobiles Betriebssystem nachzureichen.
- Des Weiteren soll eine moderne Auswahl von Frameworks getroffen werden.
- Dabei soll die Applikation möglichst intuitiv benutzbar sein.
+Dafür wird in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Theorie"
+
+\end_inset
+
+ ein Einblick in den Stand der Forschung mitsamt bestehender Arbeiten aus
+ dem Feld gegeben.
+ Bestehende Ansätze und Datenstrukturen werden mit den Anforderungen verglichen,
+ um festzustellen, ob sie verwendbar sind.
+ Im folgendem Kapitel werden in der Arbeit verwendete Technologien vorgestellt.
+ Der Aufbau sowie die Implementierung der Applikation wird in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:dotViewer"
+
+\end_inset
+
+ beschrieben.
+ In Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Experimente-und-Auswertungen"
+
+\end_inset
+
+ wird die Bildrate und Bildqualität der Applikation anhand zweier Beispielmodell
+e evaluiert.
+ Im letzten Kapitel wird die Arbeit zusammengefasst.
+ Des Weiteren werden mögliche Verbesserungen vorgestellt.
 \end_layout
 
 \begin_layout Standard
-Der Quellcode soll nach Abschluss dieser Arbeit über die Entwicklungsplattform
- github
+Der Quellcode wird nach Abschluss dieser Arbeit über die Entwicklungsplattform
+ Github
 \begin_inset Foot
 status collapsed
 
@@ -342,7 +372,7 @@ status open
 
 \begin_layout Plain Layout
 
-www.github.com
+http://www.github.com
 \end_layout
 
 \end_inset
@@ -352,7 +382,7 @@ www.github.com
 
 \end_inset
 
- frei zugänglich gemacht werden.
+ frei zugänglich gemacht.
 \end_layout
 
 \begin_layout Chapter
@@ -372,7 +402,7 @@ In diesem Kapitel werden Grundlagen zum Verstehen der Arbeit und des Kontextes
  Es wird eine kurze Einführung in die 3D-Rekonstruktion gemacht.
  Des Weiteren werden Punktwolken sowie deren Repräsentationen diskutiert.
  Anschließend werden bestehende Arbeiten diskutiert.
- Zum Abschluss werden genutzte Entwurfsmuster und Architekturstille vorgestellt.
+ Zum Abschluss werden genutzte Entwurfsmuster und Architekturstile vorgestellt.
 \end_layout
 
 \begin_layout Section
@@ -382,7 +412,7 @@ Einführung in die 3D-Rekonstruktion
 \begin_layout Standard
 Die Idee, aus einer Folge von Bildern ein 3D-Modell zu errechnen, ist eines
  der Kernthemen der Computervision.
- Verwendungen dieser Technik sind vielfältig und finden sich in der Wissenschaft
+ Verwendungen dieser Technik sind vielfältig und finden sich in Wissenschaft
  und Wirtschaft wieder.
  Anwendungen existieren zum Beispiel in der Robotik 
 \begin_inset CommandInset citation
@@ -419,7 +449,7 @@ Bei aktiver Rekonstruktion wird aktiv mit einem Sensor das Objekt abgetastet,
  3D-Scanner sind ein Vertreter dieser Gattung.
  Im Grunde sind sie der Kamera ähnlich.
  Genau wie diese besitzen sie ein Sichtfeld.
- Allerdings liefern sie statt Farbwert Abstandswert von ihrem Sichtfeld.
+ Allerdings liefern sie statt Farbwerte, Abstandswerte von ihrem Sichtfeld.
  Die Abstandswerte können unter anderem mit Hilfe einer Time-of-Flight Camera
  oder der Triangulierungsmethode ermittelt werden.
 \end_layout
@@ -433,17 +463,17 @@ key "li2014time"
 \end_inset
 
  wird ein modulierter Lichtstrahl versendet.
- Aus der Dauer bis der Strahl nach der Reflexion ihren Ausgangspunkt erreicht,
- kann die Entfernung ermittelt werden.
+ Aus der Dauer bis der Strahl nach der Reflexion seinen Ausgangspunkt erreicht,
+ kann die Entfernung vom Objekt ermittelt werden.
  Diese Methode ist bei nahen und feinen Objekten ungenau, weil die Zeit
  nur zu einer gewissen Genauigkeit gemessen werden kann.
- Die Auflösung erreichen in etwa 320x240 Pixel.
+ Die Auflösung erreicht etwa 320x240 Pixel.
  Vorteilhaft sind die hohen Bildraten von bis zu 160 Bildern pro Sekunde.
 \end_layout
 
 \begin_layout Standard
 Bei der Triangulierungsmethode wird von einem Laser ein Punkt auf das Objekt
- projizieren.
+ projiziert.
  Dieser Punkt wird von einer Kamera erfasst.
  In Abhängigkeit von der Entfernung erscheint der Laserpunkt im Sichtfeld
  der Kamera.
@@ -460,7 +490,7 @@ reference "fig:TriangulierungBild"
 \end_layout
 
 \begin_layout Standard
-Die Methode ist sehr genau und daher für Skulpturen gut geeignet.
+Diese Methode ist sehr genau und daher für Skulpturen gut geeignet.
 \end_layout
 
 \begin_layout Standard
@@ -543,9 +573,9 @@ key "ladikos2011real"
 
  ist eines der ersten in diesem Feld.
  Ausgehend von zwei auf der x-Achse verschobenen Bildern einer Szene gilt
- es Punktpaare zwischen den beiden Bildern zu finden.
- Um das zu vereinfachen sucht man nach einer Abbildung von Punkten aus Bild
- 1 zu Bild 2.
+ es, Punktpaare zwischen den beiden Bildern zu finden.
+ Um das zu vereinfachen, sucht man nach einer Abbildung von Punkten aus
+ Bild 1 zu Bild 2.
  Aufgrund der Verschiebung der Bilder auf der x-Achse kann man durch Epipolargeo
 metrie die Tiefe der Punkte berechnen.
 \end_layout
@@ -579,8 +609,8 @@ http://ccwu.me/vsfm/
 
  handelt es sich um ein 3D-Rekonstruktionssystem.
  Es verfügt über eine grafische Benutzeroberfläche und zeichnet sich durch
- Skalierbarkeit aus auf Grundlage der Nutzung von nVidia oder ATI Grafikkarten
- des Computers.
+ Skalierbarkeit auf Grundlage der Nutzung von nVidia oder ATI Grafikkarten
+ des Computers aus.
  Entwickelt wurde das Programm von dem Studenten Changchang Wu
 \begin_inset Foot
 status collapsed
@@ -612,9 +642,9 @@ Minimum Bounding-Box
 \end_layout
 
 \begin_layout Standard
-In der Geometrie versteht man unter einer Minimum Bounding-Box ein Rechteck(2D)
- oder Box(3D) welches eine Menge von Punkten umschließt.
- Dabei ist der die Fläche bzw.
+In der Geometrie versteht man unter einer Minimum Bounding-Box ein Rechteck
+ (2D) oder Box (3D) welches eine Menge von Punkten umschließt.
+ Dabei ist die Fläche bzw.
  das Volumen minimal.
 \end_layout
 
@@ -644,8 +674,7 @@ Punkt basierende geometrische Oberflächen können als Stichprobenmenge einer
 \end_inset
 
  ist eine Menge solcher Punkte.
- Im folgenden wird eine Auswahl von Ansätze vorgestellt und für das Projekt
- evaluiert.
+ Im folgendem wird eine Auswahl von Ansätze vorgestellt.
 \end_layout
 
 \begin_layout Subsection
@@ -662,7 +691,7 @@ key "Rusinkiewicz:2000:QMP:344779.344940"
 \end_inset
 
 .
- Splat bedeutet Klecks wie von Farbklecks.
+ Splat ist das englische Wort für Farbklecks.
 \end_layout
 
 \begin_layout Standard
@@ -673,10 +702,14 @@ Die Punktmenge wird durch eine Hierarchie auf Basis von Kugeln modelliert.
  Die Datenstruktur wird zu Beginn erstellt.
  Der Konstruktionsalgorithmus kann entweder auf einer Punktwolke oder besser
  einem triangulierten Modell angewendet werden.
- Bei letzterem ist es leichter, die Normalen zu berechnen.
+ Bei Letzterem ist es leichter, die Normalen zu berechnen.
  Für den Radius der Kugeln wird die Länge der längsten anliegenden Kante
  gewählt.
  Mit Hilfe folgendem Algorithmus kann nun die Datenstruktur erstellt werden:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -740,8 +773,8 @@ BuildTree(vertices[begin..end]) {
 \end_layout
 
 \begin_layout Standard
-Sobald die Datenstruktur aufgebaut ist, kann die Punktmenge gezeichnet werden
- mit folgendem Algorithmus:
+Sobald die Datenstruktur aufgebaut ist, kann die Punktmenge mit folgendem
+ Algorithmus gezeichnet werden:
 \end_layout
 
 \begin_layout Standard
@@ -821,7 +854,7 @@ Zuerst wird getestet, ob die Kugel des Knotens sichtbar ist.
 Anhand der Größe der projizierten Kugel auf die View-Ebene wird entschieden,
  ob die Rekursion fortgesetzt wird.
  Überschreitet diese einen gewissen Schwellenwert, wird die Rekursion beendet
- und der aktuelle Knoten wird gezeichnet.
+ und der aktuelle Knoten gezeichnet.
  
 \end_layout
 
@@ -883,14 +916,14 @@ Die eigentlichen Punktdaten sind in den äußeren Knoten gespeichert.
 \end_layout
 
 \begin_layout Standard
-Der Octree unterstützt das Einfügen von Punkten.
+Der Octree unterstützt das Einfügen und Löschen von Punkten.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -913,7 +946,8 @@ name "fig:Octree"
 
 \end_inset
 
-Schematische Darstellung eines Octrees (Abb aus.
+In jedem Level zerlegt der Octree den Raum in weitere feinere Würfel (Abb
+ aus.
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -938,7 +972,7 @@ key "OctreeWiki"
 Multiresolution Octree
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Multiresolution-Octree"
+name "subsec:Multiresolution-Octree"
 
 \end_inset
 
@@ -962,13 +996,13 @@ key "Wand:2008:SSP:1363373.1363581"
 \end_inset
 
 .
- Die Datenstruktur unterstützt Einfügen, Löschen und bietet unterschiedlich
- detaillierte Darstellungen des Ausgangsmodells.
+ Sie unterstützt Einfügen, Löschen und bietet unterschiedlich detaillierte
+ Darstellungen des Ausgangsmodells.
  Im Folgenden wird die Datenstruktur vorgestellt.
 \end_layout
 
 \begin_layout Standard
-Der Multiresolution Octree(MRT) kann als eine spezielle Form des Octree
+Der Multiresolution Octree (MRT) kann als eine spezielle Form des Octree
  verstanden werden.
  Wie beim Octree enthalten die äußeren Knoten alle Punkte.
  Die Tiefe ergibt sich aus der Eigenschaft, dass kein Blatt mehr als 
@@ -1033,13 +1067,9 @@ Beim Einfügen können zwei Fälle auftreten.
 \end_layout
 
 \begin_layout Standard
-Nun muss die bestehende Wurzel so lange erweitert werden, bis sie den neuen
+Die bestehende Wurzel muss so lange erweitert werden, bis sie den neuen
  Punkt mit einschließt.
- 
-\end_layout
-
-\begin_layout Standard
-Die Breite sowie Höhe der Wurzel verdoppelt sich dabei in jedem Schritt.
+ Die Breite sowie Höhe der Wurzel verdoppelt sich dabei in jedem Schritt.
 \end_layout
 
 \begin_layout Standard
@@ -1054,8 +1084,8 @@ Sobald der Punkt in der Wurzel liegt, tritt der 2.
 
 \begin_layout Standard
 Zuerst wird der Punkt der Rasterung hinzugefügt.
- Sprich, das Gewicht in der entsprechende Rasterzelle wird um 1 erhöht und
- die Farbe des Punkten wird gegebenenfalls gespeichert.
+ Das heißt, das Gewicht in der entsprechende Rasterzelle wird um eins erhöht
+ und die Farbe des Punktes wird gegebenenfalls gespeichert.
  Dann wird ermittelt, in welchem der Kinder der Punkt liegt.
  Nun wird der Vorgang beim Kind wiederholt, bis ein äußerer Knoten erreicht
  wird.
@@ -1086,6 +1116,11 @@ width "45text%"
 special "none"
 height "1in"
 height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status collapsed
 
 \begin_layout Plain Layout
@@ -1118,6 +1153,11 @@ width "45text%"
 special "none"
 height "1in"
 height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status collapsed
 
 \begin_layout Plain Layout
@@ -1161,7 +1201,7 @@ key "Wand:2008:SSP:1363373.1363581"
 \end_layout
 
 \begin_layout Subsection
-Moving Least-Squares Surfaces
+Moving-Least-Squares Surfaces
 \end_layout
 
 \begin_layout Standard
@@ -1289,18 +1329,20 @@ Ermittle eine Referenzebene
 
  handelt es sich um eine monoton, radial, fallende Funktion mit positivem
  Wertebereich.
- Typischerweise 
-\begin_inset Formula $\Theta(d)=e^{\frac{d^{2}}{h^{2}}}$
+ Normalerweise gilt: 
+\begin_inset Formula 
+\[
+\Theta(d)=e^{\frac{d^{2}}{h^{2}}}
+\]
+
 \end_inset
 
-.
  
 \begin_inset Formula $h$
 \end_inset
 
- ist typischer weise der durchschnittliche Abstand von benachbarten Punkten
- und hat einen direkten Einfluss darauf, wie glatt die Oberfläche erscheint.Typis
-cherweise
+ ist meist der durchschnittliche Abstand von benachbarten Punkten und hat
+ einen direkten Einfluss darauf, wie glatt die Oberfläche erscheint.
 \end_layout
 
 \begin_layout Enumerate
@@ -1358,7 +1400,7 @@ Die Projektion von
 \begin_inset Formula $r$
 \end_inset
 
- ist schlussendlich wie folgt definiert:
+ ist letzendlich wie folgt definiert:
 \begin_inset Formula 
 \[
 \phi(r)=q+g(0,0)n
@@ -1387,7 +1429,7 @@ Beim Rendern wird eine Datenstruktur wie bei dem QSplat-Verfahren verwendet.
 
 \begin_layout Standard
 Wenn bei dem Rendervorgang ein Blatt erreicht wird und wenn mehr als ein
- Punkt benötigt wird, werden mit Hilfe des Polynoms weiter Punkte für die
+ Punkt benötigt wird, werden mit Hilfe des Polynoms weitere Punkte für die
  Umgebung generiert.
 \end_layout
 
@@ -1395,7 +1437,7 @@ Wenn bei dem Rendervorgang ein Blatt erreicht wird und wenn mehr als ein
 Tetraedertree
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Tetraedertree"
+name "subsec:Tetraedertree"
 
 \end_inset
 
@@ -1410,35 +1452,44 @@ key "rodriguez2013compressionDiamond"
 
 \end_inset
 
- stellt eine weiter offline Datenstruktur zum Verwalten von Triangulierten
- Punkten vor.
+ stellt eine offline Datenstruktur zum Verwalten von triangulierten Punkten
+ vor.
  Die Datenstruktur unterteilt den Raum in einzelne Tetraeder.
  Durch die Tetraeder können Punkte durch baryzentriche Koordinaten repräsentiert
  werden.
 \end_layout
 
 \begin_layout Standard
-In der Vorverarbeitung wird top-down eine Diamanten Hierarchie aufgebaut.
- Wobei jeder Diamant aus einer Menge von Tetraedern besteht.
+In der Vorverarbeitung wird Top-Down eine Diamanten Hierarchie aufgebaut,
+ wobei jeder Diamant aus einer Menge von Tetraedern besteht.
  Die Eingabe erfolgt offline als eine Menge von Dreiecken.
- Zu Beginn wird die Bounding-Box in 6 Tetraeder unterteilt wobei die Diagonale
+ Zu Beginn wird die Bounding-Box in 6 Tetraeder unterteilt, wobei die Diagonale
  von allen Tetraedern geteilt wird.
  Sobald ein eingefügtes Dreieck zwischen mehrere Tetraeder (Blätter) fällt,
- wird es an dem Rand des Tetraeder abgeschnitten.
- Die neuen Dreiecke werden dann in sein entsprechendes Blatt hinzugefügt.
+ wird es am Rand des Tetraeders abgeschnitten.
+ Die neuen Dreiecke werden dann in ihre entsprechenden Blätter hinzugefügt.
  Sobald in einem Blatt mehr als eine vorher festgelegte Menge Dreiecke enthalten
- sind, wird es anhand einer Ebene, welche durch den Mittelpunkt der längsten
+ ist, wird es anhand einer Ebene, welche durch den Mittelpunkt der längsten
  Kante und seiner gegenüberliegenden Kante verläuft, geteilt.
  Im Anschluss werden die Dreiecke auf die zwei Kinder verteilt.
  Der nächste Schritt vereinfacht die Kinder Button-Up.
- Jeder Diamant wird dabei unabhängig abgearbeitet.
- Dafür muss beachtet werden das Vertices welche an den Außenwänden liegen
- nicht Verändert werden dürfen.
+ Jeder Diamant wird dabei unabhängig voneinander abgearbeitet.
+ Dafür muss beachtet werden, das Vertices, welche an den Außenwänden liegen,
+ nicht verändert werden dürfen.
  Bei Vertices an den Innenwänden muss auch der korrespondierende Vertex
  beim Nachbarn mit einbezogen werden.
- Ist beides nicht der Fall kann beliebig vereinfacht werden.
- Da die Diamanten unabhängig vereinfacht werden ist es einfach die Datenstruktur
- zu parallelisieren.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nochmal prüfen
+\end_layout
+
+\end_inset
+
+ Ist beides nicht der Fall, kann beliebig vereinfacht werden.
+ Da die Diamanten unabhängig voneinander vereinfacht werden, ist es einfacher
+ die Datenstruktur zu parallelisieren.
 \end_layout
 
 \begin_layout Section
@@ -1458,7 +1509,7 @@ Silke Ende
 \begin_layout Standard
 Die Idee, Punktwolken auf mobilen Geräten zu betrachten, ist nicht neu.
  Daher existieren schon einige Vorschläge zum Lösen des Problems.
- Im Folgenden werden einige dieser Arbeiten vorgestellt.
+ Im Folgenden werden einige dieser Möglichkeiten vorgestellt.
  
 \end_layout
 
@@ -1488,7 +1539,7 @@ http://www.kiwiviewer.org/
 
 \end_inset
 
- ist eine freie quelloffene Applikation zur Erkundung von Punktwolken.
+ ist eine Open-Source Applikation zur Erkundung von Punktwolken.
  Die App ist für Android sowie iOS verfügbar.
  Multi-Touch Gestensteuerung wird unterstützt.
  KiwiViewer bedient sich der Point-Cloud-Library
@@ -1512,19 +1563,22 @@ http://pointclouds.org/
 
 \end_inset
 
- für seine Kernfunktionen.
- Die Punktmenge wird entweder über eine SD-Karte, E-Mail oder URL geladen.
+ (PCL) für seine Kernfunktionen.
+ Bei der Point-Cloud-Library handelt es sich um eine Open-Source Bibliothek
+ zum verarbeiten von Punktwolken.
+ Die Punktdaten werden entweder über eine SD-Karte, E-Mail oder URL geladen.
+ Die Applikation lässt sich sehr einfach bedienen.
 \end_layout
 
 \begin_layout Paragraph
-
+Abgrenzung
 \emph on
-Abgrenzung 
+ 
 \end_layout
 
 \begin_layout Standard
 Die App speichert die geladenen Punkte direkt auf dem Tablet.
- Modelle werden nicht vereinfacht.
+ Punktwolken werden nicht vereinfacht.
  Daher treffen Modelle mit mehreren Millionen Punkten schnell an die Grenzen
  der GPU.
 \end_layout
@@ -1534,8 +1588,28 @@ LiMo
 \end_layout
 
 \begin_layout Standard
-Bei LiMo handelt es sich um eine von OGSystems entwickelte Android Applikation
- zum Betrachten von LiDAR Daten.
+Bei LiMo
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://play.google.com/store/apps/details?id=com.ogs.limo&hl=en
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ handelt es sich um eine von OGSystems entwickelte Android Applikation zum
+ Betrachten von LiDAR Daten.
  LiMo wurde für den professionellen Gebrauch entwickelt und ermöglicht das
  Beobachten von Gebäuden sowie Naturszenen.
  Daten können auch über einen eigenen Webservice gestreamt werden, weshalb
@@ -1552,13 +1626,14 @@ Die Anwendung ist auf LiDAR Daten beschränkt.
  LiDAR ist primär zum Scannen von großen Objekten, wie Brücken geeignet
  und verfügt daher nicht über die Genauigkeit, welche beispielsweise bei
  einer Skulptur benötigt wird.
+ Die Applikation ist auf 5 Millionen Punkte beschränkt.
 \end_layout
 
 \begin_layout Subsection
-Knn Baum
+iOS App mit Knn-Baum 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Knn-Baum"
+name "subsec:Knn-Baum"
 
 \end_inset
 
@@ -1576,47 +1651,7 @@ Mehr
 \end_layout
 
 \begin_layout Standard
-Eine weitere Möglichkeit ist ein Knn-Tree zu verwenden 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "VAST:VAST12:057-064"
-
-\end_inset
-
-.
- Allerdings mit der Beschränkung, dass die Punktmenge von Anfang an vollständig
- ist.
-\end_layout
-
-\begin_layout Standard
-Diese Arbeit richtet sich besonders an die Darstellung auf mobilen Geräten.
- Die Datenstruktur selbst wird auf einem Server gespeichert.
- Knoten werden auf Anfrage eines Clients übertragen.
- Übertragende Knoten werden mit Hilfe eines LRU-Cache gespeichert.
- Die Implementierung erfolgte in C++ und OpenGl ES.
- Für die Netzwerkkommunikation wird Http- Pipelining sowie eine Wavletkompressio
-n verwendet.
- 
-\end_layout
-
-\begin_layout Paragraph
-Abgrenzung
-\end_layout
-
-\begin_layout Standard
-Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
- Anfang an feststehen.
- Implementierung erfolgte in C++ und für iOS.
- Die Datenstruktur bietet den Vorteil, dass sie eine geringe Tiefe besitzt.
-\end_layout
-
-\begin_layout Subsection
-HuMoRS
-\end_layout
-
-\begin_layout Standard
-Das HuMoRs (Huge models Mobile Rendering System) wurde von der Visual Computing
- Gruppe
+Diese Applikation wurde von der Visual Computing Gruppe
 \begin_inset Foot
 status collapsed
 
@@ -1638,20 +1673,62 @@ http://www.crs4.it/vic/
 
  des CRS4 (Center for Advanced Studies, Research and Development in Sardinia)
  entwickelt.
+ Die Applikation verwendet einen Knn-Baum zum Verwalten der Punktmenge 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "VAST:VAST12:057-064"
+
+\end_inset
+
+.
+ Ähnlich wie beim MRT werden in den inneren Knoten vereinfacht Abbilder
+ der Kinder gespeichert.
+ Der Ansatz verwendet eine Client-Server Struktur.
+ Die Datenstruktur selbst wird auf einem Server gespeichert.
+ Die Knoten werden auf Anfrage eines Clients übertragen.
+ Übertragende Knoten werden mit Hilfe eines LRU-Cache gespeichert.
+ Die Implementierung erfolgte in C++ und OpenGl ES.
+ Für die Netzwerkkommunikation wird Http-Pipelining sowie eine Wavletkompression
+ verwendet.
+\end_layout
+
+\begin_layout Paragraph
+Abgrenzung
+\end_layout
+
+\begin_layout Standard
+Die Datenstruktur ist nicht dynamisch, also die Menge der Punkte muss von
+ Anfang an feststehen.
+ Die Implementierung erfolgte in C++ und für iOS.
+ Die Datenstruktur bietet den Vorteil, dass sie eine geringe Tiefe besitzt.
+ Die Benchmarks sind beeindruckend, da Punktwolken bis zu 180 Millionen
+ Punkte dargestellt werden können.
+ Die Anzahl gleichzeitig angezeigter Punkte liegt allerdings bei 1 Millionen
+ Punkte auf den Testgeräten.
+ Der Quellcode ist nicht frei verfügbar.
+\end_layout
+
+\begin_layout Subsection
+HuMoRS
+\end_layout
+
+\begin_layout Standard
+Das HuMoRs (Huge models Mobile Rendering System) ist eine weitere Entwicklung
+ der Visual Computing Gruppe des CRS4.
  Die Applikation beherrscht das Darstellen von Modellen mit mehr als 70
  Millionen Punkten bzw.
  Dreiecken.
  Die Anwendung läuft auf Android und wurde mit mehreren Geräten sowie Versionen
  getestet.
- Besonderes Augenmerk wurde in der Arbeit auf Navigation gelegt.
- Der Rotationspunkt wird dynamisch berechnet.
+ Besonderes Augenmerk wurde in der Arbeit auf die Bedienbarkeit gelegt.
+ Der Rotationspunkt des Modells wird dynamisch berechnet.
  Des Weiteren  werden zu jedem Modell Thumbnails generiert, um zu interessanten
  Abschnitten des Modells springen zu können.
  Die Anwendung folgt dem gleichen Client-Server Ansatz wie die iOS Applikation
  aus Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Knn-Baum"
+reference "subsec:Knn-Baum"
 
 \end_inset
 
@@ -1662,7 +1739,7 @@ reference "sub:Knn-Baum"
 \end_layout
 
 \begin_layout Standard
-Auf der Client Seite wird ein LRU-Cache verwendet, um den Netzwerkverkehr
+Auf der Clientseite wird ein LRU-Cache verwendet, um den Netzwerkverkehr
  niedrig zu halten.
  Die Applikation wurde in C++ mit Hilfe des Qt-Frameworks 
 \begin_inset Note Note
@@ -1675,6 +1752,55 @@ verweis
 \end_inset
 
 programmiert.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename papers/humors/humors-000.jpg
+	width 50text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename papers/humors/humors-001.jpg
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:HuMorsBild"
+
+\end_inset
+
+Darstellung einer Szene von hochauflösenden Statuen auf einem Tablet (Asus
+ TF201) sowie Smartphone (LG Nexus 4).
+ Am rechten Bildrand sieht man die vorausberechneten Vorschaubilder.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -1685,15 +1811,26 @@ Abgrenzung
 Die Arbeit bietet gute Ansätze, besonders in Bezug auf die Bedienung.
  Die verwendete Datenstruktur bietet eine detaillierte Darstellung samt
  hoher Bildfrequenz.
- Allerdings ist auch hier Datenstruktur offline, weshalb keine Punkte nach
- dem Erstellen mehr hinzugefügt werden können.
+ Allerdings müssen auch hier alle Punkte vor Aufbau der Datenstruktur bekannt
+ sein.
+\end_layout
+
+\begin_layout Subsection
+Auswertung
+\end_layout
+
+\begin_layout Standard
+Aufgrund der Hardwarelimitierungen sind die im Google PlayStore erhältlichen
+ Apps KiwiViewer und LiMo nicht in der Lage Punktenwolken mit mehr als 5
+ Millionen Punkten darzustellen .
+ Die beiden Entwicklungen der Visual Computing Gruppe des CRS4 ...
 \end_layout
 
 \begin_layout Section
 Proxy Entwurfsmuster
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Proxy-Design-Pattern"
+name "subsec:Proxy-Design-Pattern"
 
 \end_inset
 
@@ -1718,11 +1855,11 @@ key "Gamma:1995:DPE:186897"
 
  handelt es sich um ein Objekt, welches als Schnittstelle zu etwas Anderem
  agiert.
- Typische Beispiele wären eine große Datei oder eine andere teure Ressource.
+ Diese sind zum Beispiel eine große Datei oder eine andere teure Ressource.
 \end_layout
 
 \begin_layout Standard
-Ein klassisches Beispiel sind Platzhalter für noch nicht fertig geladen
+Ein klassisches Beispiel sind Platzhalter für noch nicht fertig geladene
  Bilder auf Webseiten.
 \end_layout
 
@@ -1744,8 +1881,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Das Diagramm zeigt wie das reale Subjekt durch ein Proxy Objekt Repräsentiert
- wird, auf das der Client zugreift 
+Das Diagramm zeigt, wie das reale Subjekt durch ein Proxy Objekt repräsentiert
+ wird, auf das der Client zugreift.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:UML-Proxy-Pattern"
@@ -1804,7 +1942,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-UML Diagram eins Singleton Objektes, welches die einzige Instanz beherbergt
+UML-Diagramm eines Singleton Objektes, welches die einzige Instanz beherbergt.
 \end_layout
 
 \end_inset
@@ -1825,7 +1963,7 @@ UML Diagram eins Singleton Objektes, welches die einzige Instanz beherbergt
 Representational State Transfer
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Representational-state-transfer"
+name "subsec:Representational-state-transfer"
 
 \end_inset
 
@@ -1843,7 +1981,7 @@ Zitierstil prüfen
 \end_layout
 
 \begin_layout Standard
-Representational state transfer (REST) ist ein Programmierparadigma für
+Representational State Transfer (REST) ist ein Programmierparadigma für
  serviceorientierte verteilte Systeme.
  REST wurde im Jahr 2000 von Roy Fielding in seiner Doktorarbeit 
 \begin_inset CommandInset citation
@@ -1876,10 +2014,10 @@ key "Andrews:1991:PPI:103162.103164"
 
  ist der Client ein auslösender Prozess und der Server ein reagierender
  Prozess.
- Clienten stellen Anfragen, auf welcher der Server reagiert.
+ Der Client stellt Anfragen, auf welche der Server reagiert.
  Der Client kann entscheiden, wann er mit dem Server interagiert.
  Der Server wiederum muss auf Anfragen warten und dann auf diese reagieren.
- Oft ist ein Server ein nicht endender Prozess, welcher auf mehrere Clienten
+ Oft ist ein Server ein nicht endender Prozess, welcher auf mehrere Clients
  reagiert.
 \end_layout
 
@@ -1913,13 +2051,14 @@ Einheitliche Schnittstelle
 \begin_layout Standard
 Ein integraler Bestandteil einer REST-Architektur ist eine einheitliche
  Schnittstelle.
- Das vereinfacht die Systemarchitektur und die Sichtbarkeit von Interaktionen
- ist verbessert.
- Sie ist durch 4 weitere Eigenschaften beschrieben.
+ Das vereinfacht die Systemarchitektur und verbessert die Sichtbarkeit von
+ Interaktionen.
+ Sie ist durch vier weitere Eigenschaften beschrieben.
 \end_layout
 
 \begin_layout Subparagraph
-Adressierbarkeit von Ressourcen
+1.
+ Adressierbarkeit von Ressourcen
 \end_layout
 
 \begin_layout Standard
@@ -1932,7 +2071,8 @@ Jede Information, die über einen URI kenntlich gemacht wurde, wird als Ressourc
 \end_layout
 
 \begin_layout Subparagraph
-Repräsentationen zur Veränderung von Ressourcen
+2.
+ Repräsentationen zur Veränderung von Ressourcen
 \end_layout
 
 \begin_layout Standard
@@ -1943,37 +2083,27 @@ Wenn ein Client die Repräsentation einer Ressource mitsamt seinen Metadaten
 \end_layout
 
 \begin_layout Subparagraph
-Self-descriptive messages
+3.
+ Self-descriptive messages
 \end_layout
 
 \begin_layout Standard
-Jede Nachricht beschreibt, wie seine Informationen zu verarbeitet sind,
- z.B durch Angabe seines Internet Media Types (MIME-Type).
+Jede Nachricht beschreibt, wie ihre Informationen zu verarbeiten ist, z.B.
+ durch Angabe ihres Internet Media Types (MIME-Type).
 \end_layout
 
 \begin_layout Subparagraph
-Hypermedia as the Engine of Application State
+4.
+ Hypermedia as the Engine of Application State
 \end_layout
 
 \begin_layout Standard
 Bei Hypermedia as the Engine of Application State (HATEOAS) navigiert der
- Client einer
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-überarbeiten
-\end_layout
-
-\end_inset
-
- REST-Schnittstelle ausschließlich über URLs, welche vom Server bereitgestellt
- werden.
- Abhängig von der gewählten Repräsentation geschieht die Bereitstellung
- der URIs über Hypermedia.
+ Client ausschließlich über Hypermedia, welche vom Server bereitgestellt
+ wird.
  Abstrakt betrachtet stellen HATEOAS-konforme REST-Services einen endlichen
  Automaten dar, dessen Zustandsveränderungen durch die Navigation mittels
- der bereitgestellten URIs erfolgt.
+ der bereitgestellten URI erfolgt.
  Durch HATEOAS ist eine lose Bindung gewährleistet und die Schnittstelle
  kann verändert werden.
  
@@ -2015,8 +2145,8 @@ ache.
  Java ist objektorientiert, nebenläufig und plattformunabhängig.
  Letzteres wird erreicht, indem Java Code, genauer gesagt Java Byte Code,
  auf einer virtuellen Maschine (JVM) interpretiert wird.
- Moderne Implementierungen der JVM unterstützen sogenannte Just-in-Time
- Kompilierung.
+ Moderne Implementierungen der JVM unterstützen die sogenannte Just-in-Time-Komp
+ilierung.
  Das bedeutet, dass eine Übersetzung in den Maschinencode während der Laufzeit
  vorgenommen wird.
  Des Weiteren kümmert sich die Laufzeitumgebung von Java um das Speichermanageme
@@ -2068,9 +2198,9 @@ https://www.android.com/
 
 \end_inset
 
- ist ein mobiles Betriebssystem, welches momentan von Google entwickelt
+ ist ein mobiles Betriebssystem, welches momentan von Google weiter entwickelt
  wird.
- Es wurde mit 33 Mitgliedern der Open Handset Alliance entwickelt.
+ Es wurde von 33 Mitgliedern der Open Handset Alliance entwickelt.
  Ziel war es, einen offenen Standard für mobile Geräte zu schaffen
 \begin_inset Foot
 status collapsed
@@ -2123,7 +2253,7 @@ http://www.idc.com/prodserv/smartphone-os-market-share.jsp
 
 \end_inset
 
- bei mobilen Geräten und ist das mit Abstand meist genutzt Betriebssystem
+ bei mobilen Geräten und ist das mit Abstand meist genutzte Betriebssystem
  weltweit
 \begin_inset Foot
 status collapsed
@@ -2153,7 +2283,7 @@ Java ist die bevorzugte, wenn auch nicht einzig mögliche Programmiersprache
  für Android.
  Allerdings kommt bei Android keine Standard JVM zum Einsatz, sondern eine
  modifizierte Version.
- Bis Android 4.4 kam die virtuelle Maschine Dalivk zum Einsatz.
+ Bis zur Version Android 4.4 kam die virtuelle Maschine Dalivk zum Einsatz.
  Diese wurde vollständig in Android 5.0 ersetzt durch Android Runtime (ART)
 \begin_inset Foot
 status collapsed
@@ -2250,21 +2380,36 @@ message Person {
 \begin_layout Standard
 Das Schema definiert einen Namespaces, über welchen dann die eigentlichen
  Daten ausgelesen werden können.
- In dem Beispiel hat der Datentyp Person drei Felder.
+ In dem Beispiel hat der Datentyp 
+\begin_inset Quotes gld
+\end_inset
+
+Person
+\begin_inset Quotes grd
+\end_inset
+
+ drei Felder.
  Jedes dieser Felder ist getypt und mit einem Schlüsselwort versehen, welches
  angibt, ob das Feld Pflicht ist.
 \end_layout
 
 \begin_layout Standard
-Es besitzt also jede Person einen String für den Namen, aber nicht immer
- einen String für die Mail.
+Es besitzt also jede 
+\begin_inset Quotes gld
+\end_inset
+
+Person
+\begin_inset Quotes grd
+\end_inset
+
+ einen String für den Namen, aber nicht immer einen String für die Mail.
 \end_layout
 
 \begin_layout Standard
 Aus dem Schema können für jede unterstützte Programmiersprache (Java, C++,
  Python, JavaNano, Ruby, Objective-C und C#) Klassen generiert werden, welche
  die Daten (de)serialisieren.
- Das macht es möglich, Clienten in anderen Sprachen zu schreiben.
+ Das macht es möglich, Clients in anderen Sprachen zu schreiben.
 \end_layout
 
 \begin_layout Standard
@@ -2275,10 +2420,10 @@ Protocol Buffers sind komplett abwärtskompatibel.
 \begin_layout Standard
 Ein weiterer Vorteil ist der merklich verringerte Overhead im Vergleich
  zu JSON oder XML.
- Nachteilig ist, dass die übertragenden Daten nicht ohne Weiteres für einen
+ Nachteilig ist, dass die übertragenen Daten nicht ohne Weiteres für einen
  Menschen lesbar sind.
  Protocol Buffers werden intensiv intern bei Google selbst eingesetzt.
- Ein weiterer prominenter Nutzer ist Blizzard beim BATTLE.NET 
+ Ein weiterer prominenter Nutzer ist Blizzard beim BATTLE.NET
 \begin_inset Foot
 status collapsed
 
@@ -2288,13 +2433,13 @@ status open
 
 \begin_layout Plain Layout
 
-https://news.ycombinator.com/item?id=11444846 .
- Besucht am 23.05.2016
+https://news.ycombinator.com/item?id=11444846
 \end_layout
 
 \end_inset
 
-
+.
+ Besucht am 23.05.2016
 \end_layout
 
 \end_inset
@@ -2316,10 +2461,10 @@ key "openGlES"
 
  bietet ein offenes Interface für Grafikhardware.
  Dieses besteht aus einer Sammlung von Prozeduren und Funktionen, die es
- dem Programmierer ermöglichen, Shaderprogramme, Objekte und Operationen
+ den Programmierern ermöglichen Shaderprogramme, Objekte und Operationen
  zu spezifizieren, um dreidimensionale Farbbilder zu produzieren.
  Viele der Funktionen von OpenGL ES implementieren das Zeichnen von geometrische
-n Objekten wie Punkte oder Linien.
+n Objekten, wie Punkte oder Linien.
  OpenGL ES setzt voraus, dass die Grafikhardware über einen Framebuffer
  verfügt.
 \end_layout
@@ -2410,16 +2555,17 @@ t werden.
  Die Ausgabe des Shaders ist ein Farb-, Tiefen- und sogenannter Stencilwert.
  Im letzten Schritt werden für die Ausgabewerte des Shaders eine Handvoll
  Tests durchgeführt.
- Ein Beispiel ist der Tiefen Test (Depth-Test), um zu vermeiden, dass verdeckte
+ Ein Beispiel ist der Tiefentest (Depth-Test), um zu vermeiden, dass verdeckte
  Objekte gezeichnet werden.
- Andere Test sind Scissor-Test, Stencil-Test und der Pixel-Ownership-Test.
+ Andere Tests sind der Scissor-Test, der Stencil-Test und der Pixel-Ownership-Te
+st.
 \end_layout
 
 \begin_layout Section
 NanoHTTPD
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:NanoHTTPD"
+name "subsec:NanoHTTPD"
 
 \end_inset
 
@@ -2447,12 +2593,12 @@ https://github.com/NanoHttpd/nanohttpd
 
 \end_inset
 
- bezeichnet sich selbst als einen schlanker HTTP Server welche darauf ausgericht
-et ist, sich einfach in bestehende Anwendungen einbetten zu lassen.
+ bezeichnet sich selbst als einen schlanken HTTP Server, welcher darauf
+ ausgerichtet ist, sich einfach in bestehende Anwendungen einbetten zu lassen.
 \end_layout
 
 \begin_layout Standard
-Das Project ist Open Source und wird aktiv auf Github entwickelt.
+Das Projekt ist Open-Source und wird aktiv auf Github entwickelt.
 \end_layout
 
 \begin_layout Section
@@ -2497,20 +2643,20 @@ key "Deutsch:1996:DCD:RFC1951"
 
 \end_inset
 
- handelt es sich um einen Kompression Algorithmus von Phil Katz aus dem
+ handelt es sich um einen Kompressionsalgorithmus von Phil Katz aus dem
  Jahre 1993.
- Er kombiniert die die Kompressions Algorithmen LZ77 oder LZSS mit einer
- Huffman Kodierung.
- Der Algorithmus zeichnet such durch eine solide Kompression in kurzer Zeit
+ Er kombiniert die Kompressionsalgorithmen LZ77 oder LZSS mit einer Huffman-Kodi
+erung.
+ Der Algorithmus zeichnet sich durch eine solide Kompression in kurzer Zeit
  aus.
- Der Algorithmus findet zum Beispiel im .png Format Anwendung.
+ Der Algorithmus findet zum Beispiel im PNG-Format Anwendung.
 \end_layout
 
 \begin_layout Section
 Volley 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Volley"
+name "subsec:Volley"
 
 \end_inset
 
@@ -2538,10 +2684,11 @@ http://developer.android.com/training/volley/index.html
 
 \end_inset
 
- handelt es sich um ein HTTP Bibliothek zum Verwalten von Netzwerkanfragen.
- Volley bietet automatisches koordinieren von Anfragen.
- Es ermöglicht mehrere neben läufige Netzwerkverbindungen, Anfragen Priorisierun
-g und einiges mehr.Die Bibliothek ist frei und wird unter diesem Link
+ handelt es sich um eine HTTP-Bibliothek zum Verwalten von Netzwerkanfragen.
+ Volley bietet automatisches Koordinieren von Anfragen.
+ Es ermöglicht mehrere nebenläufige Netzwerkverbindungen, Anfragen, Priorisierun
+g und einiges mehr.
+ Die Bibliothek ist frei und wird unter diesem Link
 \begin_inset Foot
 status collapsed
 
@@ -2551,7 +2698,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://android.googlesource.com/platform/frameworks/volley
+https://Ger.googlesource.com/platform/frameworks/volley
 \end_layout
 
 \end_inset
@@ -2566,20 +2713,27 @@ https://android.googlesource.com/platform/frameworks/volley
 
 \begin_layout Chapter
 dotViewer
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:dotViewer"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Mobile Geräte verfügen über vergleichsweise begrenzte Ressourcen was Rechenleist
-ung von CPU und GPU und Arbeitsspeicher angeht.
+Mobile Geräte verfügen über vergleichsweise begrenzte Ressourcen bezogen
+ auf die Rechenleistung von CPU und GPU und Arbeitsspeicher.
  Punktwolken mit mehr als einer Million Punkte bringen die GPU schnell an
- Ihre Grenzen.
- Daher wurde ein Ansatz gewählt, der es ermöglicht Punkte nach Bedarf anzuzeigen
- und zu vereinfachen.
- Zum ermitteln der Punkte kommt ein Multi-Resolution Octree (siehe Section
+ ihre Grenzen.
+ Daher wurde ein Ansatz gewählt, der es ermöglicht, Punkte nach Bedarf anzuzeige
+n und zu vereinfachen.
+ Zum Ermitteln der Punkte kommt ein Multiresolution Octree (siehe Sektion
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Multiresolution-Octree"
+reference "subsec:Multiresolution-Octree"
 
 \end_inset
 
@@ -2600,10 +2754,10 @@ reference "fig:Übersicht"
 
 ).
  Das eigentliche Modell wird von einem Server verwaltet.
- Der Client hat selber nur den momentan benötigten Satz Punkte gespeichert.
- Um Netzwerkverkehr niedrig zu halten werden die Punkte von Client in einem
+ Der Client hat nur den momentan benötigten Satz Punkte gespeichert.
+ Um Netzwerkverkehr niedrig zu halten, werden die Punkte von Client in einem
  Cache nach dem Least-Recently-Used Prinzip gespeichert.
- Zum Rendern werden die Punkte als Vertex-Buffer-Object in den Speicher
+ Zum Rendern werden die Punkte als Vertex Buffer Object in den Speicher
  der GPU geschrieben und anschließend gezeichnet.
  
 \end_layout
@@ -2616,7 +2770,7 @@ Als Programmiersprache wurde Java gewählt aufgrund des guten Kompromisses
 
 \begin_layout Standard
 Als Entwicklungsumgebung wurde für den Client Android-Studio und für den
- Server IntelliJ IDEA verwendet.
+ Server Intellij IDEA verwendet.
 \end_layout
 
 \begin_layout Standard
@@ -2642,7 +2796,7 @@ name "fig:Übersicht"
 
 \end_inset
 
-Das Datenfluss Diagramm zeigt die Interaktion des Client mit dem Server.
+Das Datenflussdiagramm zeigt die Interaktion des Clients mit dem Server.
 \end_layout
 
 \end_inset
@@ -2666,20 +2820,20 @@ Server
 \begin_layout Standard
 Der Server hat drei Aufgaben.
  Zum ersten erstellt er aus gegebenen Punkten einen MRT.
- Seine zweite Aufgabe ist es Punktanfragen zu bedienen und als letztes ein
- Proxy Objekt (siehe Kapitel 
+ Seine zweite Aufgabe ist es, Punktanfragen zu bedienen und als letztes
+ ein Proxy Objekt (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Proxy-Design-Pattern"
+reference "subsec:Proxy-Design-Pattern"
 
 \end_inset
 
-) des MRT an die Klienten zu verteilen.
+) des MRT an die Clients zu verteilen.
 \end_layout
 
 \begin_layout Standard
-Zur Interaktion stellt der Server ein RESTful Interface auf Basis des HTTP
- Protokolls bereit.
+Zur Interaktion stellt der Server ein RESTful Interface auf Basis des HTTP-Proto
+kolls bereit.
  
 \begin_inset Note Note
 status collapsed
@@ -2698,7 +2852,7 @@ Multiresolution Tree
 \end_layout
 
 \begin_layout Standard
-Der Multiresolution Tree besteht aus 4 Klassen (siehe Abb.
+Der Multiresolution Tree besteht aus vier Klassen (siehe Abb.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2707,13 +2861,20 @@ reference "fig:Multiresolution-Tree-UML"
 \end_inset
 
 ).
- Die Klasse MultiResolutionTree dient als Schnittstelle für alle äußeren
- Komponenten.
+ Die Klasse 
+\begin_inset Quotes gld
+\end_inset
+
+MultiResolutionTree
+\begin_inset Quotes grd
+\end_inset
+
+ dient als Schnittstelle für alle äußeren Komponenten.
  Dadurch ist eine sinnvolle Kapselung gewährleistet.
- Sie beherbergt einen Zeiger auf den Wurzelknoten des MRT.
- Des Weiteren legt sie einen Index von den Knoten an um schnellen Zugriff
+ Sie beherbergt einen Zeiger auf den Wurzelknoten des MRTs.
+ Des Weiteren legt sie einen Index von den Knoten an, um schnellen Zugriff
  zu ermöglichen.
- Zusätzlich existiert einer Factory Methode zum erstellen von Protocol Buffer
+ Zusätzlich existiert eine Factory-Methode zum Erstellen von Protocol Buffer
  Objekten.
 \end_layout
 
@@ -2721,7 +2882,7 @@ reference "fig:Multiresolution-Tree-UML"
 Die Implementierung des MRT ist analog zu der Beschreibung in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Multiresolution-Octree"
+reference "subsec:Multiresolution-Octree"
 
 \end_inset
 
@@ -2730,10 +2891,9 @@ reference "sub:Multiresolution-Octree"
 t.
  Erwähnenswert sind die Entscheidungen bei der Raster Klasse.
  Die Rasterwerte sind in einer internen Default Hash Map vermerkt.
- Diese bildet einen dreidimensionalen Vektor auf einen Farbwert und Gewicht
- ab.
+ Diese bildet einen dreidimensionalen Vektor auf Farbwert und Gewicht ab.
  Charakteristisch ist bei einer Default Hash Map, dass bei Abfrage von nicht
- existierender Einträge ein Standartwert zurück gegeben wird.
+ existierenden Einträgen ein Standartwert zurückgegeben wird.
  Dadurch wird im Vergleich zu einem 
 \begin_inset Formula $n^{3}$
 \end_inset
@@ -2757,7 +2917,7 @@ H(p)=(\left\lfloor \frac{x(p)}{cellLength}\right\rfloor ,\left\lfloor \frac{y(p)
 \begin_inset Formula $p$
 \end_inset
 
- ist hier die Positionsvektor des Punktes relativ zu Ursprung des Würfel.
+ ist hier der Positionsvektor des Punktes relativ zum Ursprung des Würfels.
  Die Variable
 \begin_inset Formula $cellLength$
 \end_inset
@@ -2775,7 +2935,7 @@ cellLength=\frac{cube.length}{k}
 \end_layout
 
 \begin_layout Standard
-Einfach gesprochen, werden die Koordinaten auf ein Vielfaches der 
+Einfach gesprochen werden die Koordinaten auf ein Vielfaches der 
 \begin_inset Formula $cellLength$
 \end_inset
 
@@ -2809,7 +2969,7 @@ name "fig:Multiresolution-Tree-UML"
 
 \end_inset
 
-Das UML Diagramm zeigt den Aufbau des Multiresolution Trees.
+Das UML-Diagramm zeigt den Aufbau des Multiresolution Trees.
 \end_layout
 
 \end_inset
@@ -2824,9 +2984,9 @@ Das UML Diagramm zeigt den Aufbau des Multiresolution Trees.
 
 \begin_layout Standard
 Damit schnelle Zugriffe bei Anfragen auf die entsprechenden Knoten bzw.
- Punkte möglich sind existiert eine weitere Hashmap als Index.
- Dieser bildet Ids auf die entsprechenden Knoten ab.
- Der Index wird in nach einer festen Anzahl Einfüge Operationen aktualisiert.
+ Punkte möglich sind, existiert eine weitere Hash Map als Index.
+ Diese bildet Ids auf die entsprechenden Knoten ab.
+ Der Index wird nach einer festen Anzahl Einfügeoperationen aktualisiert.
 \end_layout
 
 \begin_layout Subsection
@@ -2834,11 +2994,11 @@ RESTful API
 \end_layout
 
 \begin_layout Standard
-Unter einer RESTful API versteht man ein Webinterface welches die Beschränkungen
- von REST (siehe Kapitel 
+Unter einer RESTful API versteht man ein Webinterface, welches die Beschränkunge
+n von REST (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Representational-state-transfer"
+reference "subsec:Representational-state-transfer"
 
 \end_inset
 
@@ -2849,12 +3009,12 @@ reference "sub:Representational-state-transfer"
 Die API wurde mit Hilfe des NanoHTTPD Frameworks (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:NanoHTTPD"
+reference "subsec:NanoHTTPD"
 
 \end_inset
 
 ) implementiert.
- NanoHTTPD wurde ausgewählt weil es schlank und einfach ist.
+ NanoHTTPD wurde ausgewählt, weil es schlank und einfach ist.
 \end_layout
 
 \begin_layout Standard
@@ -2879,7 +3039,7 @@ GET SERVER_IP:PORT/?parameter
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2993,7 +3153,15 @@ Id für Punktdaten
 \end_layout
 
 \begin_layout Standard
-Prinzipiell wird bei jeder Anfrage eine Fallunterscheidung an dem mode Parameter
+Prinzipiell wird bei jeder Anfrage eine Fallunterscheidung an dem Parameter
+ 
+\begin_inset Quotes gld
+\end_inset
+
+mode
+\begin_inset Quotes grd
+\end_inset
+
  gemacht.
  Die Anfragetypen werden im Folgenden vorgestellt.
 \end_layout
@@ -3002,7 +3170,7 @@ Prinzipiell wird bei jeder Anfrage eine Fallunterscheidung an dem mode Parameter
 MRT-Proxy Anfrage
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:MRT-Proxy-Anfrage"
+name "subsec:MRT-Proxy-Anfrage"
 
 \end_inset
 
@@ -3010,13 +3178,13 @@ name "sub:MRT-Proxy-Anfrage"
 \end_layout
 
 \begin_layout Standard
-Da die Ermittlung gebrauchten Punkte auf dem Klienten statt findet muss
- auch dieser in Kenntnis über die Struktur des MRTs sein.
- Aus diesem Grund Stellt der Server ein MRT-Proxy zur Verfügung.
+Da die Ermittlung gebrauchter Punkte auf dem Clients stattfindet, muss auch
+ dieser in Kenntnis über die Struktur des MRTs gesetzt werden.
+ Aus diesem Grund stellt der Server ein MRT-Proxy zur Verfügung.
  Der MRT-Proxy ist im Prinzip gleich dem Multiresolution Octree, allerdings
  haben seine Knoten keine Punkte oder Rasterung gespeichert, sondern nur
- Ids um beim Server die entsprechenden Punkte anzufragen.
- Diese können entweder Original Punkte aus Blättern sein oder Punkte aus
+ Ids, um beim Server die entsprechenden Punkte anzufragen.
+ Diese können entweder Originalpunkte aus Blättern sein oder Punkte aus
  der Rasterung.
 \end_layout
 
@@ -3040,7 +3208,7 @@ GET 192.168.2.1:8080/?mode=tree
 \end_layout
 
 \begin_layout Standard
-Zum versendet wird aus der Datenstruktur ein Protocol Buffer Objekt erstellt.
+Zum Versenden wird aus der Datenstruktur ein Protocol Buffer Objekt erstellt.
  Diese kann dann problemlos serialisiert werden.
  Das Protocol Buffer Objekt ist wie folgt definiert.
 \end_layout
@@ -3130,25 +3298,43 @@ message MRTree{
 
 \begin_layout Subsubsection
 Punktanfrage
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Silke Stand
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Der 2.
- Typ Anfragen liefert Punkte an den Klienten aus.
- Bei dieser Anfrage wird vom Klienten immer eine Id als Parameter mitgesendet.
- Diese Id passt auf einen Knoten des MRT.
+ Typ Anfragen liefert Punkte an die Clients aus.
+ Bei dieser Anfrage wird vom Client immer eine Id als Parameter mitgesendet.
+ Diese Id passt auf einen Knoten des MRTs.
 \end_layout
 
 \begin_layout Standard
-Falls es sich um ein inneren Knoten handelt wird die Rasterung zu einer
+Falls es sich um einen inneren Knoten handelt, wird die Rasterung zu einer
  Liste von Punkten exportiert.
- Beim einem Blatt wird lediglich auf die vorhandene Punktliste zugegriffen.
+ Bei einem Blatt wird lediglich auf die vorhandene Punktliste zugegriffen.
  
 \end_layout
 
 \begin_layout Standard
-Der Server greift über die MultiResolutionTree Klasse auf den entsprechende
- Knoten zu und generiert ein Protocol Buffer Objekt.
+Der Server greift über die 
+\begin_inset Quotes gld
+\end_inset
+
+MultiResolutionTree
+\begin_inset Quotes grd
+\end_inset
+
+ Klasse auf den entsprechenden Knoten zu und generiert ein Protocol Buffer
+ Objekt.
  Die Spezifikation des Objektes lautet:
 \end_layout
 
@@ -3222,7 +3408,7 @@ message Raster{
 
 \begin_layout Standard
 Es handelt sich also um eine Liste von Punkten mit Positions-, Farb- und
- einer Gewichtswerten (size).
+ Gewichtswerten (size).
 \end_layout
 
 \begin_layout Standard
@@ -3237,20 +3423,20 @@ Client
 \end_layout
 
 \begin_layout Standard
-Bei dem Client handelt es um eine Android Anwendung.
+Bei dem Client handelt es sich um eine Android Anwendung.
  Der Client ist verantwortlich für das Darstellen der Punktwolke und reagiert
  auf Eingaben des Users.
 \end_layout
 
 \begin_layout Standard
 Der Client verfolgt eine eventbasierte Architektur.
- Wird vom Nutzer eine Translation(2-Finger Geste) oder Rotation(Slide Geste)
- an dem Punktmodel ausgeführt kann sich die Menge der zu zeichnenden Punkte
- ändern.
+ Wird vom Nutzer eine Translation (Zwei-Finger Geste) oder Rotation (Slide
+ Geste) an dem Punktmodell ausgeführt, kann sich die Menge der zu zeichnenden
+ Punkte ändern.
 \end_layout
 
 \begin_layout Standard
-Die Menge der momentan zu zeichnenden Punkte wird im folgenden als aktive
+Die Menge der momentan zu zeichnenden Punkte wird im Folgenden als aktive
  Punkte bezeichnet.
  Die Knoten, welche die aktiven Punkte beinhalten, werden als aktive Knoten
  bezeichnet.
@@ -3276,7 +3462,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Das UML Diagramm zeigt den Aufbau des Multiresolution Trees.
+Das UML-Diagramm zeigt den Aufbau des Multiresolution Trees.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Client-UML"
@@ -3301,8 +3487,15 @@ Netzwerkverkehr
 \end_layout
 
 \begin_layout Standard
-Bei der DataAcessLayer Klasse handelt es sich um ein Singleton (siehe Kapitel
- 
+Bei der 
+\begin_inset Quotes gld
+\end_inset
+
+DataAcessLayer
+\begin_inset Quotes grd
+\end_inset
+
+ Klasse handelt es sich um ein Singleton (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Singleton-Pattern"
@@ -3310,24 +3503,21 @@ reference "sec:Singleton-Pattern"
 \end_inset
 
 ), welches als Schnittstelle für jeglichen Netzwerkverkehr fungiert.
- Sie verfügt über Funktion zum Anfordern von Punkten oder des Proxys.
+ Diese verfügt über Funktionen zum Anfordern von Punkten oder des Proxys.
  Für die asynchronen Anfragen wird das Volley Framework verwendet (siehe
  Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Volley"
+reference "subsec:Volley"
 
 \end_inset
 
 ).
- Das Framework stellt eine Prioritätswarteschlange für HTTP Anfragen zur
+ Das Framework stellt eine Prioritätswarteschlange für HTTP-Anfragen zur
  Verfügung.
- Volley ermöglicht es die Callback Funktion, welche nach Eintreffen einer
+ Volley ermöglicht es, die Callback Funktion, welche nach Eintreffen einer
  Antwort aufgerufen wird, zu überschreiben, um eigene Logik zu definieren.
-\end_layout
-
-\begin_layout Standard
-Die zwei Methoden der Klasse werden im folgendem vorgestellt.
+ Die zwei Methoden der Klasse werden im Folgendem vorgestellt.
 \end_layout
 
 \begin_layout Paragraph
@@ -3335,8 +3525,24 @@ buildMultiResTreeProtos(owner:MultiResTreeOwner)
 \end_layout
 
 \begin_layout Standard
-Die Methode dekoriert eine Instanz welche das MultiResTreeOwner Interface
- implementiert (z.B RemotePointClusterGL) mit dem MRT-Proxy.
+Die Methode dekoriert eine Instanz, welche das 
+\begin_inset Quotes gld
+\end_inset
+
+MultiResTreeOwner
+\begin_inset Quotes grd
+\end_inset
+
+ Interface implementiert (z.B.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+RemotePointClusterGL
+\begin_inset Quotes grd
+\end_inset
+
+) mit dem MRT-Proxy.
  
 \end_layout
 
@@ -3354,8 +3560,8 @@ getSamples(id:String, cache:LRUDrawableCache)
 
 \begin_layout Standard
 Die Methode fordert Punktdaten vom Server an und speichert diese in einem
- Cache Objekt welches später zum Zeichnen der Punkte verwendet wird.
- Beim erhalten der Antwort werden die Daten zuerst dekomprimiert (DEFLATE)
+ Cache Objekt, welches später zum Zeichnen der Punkte verwendet wird.
+ Beim Erhalten der Antwort werden die Daten zuerst dekomprimiert (DEFLATE)
  und deserialisiert.
  Im Anschluss werden die Farb-, Positions- und Gewichtswerte in einen nativen
  Buffer geschrieben, damit OpenGL bei Bedarf darauf zugreifen kann.
@@ -3375,10 +3581,10 @@ Shader
 \end_layout
 
 \begin_layout Standard
-Die Shader sind als Textdatei in dem Android Ressourcen gespeichert.
- Bei der Initialisierung der OpenGL View Instanz werden sie kompiliert und
+Die Shader sind als Textdatei in den Android Ressourcen gespeichert.
+ Bei der Initialisierung der OpenGL View-Instanz werden sie kompiliert und
  gelinkt.
- Im folgendem werden die Shader vorgestellt.
+ Im Folgenden werden die Shader vorgestellt.
 \end_layout
 
 \begin_layout Standard
@@ -3452,11 +3658,11 @@ void main() {
 
 \begin_layout Standard
 In dem Vertex Shader werden die Postionen der Punkte mit der Projektionsmatrix
- multipliziert und an die nächste Stufe der OpenGL Pipeline weiter gegeben.
- Des weiteren wird die Größe der zu zeichnenden Punktes berechnet.
- Es wird die Wurzel gezogen um sehr große Werte abzuschwächen.
- Durch die min() Funktion wird eine obere Grenze von 4 eingeführt.
- Das ist nötig den bei sehr detaillierten Objekten kann das Gewicht schnell
+ multipliziert und an die nächste Stufe der OpenGL Pipeline weitergegeben.
+ Des Weiteren wird die Größe der zu zeichnenden Punkte berechnet.
+ Es wird die Wurzel gezogen, um sehr große Werte abzuschwächen.
+ Durch die min-Funktion wird eine obere Grenze von 4 eingeführt.
+ Das ist nötig, denn bei sehr detaillierten Objekten kann das Gewicht schnell
  sehr groß werden.
  Die Farbwerte werden einfach an den Fragment Shader durch eine varying
  Variable weitergereicht.
@@ -3508,14 +3714,14 @@ Scene Klasse
 \end_layout
 
 \begin_layout Standard
-Die Scene Klasse siehe(Abbildung 
+Die Scene Klasse (siehe Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Client-UML"
 
 \end_inset
 
-)ist die Schnittstelle für alle Rendering relevanten Aktionen.
+) ist die Schnittstelle für alle renderingrelevanten Aktionen.
  Alle zu zeichnenden Objekte sowie die Kamera sind in dieser Klasse gespeichert.
  Nutzereingaben werden von dieser Klasse entgegengenommen und entsprechend
  verarbeitet.
@@ -3526,7 +3732,7 @@ drawScene()
 \end_layout
 
 \begin_layout Standard
-Beim Aufruf der Methode wird die draw() Methode von jedem Element der Liste
+Beim Aufruf der Methode wird die draw-Methode von jedem Element der Liste
  ausgelöst.
 \end_layout
 
@@ -3535,17 +3741,33 @@ RemotePointClusterGL
 \end_layout
 
 \begin_layout Standard
-Die RemotePointClusterGL kümmert sich um das Ermitteln aktiver Punkte mit
- Hilfe des MRT, dafür sind Verweise auf den Cache und dem MRT-Proxy gespeichert.
- Des weiteren greift die Klasse auf die DataAccesLayer Instanz zu, um entweder
- den MRT Proxy zu aktualisieren oder neuen Punkten anzufordern.
+Die 
+\begin_inset Quotes gld
+\end_inset
+
+RemotePointClusterGL
+\begin_inset Quotes grd
+\end_inset
+
+ kümmert sich um das Ermitteln aktiver Punkte mit Hilfe des MRT, dafür sind
+ Verweise auf den Cache und dem MRT-Proxy gespeichert.
+ Des Weiteren greift die Klasse auf die 
+\begin_inset Quotes gld
+\end_inset
+
+DataAccesLayer
+\begin_inset Quotes grd
+\end_inset
+
+ Instanz zu, um entweder den MRT Proxy zu aktualisieren oder neue Punkte
+ anzufordern.
  Bei Initialisierung der Instanz wird der Proxy vom Server erfragt.
- Der gespeicherte LRU-Cache beinhaltet die Punktdaten
+ Der gespeicherte LRU-Cache beinhaltet die Punktdaten.
 \end_layout
 
 \begin_layout Standard
-Immer wenn sich die Kameraposition ändert wird die updateCache() aufgerufen
- um den aktiven Knoten zu ermitteln.
+Immer wenn sich die Kameraposition ändert, wird die updateCache-Methode
+ aufgerufen, um den aktiven Knoten zu ermitteln.
 \end_layout
 
 \begin_layout Paragraph
@@ -3553,12 +3775,12 @@ updateCache()
 \end_layout
 
 \begin_layout Standard
-Die Methode bestimmt die momentan aktiven Punkten bzw.
+Die Methode bestimmt die momentan aktiven Punkte bzw.
  Knoten mit Hilfe des Proxy Objektes.
 \end_layout
 
 \begin_layout Standard
-Knoten(mit ihren Punkten) werden zu den aktiven Knoten hinzugefügt wenn
+Knoten (mit ihren Punkten) werden zu den aktiven Knoten hinzugefügt, wenn
  folgende Kriterien erfüllt sind:
 \end_layout
 
@@ -3567,12 +3789,12 @@ die Punkte sind sichtbar
 \end_layout
 
 \begin_layout Itemize
-die Auflösung der Punkte ist ausreichen oder schon maximal
+die Auflösung der Punkte ist ausreichend oder schon maximal
 \end_layout
 
 \begin_layout Standard
-Um das zu erreichen wird der Proxy mit Hilfe des folgenden Algorithmus traversie
-rt.
+Um das zu erreichen, wird der Proxy mit Hilfe des folgenden Algorithmus
+ traversiert.
 \end_layout
 
 \begin_layout Standard
@@ -3668,22 +3890,12 @@ private void _getIdsViewDependent(OctreeNodeGL currentNode, List<String>
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Einfach gesagt, besuche Knoten solange sichtbar bis entweder ein Blatt erreicht
- ist oder eine ausreichende Detailstufe.
- Bei dem Test auf Sichtbarkeit wird geprüft ob die projektierte Box (von
- einem Knoten) sich mit der View-Ebene schneidet.
- In jedem Schritt wird der Detail-Factor ermitteln und mit einem festgelegten
- Schwellwert verglichen.
- Der 
-\end_layout
-
-\begin_layout Standard
-Schwellwert ist experimentell ermittelt und kann abhängig von der Leistung
- des Gerätes gewählt werden.
+Beim Test auf Sichtbarkeit wird geprüft, ob die projizierte Box (von einem
+ Knoten) sich mit der View-Ebene schneidet.
+ In jedem Schritt wird der Detail-Factor ermittelt und mit einem festgelegten
+ Schwellenwert verglichen.
+ Der Schwellenwert ist experimentell ermittelt und kann abhängig von der
+ Leistung des Gerätes gewählt werden.
  Sobald der Detail-Factor klein genug ist, gilt der Knoten als ausreichend
  aufgelöst und wird gezeichnet.
  Der Detail-Factor berechnet sich wie folgt:
@@ -3739,15 +3951,22 @@ atrix, m.getModelMatrix());
 
 \begin_layout Standard
 Der komplette Vorgang findet in einem eigenem Thread statt, damit der Nutzer
- nicht warten muss um neue Eingabe zu machen.
- Für die Verwaltung von Threads kommt die von Java mitgelieferte ThreadPoolExecu
-tor Klasse zum Einsatz.
+ nicht warten muss, um neue Eingaben zu machen.
+ Für die Verwaltung von Threads kommt die von Java mitgelieferte 
+\begin_inset Quotes gld
+\end_inset
+
+ThreadPoolExecutor
+\begin_inset Quotes grd
+\end_inset
+
+ Klasse zum Einsatz.
 \end_layout
 
 \begin_layout Standard
 Nachdem alle nötigen Knoten festgestellt wurden, wird geprüft, ob sich diese
  schon im Cache befinden.
- Falls nicht werden diese vom Server angefordert.
+ Falls nicht, werden diese vom Server angefordert.
 \end_layout
 
 \begin_layout Paragraph
@@ -3755,7 +3974,7 @@ draw()
 \end_layout
 
 \begin_layout Standard
-Zum zeichnen des Models wird die draw Methode aller aktiven Knoten im Cache
+Zum Zeichnen des Modells wird die draw-Methode aller aktiver Knoten im Cache
  aufgerufen.
  
 \end_layout
@@ -3776,12 +3995,11 @@ Diese Klasse speichert und cached die Punktdaten vom Server.
 \end_layout
 
 \begin_layout Standard
-Der Cache besitzt eine Prioritätswarteschlange von Knoten nach dem zuletzt
- benutzt Prinzip.
- Die Knoten besitzen die Punktdaten und einen Vermerk ob diese schon im
+Der Cache besitzt eine Prioritätswarteschlange von Knoten nach dem LRU-Prinzip.
+ Die Knoten besitzen die Punktdaten und einen Vermerk, ob diese schon im
  Speicher der GPU gelandet sind.
  Die Positions-, Farb- und Gewichtsdaten werden in einem einzigen Buffer
- pro Knoten ineinander abgespeichert um die Performance zu verbessern 
+ pro Knoten ineinander abgespeichert, um die Performance zu verbessern 
 \begin_inset Foot
 status collapsed
 
@@ -3807,10 +4025,10 @@ rtexData.html
 \end_layout
 
 \begin_layout Standard
-Beim zeichnen wird zuerst geprüft ob die Daten des Knoten schon als VBO
+Beim Zeichnen wird zuerst geprüft, ob die Daten des Knotens schon als VBO
  auf der GPU sind.
- Falls ja werden die Punkte mit der folgenden Methode gezeichnet.
- Ansonsten werd die Punkte erst übermittelt.
+ Falls ja, werden die Punkte mit der folgenden Methode gezeichnet.
+ Ansonsten werden die Punkte erst übermittelt.
 \end_layout
 
 \begin_layout Standard
@@ -3843,22 +4061,52 @@ Benutzer Interface
 \end_layout
 
 \begin_layout Standard
-Die Applikation unterstützt drei Gesten zum erkunden der Modelle.
+Die Applikation unterstützt drei Gesten zum Erkunden der Modelle.
  Das einfache Scrollen mit einem Finger wird als Rotation interpretiert.
- Modelle pro Bewegung können nur um eine Achse rotiert werden um die Eingabe
+ Modelle können pro Bewegung nur um eine Achse rotiert werden, um die Eingabe
  zu vereinfachen.
- Zwei Finger Scrollen wird als Zoom verstanden und das Zusammenziehen von
+ Zwei-Finger-Scrollen wird als Zoom verstanden und das Zusammenziehen von
  zwei Fingern (Pinch) als Skalierung.
  
 \end_layout
 
 \begin_layout Standard
-Für das Verarbeiten de Scroll Gesten mit einem oder zwei Fingern, werden
- Eingaben an Die GestureListener Klasse weitergeleitet.
- Dieser Klasse implementiert das von Android mitgelieferten GestureDetector.OnGes
-tureListener Interface.
- Bei Pinch Eingaben kommt die ScaleListener Klasse zum Einsatz.
- Diese implementiert das vorgegebene ScaleGestureDetector.OnScaleGestureListener
+Für das Verarbeiten der Scroll-Gesten mit einem oder zwei Fingern werden
+ Eingaben an die 
+\begin_inset Quotes gld
+\end_inset
+
+GestureListener
+\begin_inset Quotes grd
+\end_inset
+
+ Klasse weitergeleitet.
+ Diese Klasse implementiert das von Android mitgelieferten 
+\begin_inset Quotes gld
+\end_inset
+
+GestureDetector.OnGestureListener
+\begin_inset Quotes grd
+\end_inset
+
+ Interface.
+ Bei Pinch Eingaben kommt die 
+\begin_inset Quotes gld
+\end_inset
+
+ScaleListener
+\begin_inset Quotes grd
+\end_inset
+
+ Klasse zum Einsatz.
+ Diese implementiert das vorgegebene 
+\begin_inset Quotes gld
+\end_inset
+
+ScaleGestureDetector.OnScaleGestureListener
+\begin_inset Quotes grd
+\end_inset
+
  Interface.
  Die Listener Klassen besitzen Zeiger auf das Scene Singleton.
  Die Call-Back Methoden der Listener Klasse rufen dann die entsprechenden
@@ -3866,9 +4114,9 @@ tureListener Interface.
 \end_layout
 
 \begin_layout Standard
-Des Weiteren bietet die Applikation in seinem Aktionbar, dem schwarzen Menübalke
-n am oberen Bildschirm, einen Zugang zum Settings Menü.
- Dort kann die IP des Servers, sowie ein Schwellenwert für die Detailstufe
+Des Weiteren bietet die Applikation in seinem Actionbar, dem schwarzen Menübalke
+n am oberen Bildschirm, einen Zugang zum Settings-Menü.
+ Dort kann die IP des Servers sowie ein Schwellenwert für die Detailstufe
  eingetragen werden.
 \end_layout
 
@@ -3885,44 +4133,33 @@ name "chap:Experimente-und-Auswertungen"
 
 \begin_layout Standard
 In diesem Kapitel soll die Performance des dotViewers evaluiert werden.
- Performance ist hier definiert als die Anzahl berechneten Bilder (Frames)
+ Performance ist hier definiert als die Anzahl der berechneten Bilder (Frames)
  pro Sekunde (FPS).
  Umso mehr Bilder pro Sekunde berechnet werden, desto performanter und flüssiger
  ist die Darstellung.
- Zur Messung werden unterschiedliche Modelle in verschiedenen Vergrößerungsstufe
-n um 360 Grad gedreht.
- Zum einem eine Felslandschaft mit ca.
- 1.6 Millionen Punkten.
+ Die Darstellungsqualität selbst gibt Aufschluss darüber, wie gut die Datenstruk
+tur das Grundmodell vereinfacht.
+\end_layout
+
+\begin_layout Section
+Durchführung
+\end_layout
+
+\begin_layout Standard
+Zur Messung werden unterschiedliche Modelle in verschiedenen Vergrößerungsstufen
+ um 360 Grad gedreht.
+ Die Punkte jedes Modells werden vollständig in die Datenstruktur eingefügt,
+ bevor gemessen wird.
+ Zum Messen der FPS wurde eine einfache Methode in den Mainloop von OpenGL
+ hinzugefügt, welche den Wert in der Konsole ausgibt.
+ Als Erstes wird eine Felslandschaft mit ca.
+ 1.6 Millionen Punkten analysiert.
  Das Modell wurde vom dem Archaeocopter Projekt via 3D-Rekonstruktion errechnet.
- Das zweite Testobjekt ist eine Thailändische Statue aus dem Stanford 3D
- Scanning Repository
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://graphics.stanford.edu/data/3Dscanrep/
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
- Das Modell hat ungefähr 5 Millionen Punkte.
- Schlussendlich wird eine Baustelle und Umgebung mit 20 Millionen Punkte
- getestet.
+ Als Zweites wird eine Baustelle und Umgebung mit 20 Millionen Punkten getestet.
  Das Modell stammt von der Jacobs University Bremen gGmbH und wurde von
  Dorit Borrmann, Jan Elseberg, Hamid Reza Houshiar und Andreas Nüchter aufgenomm
 en.
- Angeboten wird das Model in dem Robotic 3D Scan Repository
+ Angeboten wird das Modell in dem Robotic 3D Scan Repository
 \begin_inset Foot
 status collapsed
 
@@ -3943,33 +4180,32 @@ http://kos.informatik.uni-osnabrueck.de/3Dscans/
 \end_inset
 
 .
- Als Server kommt ein Thinkpad T460 mit eine Intel i5 Prozessor und 16GB
+ Als Server kommt ein Thinkpad T460 mit einem Intel i5 Prozessor und 16GB
  RAM zum Einsatz.
- Bei dem Client handelt es sich um LG G3 Smartphone mit einem 4-Kern Qualcomm
- Snapdragon 80 Chip.
+ Bei dem Client handelt es sich um ein LG G3 Smartphone mit einem 4-Kern
+ Qualcomm Snapdragon 80 Chip.
  Das Smartphone verfügt über eine Auflösung von 1440x2560 Pixel und 2 GB
- RAM.
+ RAM und ist damit mit einem Tablett vergleichbar.
  Der Netzwerkverkehr läuft über das WLAN.
 \end_layout
 
 \begin_layout Standard
-Die Messwerte und die Darstellungen selbst geben Aufschluss darüber, wie
- gut die Datenstruktur das Grundmodelle vereinfacht.
+Die Messwerte und die Darstellungsqualität selbst geben Aufschluss darüber,
+ wie gut die Datenstruktur das Grundmodell vereinfacht.
  
 \end_layout
 
 \begin_layout Section
-Schlucht
+Auswertung
 \end_layout
 
 \begin_layout Standard
-Dieses Modell ist durch 3D-Rekonstruktion entstanden.
- Es handelt sich um eine Felsschlucht.
- Das Modell ist mit 1.5 Millionen Punkten für ein Landschaftsmodell wenig
- detailliert.
+Die Felslandschaft ist mit 1.5 Millionen Punkten für ein Landschaftsmodell
+ wenig detailliert.
+ Der Aufbau des MRTs auf dem Server dauert 3 Minuten.
  Das Modell wird von der Applikation mit mindestens 30FPS in jeder Perspektive
  dargestellt.
- Die verschiedenen Detailstufen werden nachgeladen (siehe Abb.
+ Die verschiedenen Detailstufen werden kaum spürbar nachgeladen (siehe Abb.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3987,7 +4223,7 @@ reference "fig:Terra_far"
 
 ).
  Verzögerungen durch den Netzwerkverkehr beim Aufbau des Bildes übersteigen
- nicht die 5 Sekunden Marke.
+ nicht die 5-Sekunden-Marke.
  Sobald Flächen mit unterschiedlichen Sampleraten nebeneinander liegen,
  kann es zu sichtbaren Grenzen kommen.
  Das kann passieren, sobald eine gerasterte Fläche (innerer Knoten) neben
@@ -4000,7 +4236,7 @@ reference "fig:Terra_close"
 
 \end_inset
 
- beim oberen Bild zu beobachten.
+ im oberen Bild zu beobachten.
 \end_layout
 
 \begin_layout Standard
@@ -4033,7 +4269,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Auf aus der ferner Distanz.
+Visualisierung einer Felsschlucht aus der ferner Distanz.
  Details wurden hier vereinfacht.
  Die dicker gezeichneten Punkte repräsentieren Bereiche mit einer hohen
  Dichte an Punkten.
@@ -4087,8 +4323,9 @@ status collapsed
 
 \begin_layout Plain Layout
 Oben: Bild aus mittlerer Perspektive.
- Eine Kante zwischen zwei Oktanten ist oben rechts im Bild erkennbar.
+ Eine Kante zwischen zwei Oktanten ist oben rechts im Bild deutlich erkennbar.
  Unten: Die Schlucht in naher Aufnahme.
+ Punkte welche in der Ferne liegen werden gröber Dargestellt.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -4113,53 +4350,20 @@ name "fig:Terra_close"
 
 \end_layout
 
-\begin_layout Section
-Dinosaurierschädel
-\end_layout
-
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-foo bar
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Baustelle
-\end_layout
-
-\begin_layout Standard
-Das Modell stellt ein weitläufige Baustelle dar.
- Das Modell enthält urbane Objekte z.B Häuser und Brücken.
- Die Darstellung durch die Applikation vereinfacht das Gelände sinnvoll.
+Das zweite Modell stellt eine weitläufige Baustelle dar.
+ Das Modell enthält urbane Objekte, z.B.
+ Häuser und Brücken.
+ Das Einfügen der 20 Millionen Punkte in den MRT dauert 13 Minuten.
+ Die Darstellung des Geländes wird durch die Applikation sinnvoll vereinfacht.
  Die Performance bleibt bei jeder Einstellung über 18FPS.
- Auffallend sind die recht hohen Latenzen von bis zu 10 Sekunden beim nachladen
+ Auffallend sind die recht hohen Latenzen von bis zu 10 Sekunden beim Nachladen
  der einzelnen Oktanten.
- Diese ist allerdings nicht verwunderlich Anbetracht der hohen Menge an
- Punkten von diesem Modell.
+ Diese sind allerdings nicht verwunderlich Anbetracht der hohen Menge an
+ Punkten, welche vom Server an die Clients gesendet werden.
  Bei nahen Darstellungen werden Details sichtbar.
- Es kann auf kurzer Distanz zu verdunkelten Bereichen kommen sobald der
- Punktabstand zwischen etwas größer als 1 Pixel beträgt (siehe Abb.
+ Es kann auf kurzer Distanz zu verdunkelten Bereichen kommen, sobald der
+ Punktabstand größer als 1 Pixel beträgt (siehe Abb.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4275,29 +4479,29 @@ Zusammenfassung
 
 \begin_layout Standard
 In der vorliegenden Bachelorarbeit wurde eine Implementierung zum Betrachten
- von großer Punktemenge auf Android Geräten vorgestellt.
+ von großen Punktmengen auf Android Geräten vorgestellt.
  
 \end_layout
 
 \begin_layout Standard
 Im Kapitel Grundlagen und verwandte Arbeiten wurde eine Einführung in die
- 3D- Rekonstruktion gegeben.
+ 3D-Rekonstruktion gegeben.
  Des Weiteren wurden unterschiedliche Repräsentationen von Punktwolken diskutier
-t und auf ihre Eignung bezüglich der gestellten Anforderungen geprüft .
- Im folgenden wurde bestehende Lösungen für mobile Geräte diskutiert.
+t.
+ Im Folgenden wurden bestehende Lösungen für mobile Geräte diskutiert.
  Aktuelle Arbeiten konnten große Punktmengen mit mehr als 100 Millionen
  Punkten bewältigen.
  Allerdings wurden offline Datenstrukturen für die Punktverwaltung verwendet.
- Daher musst die Punktwolken beim erstellen schon vollständig vorliegen.
+ Daher mussten die Punktwolken beim Erstellen schon vollständig vorliegen.
 \end_layout
 
 \begin_layout Standard
-Aufbauend auf diesen Schwachpunkt wurde im Kapitel dotViewer eine Applikation
- vorgestellt welche zu einem in der Lage ist Punktdaten online zu verarbeiten
- sowie Punktwolken mit über 10 Millionen Punkten darzustellen.
+Aufbauend auf diesem Schwachpunkt wurde im Kapitel dotViewer eine Applikation
+ vorgestellt, welche zum einen in der Lage ist, Punktdaten online zu verarbeiten
+ sowie Punktwolken mit über 20 Millionen Punkten darzustellen.
  Die theoretische Grundlage für die verwendete Datenstruktur war der in
- Kapitel 2 vorgestellt MRT.
- Als Architektur wurde das Client Server Modell mit einer RESTfull API gewählt
+ Kapitel 2 vorgestellte MRT.
+ Als Architektur wurde das Client-Server Modell mit einer RESTfull API gewählt,
  um Speicher und GPU vom Tablett zu entlasten.
  
 \end_layout
@@ -4310,17 +4514,17 @@ reference "chap:Experimente-und-Auswertungen"
 
 \end_inset
 
- wurde die Applikation durch messen der FPS und durch Beobachten der Darstellung
+ wurde die Applikation durch Messen der FPS und durch Beobachten der Darstellung
  evaluiert.
  Die Framerate ist dabei nicht unter 18FPS gesunken.
- Durch die Teils unterschiedliche aufgelösten Rasterungen kann es zu sichtbaren
- Kanten kommen.
- Des weiteren können Bereiche dunkler Wirken, wenn der Punktabstand ein
+ Durch die teilweise unterschiedlich aufgelösten Rasterungen kann es zu
+ sichtbaren Kanten kommen.
+ Des Weiteren können Bereiche dunkler wirken, wenn der Punktabstand ein
  wenig größer ist als die Pixeldichte.
  Dieser Effekt ist nicht verwunderlich, da zwischen den Punkten nicht interpolie
 rt wird.
- Dadurch füllen sich die leeren Bereiche mit Schwarz und die Farbe wirkt
- verfälscht.
+ Dadurch füllen sich die leeren Bereiche mit der Hintergrundfarbe und die
+ Farbe wirkt verfälscht.
 \end_layout
 
 \begin_layout Section
@@ -4328,36 +4532,39 @@ Ausblick
 \end_layout
 
 \begin_layout Standard
-Viele Bereiche der Anwendung sind einfach gehalten um den angepeilten Zeitrahmen
- nicht zu sprengen.
- Der Server ist nicht an eine Datenbank gekoppelt um Daten auf die Festplatte
+Viele Komponenten der Anwendung sind einfach gehalten, um den angepeilten
+ Zeitrahmen nicht zu sprengen.
+ Der Server ist nicht an eine Datenbank gekoppelt, um Daten auf die Festplatte
  auszulagern.
- Dadurch wären die Größe Modelle theoretische nur von Festplattenspeicher
+ Dadurch wäre die Größe der Modelle theoretisch nur vom Festplattenspeicher
  begrenzt.
- Eine weiteres Problem ist die Kompression vor dem Netzwerkverkehr.
+ Ein weiteres Problem ist die Kompression vor dem Netzwerkverkehr.
  Für die Punktdaten lässt sich sicherlich eine besser angepasste Kompression
  finden.
- Andere Projekte besuchten hierfür zum Beispiel eine Wavletkompression.
- Die Steuerung ist auch nicht optinal gelöst.
- Intelligentere Mechanismen wie sie bei HuMors vorhanden sind wären eine
+ Andere Projekte benutzen hierfür zum Beispiel eine Wavletkompression 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "VAST:VAST12:057-064"
+
+\end_inset
+
+.
+ Die Steuerung ist auch nicht optimal gelöst.
+ Intelligentere Mechanismen, wie sie bei HuMors vorhanden sind, wären eine
  sinnvolle Ergänzung.
 \end_layout
 
 \begin_layout Standard
-Es würde sich auch Anbieten den Server um weitere HTTP-Methoden zu erweitern.
- Die PUT Methode könnte zum Hinzufügen von Punkten genutzt werden.
- Dadurch wäre der Server gut Ansprechbar über eine plattformunabhängige
+Es würde sich auch anbieten, den Server um weitere HTTP-Methoden zu erweitern.
+ Die PUT-Methode könnte zum Hinzufügen von Punkten genutzt werden.
+ Dadurch wäre der Server gut ansprechbar über eine plattformunabhängige
  Schnittstelle.
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 Die Applikation soll nach Abgabe dieser Arbeit frei zugänglich durch die
- Entwicklungsplattform github sein.
- Aufgrund seiner modularen Architektur sind weiter Komponenten unkompliziert
+ Entwicklungsplattform Github sein.
+ Aufgrund seiner modularen Architektur sind weitere Komponenten unkompliziert
  nachreichbar.
 \end_layout
 
