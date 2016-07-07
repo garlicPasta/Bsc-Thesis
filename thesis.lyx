@@ -17,10 +17,10 @@
 {\normalsize Bachelorarbeit am Institut für Informatik der Freien Universität Berlin}\\ DotViewer: Darstellung gigantischer Punktwolken auf Android Geräten}
 
 \author{Jakob Krause\\
-Matrikelnummer: xxxxxxx \\
+Matrikelnummer: 4573260 \\
 jakobkrause@zedat.fu-berlin.de\\\\
 Betreuung und Erstgutachten:\\ Prof. Dr. Marco Block-Berlitz\\
-Zweitgutachten:\\ }
+}
 \date{\today}
 \urlstyle{same}
 \end_preamble
@@ -1102,7 +1102,7 @@ Zuerst wird der Punkt der Rasterung hinzugefügt.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Box Frameless
@@ -1178,8 +1178,13 @@ status collapsed
 
 \begin_layout Plain Layout
 Abb.
- Links: Die Rasterung ist schematisch dargestellt, Rechts: Das Schema nach
- dem einfügen eines weiteren Punkten (Abb.
+ Links: Die Rasterung ist schematisch für die zweite Dimension dargestellt.
+ Die inneren Knoten beinhalten die Gewichte.
+ Die äußeren Knoten enthalten die Punkte.
+ Rechts: Das Schema nach dem Einfügen eines weiteren Punktes in den Quadranten
+ rechts unten.
+ Auf jedem Level wird ein Gewicht erhöht.
+ (Abb.
  aus 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1400,7 +1405,7 @@ Die Projektion von
 \begin_inset Formula $r$
 \end_inset
 
- ist letzendlich wie folgt definiert:
+ ist letztendlich wie folgt definiert:
 \begin_inset Formula 
 \[
 \phi(r)=q+g(0,0)n
@@ -1472,21 +1477,12 @@ In der Vorverarbeitung wird Top-Down eine Diamanten Hierarchie aufgebaut,
  ist, wird es anhand einer Ebene, welche durch den Mittelpunkt der längsten
  Kante und seiner gegenüberliegenden Kante verläuft, geteilt.
  Im Anschluss werden die Dreiecke auf die zwei Kinder verteilt.
- Der nächste Schritt vereinfacht die Kinder Button-Up.
+ Der nächste Schritt vereinfacht die Kinder Buttom-Up.
  Jeder Diamant wird dabei unabhängig voneinander abgearbeitet.
  Dafür muss beachtet werden, das Vertices, welche an den Außenwänden liegen,
  nicht verändert werden dürfen.
  Bei Vertices an den Innenwänden muss auch der korrespondierende Vertex
  beim Nachbarn mit einbezogen werden.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Nochmal prüfen
-\end_layout
-
-\end_inset
-
  Ist beides nicht der Fall, kann beliebig vereinfacht werden.
  Da die Diamanten unabhängig voneinander vereinfacht werden, ist es einfacher
  die Datenstruktur zu parallelisieren.
@@ -1494,16 +1490,6 @@ Nochmal prüfen
 
 \begin_layout Section
 Bestehende Applikationen
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Silke Ende
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1534,7 +1520,8 @@ http://www.kiwiviewer.org/
 \end_inset
 
 .
- Besucht am 19.05.2016
+ Aufg.
+ am 19.05.2016
 \end_layout
 
 \end_inset
@@ -1558,7 +1545,8 @@ http://pointclouds.org/
 \end_inset
 
 .
- Besucht am 22.05.2016
+ Aufg.
+ am 22.05.2016
 \end_layout
 
 \end_inset
@@ -1603,7 +1591,9 @@ https://play.google.com/store/apps/details?id=com.ogs.limo&hl=en
 
 \end_inset
 
-
+.
+ Aufg.
+ am 27.05.2016
 \end_layout
 
 \end_inset
@@ -1637,23 +1627,13 @@ name "subsec:Knn-Baum"
 
 \end_inset
 
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Mehr
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
 \begin_layout Standard
 Diese Applikation wurde von der Visual Computing Gruppe
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -1666,7 +1646,9 @@ http://www.crs4.it/vic/
 
 \end_inset
 
-
+.
+ Aufg.
+ am 11.06.2016
 \end_layout
 
 \end_inset
@@ -1713,8 +1695,14 @@ HuMoRS
 \end_layout
 
 \begin_layout Standard
-Das HuMoRs (Huge models Mobile Rendering System) ist eine weitere Entwicklung
- der Visual Computing Gruppe des CRS4.
+Das HuMoRs (Huge models Mobile Rendering System) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Balsa:2014:HHM"
+
+\end_inset
+
+ ist eine weitere Entwicklung der Visual Computing Gruppe des CRS4.
  Die Applikation beherrscht das Darstellen von Modellen mit mehr als 70
  Millionen Punkten bzw.
  Dreiecken.
@@ -1725,7 +1713,7 @@ Das HuMoRs (Huge models Mobile Rendering System) ist eine weitere Entwicklung
  Des Weiteren  werden zu jedem Modell Thumbnails generiert, um zu interessanten
  Abschnitten des Modells springen zu können.
  Die Anwendung folgt dem gleichen Client-Server Ansatz wie die iOS Applikation
- aus Kapitel 
+ aus Sektion 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Knn-Baum"
@@ -1733,7 +1721,14 @@ reference "subsec:Knn-Baum"
 \end_inset
 
 .
- Als Datenstruktur wird ein Tetraederbaum verwendet.
+ Als Datenstruktur wird ein Tetraederbaum (siehe Sektion 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Tetraedertree"
+
+\end_inset
+
+) verwendet.
  Diese ermöglicht eine Kompression, welche einen Vertex mit Position, Farbe
  und Normale auf 64Bit komprimiert.
 \end_layout
@@ -1759,7 +1754,7 @@ programmiert.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1791,6 +1786,15 @@ name "fig:HuMorsBild"
 Darstellung einer Szene von hochauflösenden Statuen auf einem Tablet (Asus
  TF201) sowie Smartphone (LG Nexus 4).
  Am rechten Bildrand sieht man die vorausberechneten Vorschaubilder.
+ (Abb.
+ aus 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Balsa:2014:HHM"
+
+\end_inset
+
+)
 \end_layout
 
 \end_inset
@@ -1813,17 +1817,6 @@ Die Arbeit bietet gute Ansätze, besonders in Bezug auf die Bedienung.
  hoher Bildfrequenz.
  Allerdings müssen auch hier alle Punkte vor Aufbau der Datenstruktur bekannt
  sein.
-\end_layout
-
-\begin_layout Subsection
-Auswertung
-\end_layout
-
-\begin_layout Standard
-Aufgrund der Hardwarelimitierungen sind die im Google PlayStore erhältlichen
- Apps KiwiViewer und LiMo nicht in der Lage Punktenwolken mit mehr als 5
- Millionen Punkten darzustellen .
- Die beiden Entwicklungen der Visual Computing Gruppe des CRS4 ...
 \end_layout
 
 \begin_layout Section
@@ -2168,7 +2161,8 @@ http://www.tiobe.com/tiobe_index?page=Java
 \end_inset
 
 .
- Besucht am 17.05.2016
+ Aufg.
+ am 17.05.2016
 \end_layout
 
 \end_inset
@@ -2193,7 +2187,8 @@ https://www.android.com/
 \end_inset
 
 .
- Besucht am 19.05.2016
+ Aufg.
+ am 19.05.2016
 \end_layout
 
 \end_inset
@@ -2217,7 +2212,8 @@ http://www.openhandsetalliance.com/press_110507.html
 \end_inset
 
 .
- Besucht am 23.05.2016
+ Aufg.
+ am 23.05.2016
 \end_layout
 
 \end_inset
@@ -2248,7 +2244,8 @@ http://www.idc.com/prodserv/smartphone-os-market-share.jsp
 \end_inset
 
 .
- Besucht am 21.05.2016
+ Aufg.
+ am 21.05.2016
 \end_layout
 
 \end_inset
@@ -2270,7 +2267,8 @@ https://en.wikipedia.org/wiki/Usage_share_of_operating_systems
 \end_inset
 
 .
- Besucht am 21.05.2016
+ Aufg.
+ am 21.05.2016
 \end_layout
 
 \end_inset
@@ -2300,7 +2298,8 @@ http://developer.android.com/about/versions/android-5.0-changes.html
 \end_inset
 
 .
- Besucht am 23.05.2016
+ Aufg.
+ am 23.05.2016
 \end_layout
 
 \end_inset
@@ -2328,7 +2327,9 @@ https://developers.google.com/protocol-buffers/
 
 \end_inset
 
-
+.
+ Aufg.
+ am 20.05.2016
 \end_layout
 
 \end_inset
@@ -2439,7 +2440,8 @@ https://news.ycombinator.com/item?id=11444846
 \end_inset
 
 .
- Besucht am 23.05.2016
+ Aufg.
+ am 23.05.2016
 \end_layout
 
 \end_inset
@@ -2588,7 +2590,9 @@ https://github.com/NanoHttpd/nanohttpd
 
 \end_inset
 
-
+.
+ Aufg.
+ am 24.05.2016
 \end_layout
 
 \end_inset
@@ -2608,7 +2612,7 @@ la4j
 \begin_layout Standard
 La4j
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -2621,7 +2625,9 @@ http://la4j.org/
 
 \end_inset
 
-
+.
+ Aufg.
+ am 10.06.2016
 \end_layout
 
 \end_inset
@@ -2679,7 +2685,9 @@ http://developer.android.com/training/volley/index.html
 
 \end_inset
 
-
+.
+ Aufg.
+ am 24.05.2016
 \end_layout
 
 \end_inset
@@ -2690,20 +2698,22 @@ http://developer.android.com/training/volley/index.html
 g und einiges mehr.
  Die Bibliothek ist frei und wird unter diesem Link
 \begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
+\begin_inset Flex URL
+status collapsed
 
-https://Ger.googlesource.com/platform/frameworks/volley
+\begin_layout Plain Layout
+
+https://android.googlesource.com/platform/frameworks/volley/
 \end_layout
 
 \end_inset
 
-
+.
+ Aufg.
+ am 24.05.2016 
 \end_layout
 
 \end_inset
@@ -2796,7 +2806,9 @@ name "fig:Übersicht"
 
 \end_inset
 
-Das Datenflussdiagramm zeigt die Interaktion des Clients mit dem Server.
+Das Datenflussdiagramm zeigt den groben Aufbau von Client und Server sowie
+ die Interaktion mit der Api durch den Data-Access-Layer des Servers.
+ 
 \end_layout
 
 \end_inset
@@ -3298,16 +3310,6 @@ message MRTree{
 
 \begin_layout Subsubsection
 Punktanfrage
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Silke Stand
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3706,7 +3708,15 @@ void main() {
 
 \begin_layout Standard
 Der Fragment Shader empfängt die Farbwerte und gibt sie weiter an die vorgegeben
-e Variable gl_FragColor und legt damit den Farbwert des Fragmentes fest.
+e Variable 
+\begin_inset Quotes gld
+\end_inset
+
+gl_FragColor
+\begin_inset Quotes grd
+\end_inset
+
+ und legt damit den Farbwert des Fragmentes fest.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3714,14 +3724,23 @@ Scene Klasse
 \end_layout
 
 \begin_layout Standard
-Die Scene Klasse (siehe Abbildung 
+Die 
+\begin_inset Quotes gld
+\end_inset
+
+Scene
+\begin_inset Quotes grd
+\end_inset
+
+ Klasse (siehe Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Client-UML"
 
 \end_inset
 
-) ist die Schnittstelle für alle renderingrelevanten Aktionen.
+) ist ein Singleton welches die Schnittstelle für alle renderingrelevanten
+ Aktionen bildet.
  Alle zu zeichnenden Objekte sowie die Kamera sind in dieser Klasse gespeichert.
  Nutzereingaben werden von dieser Klasse entgegengenommen und entsprechend
  verarbeitet.
@@ -3907,39 +3926,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-\align left
 
-public float getDetailFactor(ModelGl m){             
+getDetailFactor(MRTNode k, Camera c){
 \end_layout
 
 \begin_layout Plain Layout
-\align left
 
-	float[] boundingBox = getBoundingBox(projectPoints(edgePoints,m.camera.projection
-Matrix, m.camera.viewMatrix, m.getModelMatrix()));             
+	float[] edgePointsOnViewPlane = projectPoints(edgePoints(k), c)
 \end_layout
 
 \begin_layout Plain Layout
-\align left
 
-	float[] centerProj = projectPoint(center, m.camera.projectionMatrix, m.camera.viewM
-atrix, m.getModelMatrix());             
+	float[] minimumBoundingBox = getMinimumBoundingBox(edgePointsOnViewPlane)
 \end_layout
 
 \begin_layout Plain Layout
-\align left
 
-	float zNorm = centerProj[2];             
+	return getArea(minimumBoundingBox) * 1/(projectPoint(k.center.z, c))
 \end_layout
 
 \begin_layout Plain Layout
-\align left
-
-	return getArea(boundingBox) * 1/(zNorm * zNorm);        
-\end_layout
-
-\begin_layout Plain Layout
-\align left
 
 }
 \end_layout
@@ -3947,6 +3953,11 @@ atrix, m.getModelMatrix());
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Die einfließende z-Koordinate sorgt dafür, dass von dem Betrachter entfernte
+ Knoten weniger detailliert dargestellt werden.
 \end_layout
 
 \begin_layout Standard
@@ -4001,7 +4012,7 @@ Der Cache besitzt eine Prioritätswarteschlange von Knoten nach dem LRU-Prinzip.
  Die Positions-, Farb- und Gewichtsdaten werden in einem einzigen Buffer
  pro Knoten ineinander abgespeichert, um die Performance zu verbessern 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Flex URL
@@ -4016,7 +4027,9 @@ rtexData.html
 
 \end_inset
 
-
+.
+ Aufg.
+ am 13.05.2016
 \end_layout
 
 \end_inset
@@ -4108,7 +4121,15 @@ ScaleGestureDetector.OnScaleGestureListener
 \end_inset
 
  Interface.
- Die Listener Klassen besitzen Zeiger auf das Scene Singleton.
+ Die Listener Klassen besitzen Zeiger auf das 
+\begin_inset Quotes gld
+\end_inset
+
+Scene
+\begin_inset Quotes grd
+\end_inset
+
+ Singleton.
  Die Call-Back Methoden der Listener Klasse rufen dann die entsprechenden
  Transformationsmethoden auf.
 \end_layout
@@ -4429,7 +4450,7 @@ name "fig:bstelle_close"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -4453,6 +4474,9 @@ status collapsed
 
 \begin_layout Plain Layout
 Beide Bilder zeigen die Baustelle auf mittlerer Distanz.
+ Die Bildfrequenz liegt bei den Szenen bei ungefähr 15FPS.
+ Das Nachladen zwischen den Zoomstufen ist stark spürbar, wenn die Daten
+ nicht gecached sind.
 \end_layout
 
 \end_inset
@@ -4516,7 +4540,8 @@ reference "chap:Experimente-und-Auswertungen"
 
  wurde die Applikation durch Messen der FPS und durch Beobachten der Darstellung
  evaluiert.
- Die Framerate ist dabei nicht unter 18FPS gesunken.
+ Die Framerate ist dabei nicht unter 15FPS gesunken, was völlig ausreichend
+ für das Betrachten ist.
  Durch die teilweise unterschiedlich aufgelösten Rasterungen kann es zu
  sichtbaren Kanten kommen.
  Des Weiteren können Bereiche dunkler wirken, wenn der Punktabstand ein
@@ -4537,7 +4562,8 @@ Viele Komponenten der Anwendung sind einfach gehalten, um den angepeilten
  Der Server ist nicht an eine Datenbank gekoppelt, um Daten auf die Festplatte
  auszulagern.
  Dadurch wäre die Größe der Modelle theoretisch nur vom Festplattenspeicher
- begrenzt.
+ begrenzt und die Applikation könnte vergleichbare Punktenmengen verarbeiten
+ wie HuMoRs.
  Ein weiteres Problem ist die Kompression vor dem Netzwerkverkehr.
  Für die Punktdaten lässt sich sicherlich eine besser angepasste Kompression
  finden.
@@ -4548,22 +4574,62 @@ key "VAST:VAST12:057-064"
 
 \end_inset
 
-.
+ .
  Die Steuerung ist auch nicht optimal gelöst.
- Intelligentere Mechanismen, wie sie bei HuMors vorhanden sind, wären eine
+ Intelligentere Mechanismen, wie sie bei HuMoRs vorhanden sind, wären eine
  sinnvolle Ergänzung.
 \end_layout
 
 \begin_layout Standard
 Es würde sich auch anbieten, den Server um weitere HTTP-Methoden zu erweitern.
  Die PUT-Methode könnte zum Hinzufügen von Punkten genutzt werden.
- Dadurch wäre der Server gut ansprechbar über eine plattformunabhängige
- Schnittstelle.
+ Dadurch wäre der Server über eine plattformunabhängige Schnittstelle gut
+ ansprechbar .
 \end_layout
 
 \begin_layout Standard
-Die Applikation soll nach Abgabe dieser Arbeit frei zugänglich durch die
- Entwicklungsplattform Github sein.
+Die Client
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/garlicPasta/dotViewer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ und Server
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/garlicPasta/dotServer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ wird nach Abgabe dieser Arbeit frei zugänglich durch die Entwicklungsplattform
+ Github sein.
  Aufgrund seiner modularen Architektur sind weitere Komponenten unkompliziert
  nachreichbar.
 \end_layout
@@ -4572,7 +4638,7 @@ Die Applikation soll nach Abgabe dieser Arbeit frei zugänglich durch die
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "sources"
-options "bibtotoc,plain"
+options "bibtotoc,plainyr"
 
 \end_inset
 
